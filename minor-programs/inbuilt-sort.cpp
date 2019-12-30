@@ -1,5 +1,5 @@
 #include <iostream>
-#include<algorithm>
+#include<bits/stdc++.h>
 using namespace std;
 bool mycompare(int a, int b){
     cout <<"compare :" <<a<<"and"<<b<<"\n";
@@ -7,10 +7,12 @@ bool mycompare(int a, int b){
     
 }
 int main() {
+	int s;
+	cin>>s;
     int a[]={1,4,7,5,4,5,6,7,3,66,5,4,55,4};
     int n= sizeof(a)/sizeof(int);
     sort(a,a+n,mycompare);
     for(int i=0; i<n;i++){
-        cout<<a[i]<<" ";
+        cout<<a[i]<<" "; 
     }
 }
