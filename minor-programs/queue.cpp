@@ -16,15 +16,17 @@ int32_t main()
 	// int t;cin>>t;while(t--)
 	{
 		int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-		stack<string> st;
-		st.push("mango");
-		st.push("apple");
-		st.push("pineapple");
-		st.push("guava");
-		st.push("carrot");
-		while(!st.empty()){
-			cout<<st.top()<<endl;
-			st.pop();
+		queue<int> qu;
+		int A[]={1,2,3,2,2,3,2,3,4};
+		n=sizeof(A)/sizeof(int);
+		for (int i = 0; i < n; ++i)
+		{
+			qu.push(A[i]);
 		}
+		while(!qu.empty()){
+			cout<<qu.front()<<endl;
+			qu.pop();
+		}
+
 	}
 }
