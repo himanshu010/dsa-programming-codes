@@ -15,23 +15,25 @@ public:
 	int x;
 	int y;
 	int id;
-	Car(int x, int y, int id){
+	Car(int x,int y, int id){
 		this->x=x;
 		this->y=y;
 		this->id=id;
 	}
-	int dist(){
-		return (x*x + y*y);
+	float dist(){
+		return sqrt(x*x + y*y);
 	}
 	void print(){
-		cout<<id<<","<<x<<","<<y<<endl;
+		float distance= dist();
+		cout<<id<<","<<x<<","<<y<<"  :  "<<distance<<endl;
 	}
+
 	
 };
-class Carcompare
+class Comparator
 {
 public:
-	bool operator()(Car a , Car b){
+	bool operator()(Car a,Car b){
 		return a.dist()>b.dist();
 	}
 	
@@ -43,17 +45,17 @@ int32_t main()
 	cin.tie(NULL); cout.tie(NULL);
 	// int t;cin>>t;while(t--)
 	{
-		int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-		int x[]={1,4,3,2,5,6,4,7};
-		int y[]={2,4,2,5,3,6,7,2};
-		priority_queue<Car, std::vector<Car>,Carcompare> pq;
+		int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;\
+		int x[]={1,4,3,5,3,8,7,1};
+		int y[]={5,4,3,6,1,2,4,6};
+		priority_queue<Car,vector<Car>, Comparator> pq;
 		for (i=0;i<8;i++){
-			Car c(x[i],y[i],i);
-			pq.push(c);
+			Car d(x[i],y[i],i);
+			pq.push(d);
 		}
 		while(!pq.empty()){
-			Car p = pq.top();
-			p.print();
+			Car r=pq.top();
+			r.print();
 			pq.pop();
 		}
 
