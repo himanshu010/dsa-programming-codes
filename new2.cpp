@@ -9,101 +9,196 @@ using namespace std;
 #define P pair<int,int>
 #define pb push_back
 
-// int MOD=1000000000;
 
-int i, j, k, n, m, ans = 0, cnt = 0, sum = 0,temp;
-vector<int>c,b;
 
-vector<vector<int>> multiply(vector<vector<int>> A,vector<vector<int>> B,int k){
-	vector<vector<int>> C(k,vector<int>(k));
-	for (int i = 0; i <= k; ++i)
-	{
-		for (int j = 1; j <=k; ++j)
-		{
-			for (int x = 1; x <=k; ++x)
-			{
-				C[i][j]=C[i][j]+(A[i][j]*B[i][j]);
-			}
-		}
-	}
-	return C;
+void buildTree(int *a, int s , int e , int *tree, int index) {
+    //BASE CASE
+    if (s == e) {
+        tree[index] = a[s];
+        return;
+    }
+    //REC CASE
+    int mid = (s + e) / 2;
+    buildTree(a, s, mid, tree, 2 * index);
+    buildTree(a, mid + 1, e, tree, 2 * index + 1);
+
+    int leftvalue = 0, rightvalue = 0;
+    if (tree[2 * index] > 0) {
+        leftvalue = tree[2 * index];
+    }
+    if (tree[2 * index + 1] > 0) {
+        rightvalue = tree[2 * index + 1];
+    }
+    if (tree[2 * index] < 0 && tree[2 * index + 1] < 0) {
+
+        leftvalue = max(tree[2 * index], tree[2 * index + 1]);
+    }
+    tree[index] = leftvalue + rightvalue;
+    return;
+
 }
 
-vector<vector<int>> power(vector<vector<int>>A,int p,int k){
-	if(n==1){
-		return A;
-	}
-	else{
-		if(p&1){
-			return multiply(A,power(A,n-1,k),k);
-		}
-		else{
-			vector<vector<int>> X=power(A,n/2,k);
-			return multiply(X,X,k);
-		}
-	}
+
+
+int query(int *tree, int ss, int se, int qs, int qe, int index) {
+    if (ss >= qs && se <= qe) {
+        return tree[index];
+    }
+
+    if (qe < ss || qs > se) {
+        return 0;
+    }
+    int mid = (ss + se) / 2;
+    int leftAns = query(tree, ss, mid, qs, qe, 2 * index);
+    int rightAns = query(tree, mid + 1, se, qs, qe, 2 * index + 1);
+
+    int leftvalue = 0, rightvalue = 0;
+    if (leftAns > 0) {
+        leftvalue = leftAns;
+    }
+    if (rightAns > 0) {
+        rightvalue = rightAns;
+    }
+    if (leftAns < 0 && rightAns < 0) {
+
+        leftvalue = max(leftAns, rightAns);
+    }
+    return (leftvalue + rightvalue);
 }
 
-int compute(int n,int k){
-	vector<vector<int>> T(k,vector<int>(k));
-	if (n==0){
-		return 0;
-	}
-	else if(n<=k){
-		return b[n];		
-	}
-	else{
-		for (int i = 1; i <= k; ++i)
-		{
-			for (int j = 1; j <= k; ++j)
-			{
-				if(i<k){
-					if(i==j+1){
-						T[i][j]=1;
-					}
-					else{
-						T[i][j]=0;
-					}
-				}
-				else{
-					T[i][j]=c[k-(j-1)];
-				}
-			}
-		}
-	}
-	T=power(T,n-1,k);
-	int res=0;
-	for (int i = 1; i <=k; ++i)
-	{
-			res=(res+(T[1][i]*b[i]));
-	}
-	return res;
-}
+
+
+
+// void updateNode(int *tree, int ss, int se, int i, int update, int index) {
+//     if (i > se || i < ss) {
+//         return;
+//     }
+//     if (ss == se) {
+
+//         // COUT UPDATE INFORMATION-1
+//         cout << "index: " << ss << endl;
+//         cout << tree[index] << "==>";
+
+
+//         tree[index] += update;
+
+
+//         // COUT UPDATE INFORMATION-2
+//         cout << tree[index] << endl;
+
+
+//         return;
+//     }
+//     int mid = (ss + se) / 2;
+//     updateNode(tree, ss, mid, i, update, 2 * index);
+//     updateNode(tree, mid + 1, se, i, update, 2 * index + 1);
+// }
+
+
+
+// void updateRange(int *tree, int ss, int se, int l, int r, int  update, int index ) {
+//     if (l > se || r < ss) {
+//         return;
+//     }
+//     if (ss == se) {
+
+
+//         // COUT UPDATE INFORMATION-1
+//         cout << "index: " << ss << endl;
+//         cout << tree[index] << "==>";
+
+
+//         tree[index] += update;
+
+
+//         // COUT UPDATE INFORMATION-2
+//         cout << tree[index] << endl;
+
+
+//         return;
+//     }
+//     int mid = (ss + se) / 2;
+//     updateRange(tree, ss, mid, l, r, update, 2 * index);
+//     updateRange(tree, mid + 1, se, l, r, update, 2 * index + 1);
+//     tree[index] = min(tree[2 * index], tree[2 * index + 1]);
+//     return;
+// }
+
+
 
 int32_t main()
 {
-	#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r" , stdin);
-    freopen("output.txt", "w" , stdout);
-    #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
 
-	ios_base:: sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
-	// int t;cin>>t;while(t--)
-	{
-		cin>>k;
-		for (int i = 1; i <= k; ++i)
-		{
-			cin>>temp;
-			c.pb(temp);
-		}
-		for (int i = 1; i <= k; ++i)
-		{
-			cin>>temp;
-			b.pb(temp);
-		}
-		cin>>n;
-		compute(n,k);
+    ios_base:: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    // int t;cin>>t;while(t--)
+    {
+        int j, k, m, ans = 0, cnt = 0, sum = 0, update, indexToUpdate, left, right, no_of_query, queryLeft, queryRight;
 
-	}
+        int n;
+        cin >> n;
+        int a[n];
+
+
+        //ARRAY HAVE ZERO BASED INDEXING
+        //TREE HAVE ONE BASED INDEXING
+        for (int i = 0; i < n; ++i)
+        {
+            cin >> a[i];
+        }
+
+        //INITIALISING TREE WITH ZERO
+        int tree[4 * n + 1] = {0};
+
+
+        //BUILDTREE(ARRAY, START, END, TREE, TREE-STARTING-INDEX)
+        buildTree(a, 0, n - 1, tree, 1);
+
+        // COUT TREE
+        // for (int i = 1; i <= (4 * n + 1); ++i)
+        // {
+        //     cout << tree[i] << " ";
+        // }
+        // cout << endl;
+
+
+
+        //UPDATE TREE NODE
+        {
+            // cin >> indexToUpdate >> update;
+
+
+            //UPDATENODE(TREE, ARRAY-STARTING, ARRAY-ENDING, INDEX-WHERE-UPDATE, UPDATE, TREE-STARTING-INDEX)
+            // updateNode(tree, 0, n - 1, indexToUpdate, update, 1);
+        }
+
+
+        //UPDATE TREE RANGE
+        {
+            // cin >> left >> right >> update;
+
+            //UPDATERANGE(TREE, TREE-START, TREE-END, RANGE-START, RANGE-END, UPDATE, TREE-STARTING-INDEX)
+            // updateRange(tree, 0, n - 1, left, right, update, 1);
+        }
+
+
+        //QUERY
+        {
+            cin >> no_of_query;
+            while (no_of_query--) {
+
+                cin >> queryLeft >> queryRight;
+
+                //QUERY(TREE, ARRAY-START, ARRAY-END, QUERY-LEFT, QUERY-RIGHT, TREE-STARTING-INDEX)
+                cout << query(tree, 0, n - 1, queryLeft - 1, queryRight - 1, 1) << endl;
+
+            }
+        }
+
+    }
 }
