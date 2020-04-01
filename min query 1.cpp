@@ -8,7 +8,6 @@ using namespace std;
 #define S second
 #define P pair<int,int>
 #define pb push_back
-#define max INT_MAX
 
 
 
@@ -22,7 +21,19 @@ void buildTree(int *a, int s , int e , int *tree, int index) {
     int mid = (s + e) / 2;
     buildTree(a, s, mid, tree, 2 * index);
     buildTree(a, mid + 1, e, tree, 2 * index + 1);
-    tree[index] = min(tree[2 * index], tree[2 * index + 1]);
+
+    int leftvalue = 0, rightvalue = 0;
+    if (tree[2 * index] > 0) {
+        leftvalue = tree[2 * index];
+    }
+    if (tree[2 * index + 1] > 0) {
+        rightvalue = tree[2 * index + 1];
+    }
+    if (tree[2 * index] < 0 && tree[2 * index + 1] < 0) {
+
+        leftvalue = max(tree[2 * index], tree[2 * index + 1]);
+    }
+    tree[index] = leftvalue + rightvalue;
     return;
 
 }
@@ -35,72 +46,83 @@ int query(int *tree, int ss, int se, int qs, int qe, int index) {
     }
 
     if (qe < ss || qs > se) {
-        return max;
+        return 0;
     }
     int mid = (ss + se) / 2;
     int leftAns = query(tree, ss, mid, qs, qe, 2 * index);
     int rightAns = query(tree, mid + 1, se, qs, qe, 2 * index + 1);
-    return min(leftAns, rightAns);
+
+    int leftvalue = 0, rightvalue = 0;
+    if (leftAns > 0) {
+        leftvalue = leftAns;
+    }
+    if (rightAns > 0) {
+        rightvalue = rightAns;
+    }
+    if (leftAns < 0 && rightAns < 0) {
+
+        leftvalue = max(leftAns, rightAns);
+    }
+    return (leftvalue + rightvalue);
 }
 
 
 
 
-void updateNode(int *tree, int ss, int se, int i, int update, int index) {
-    if (i > se || i < ss) {
-        return;
-    }
-    if (ss == se) {
+// void updateNode(int *tree, int ss, int se, int i, int update, int index) {
+//     if (i > se || i < ss) {
+//         return;
+//     }
+//     if (ss == se) {
 
-        // COUT UPDATE INFORMATION-1
-        // cout << "index: " << ss << endl;
-        // cout << tree[index] << "==>";
-
-
-        tree[index] = update;
+//         // COUT UPDATE INFORMATION-1
+//         cout << "index: " << ss << endl;
+//         cout << tree[index] << "==>";
 
 
-        // COUT UPDATE INFORMATION-2
-        // cout << tree[index] << endl;
+//         tree[index] += update;
 
 
-        return;
-    }
-    int mid = (ss + se) / 2;
-    updateNode(tree, ss, mid, i, update, 2 * index);
-    updateNode(tree, mid + 1, se, i, update, 2 * index + 1);
-    tree[index] = min( tree[2 * index] , tree[2 * index + 1] );
-}
+//         // COUT UPDATE INFORMATION-2
+//         cout << tree[index] << endl;
+
+
+//         return;
+//     }
+//     int mid = (ss + se) / 2;
+//     updateNode(tree, ss, mid, i, update, 2 * index);
+//     updateNode(tree, mid + 1, se, i, update, 2 * index + 1);
+// }
 
 
 
-void updateRange(int *tree, int ss, int se, int l, int r, int  update, int index ) {
-    if (l > se || r < ss) {
-        return;
-    }
-    if (ss == se) {
+// void updateRange(int *tree, int ss, int se, int l, int r, int  update, int index ) {
+//     if (l > se || r < ss) {
+//         return;
+//     }
+//     if (ss == se) {
 
 
-        // COUT UPDATE INFORMATION-1
-        cout << "index: " << ss << endl;
-        cout << tree[index] << "==>";
+//         // COUT UPDATE INFORMATION-1
+//         cout << "index: " << ss << endl;
+//         cout << tree[index] << "==>";
 
 
-        tree[index] += update;
+//         tree[index] += update;
 
 
-        // COUT UPDATE INFORMATION-2
-        cout << tree[index] << endl;
+//         // COUT UPDATE INFORMATION-2
+//         cout << tree[index] << endl;
 
 
-        return;
-    }
-    int mid = (ss + se) / 2;
-    updateRange(tree, ss, mid, l, r, update, 2 * index);
-    updateRange(tree, mid + 1, se, l, r, update, 2 * index + 1);
-    tree[index] = min(tree[2 * index], tree[2 * index + 1]);
-    return;
-}
+//         return;
+//     }
+//     int mid = (ss + se) / 2;
+//     updateRange(tree, ss, mid, l, r, update, 2 * index);
+//     updateRange(tree, mid + 1, se, l, r, update, 2 * index + 1);
+//     tree[index] = min(tree[2 * index], tree[2 * index + 1]);
+//     return;
+// }
 
 
 
@@ -119,7 +141,7 @@ int32_t main()
         int j, k, m, ans = 0, cnt = 0, sum = 0, update, indexToUpdate, left, right, no_of_query, queryLeft, queryRight;
 
         int n;
-        cin >> n >> no_of_query;
+        cin >> n;
         int a[n];
 
 
@@ -137,12 +159,12 @@ int32_t main()
         //BUILDTREE(ARRAY, START, END, TREE, TREE-STARTING-INDEX)
         buildTree(a, 0, n - 1, tree, 1);
 
-        //COUT TREE
+        // COUT TREE
         // for (int i = 1; i <= (4 * n + 1); ++i)
         // {
         //     cout << tree[i] << " ";
         // }
-        // cout<<endl;
+        // cout << endl;
 
 
 
@@ -167,24 +189,13 @@ int32_t main()
 
         //QUERY
         {
-            int type;
+            cin >> no_of_query;
             while (no_of_query--) {
 
-                cin >> type >> queryLeft >> queryRight;
-                if (type == 1) {
+                cin >> queryLeft >> queryRight;
 
-                    //QUERY(TREE, ARRAY-START, ARRAY-END, QUERY-LEFT, QUERY-RIGHT, TREE-STARTING-INDEX)
-                    cout << query(tree, 0, n - 1, queryLeft - 1, queryRight - 1, 1) << endl;
-                }
-                else {
-                    indexToUpdate = queryLeft;
-                    update = queryRight;
-
-
-                    // UPDATENODE(TREE, ARRAY - STARTING, ARRAY - ENDING, INDEX - WHERE - UPDATE, UPDATE, TREE - STARTING - INDEX)
-                    updateNode(tree, 0, n - 1, indexToUpdate - 1, update, 1);
-                }
-
+                //QUERY(TREE, ARRAY-START, ARRAY-END, QUERY-LEFT, QUERY-RIGHT, TREE-STARTING-INDEX)
+                cout << query(tree, 0, n - 1, queryLeft - 1, queryRight - 1, 1) << endl;
 
             }
         }
