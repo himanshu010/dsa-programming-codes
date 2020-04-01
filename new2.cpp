@@ -8,7 +8,6 @@ using namespace std;
 #define S second
 #define P pair<int,int>
 #define pb push_back
-#define max INT_MAX
 
 
 
