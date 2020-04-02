@@ -28,18 +28,17 @@ void buildTree(int *a, int s , int e , int *tree, int index) {
 
 
 
-int query(int *tree, int ss, int se, int qs, int qe, int index, int num) {
+int query(int *tree, int ss, int se, int qs, int qe, int index) {
     if (ss >= qs && se <= qe) {
-        cout << index << "----->" << tree[index] << endl;
         return tree[index];
     }
 
     if (qe < ss || qs > se) {
-        return max;
+        return INT_MAX;
     }
     int mid = (ss + se) / 2;
-    int leftAns = query(tree, ss, mid, qs, qe, 2 * index, num);
-    int rightAns = query(tree, mid + 1, se, qs, qe, 2 * index + 1, num);
+    int leftAns = query(tree, ss, mid, qs, qe, 2 * index);
+    int rightAns = query(tree, mid + 1, se, qs, qe, 2 * index + 1);
     return min(leftAns, rightAns);
 }
 
@@ -167,15 +166,13 @@ int32_t main()
 
         //QUERY
         {
-            int numb;
             cin >> no_of_query;
             while (no_of_query--) {
 
-                cin >> queryLeft >> queryRight >> numb;
+                cin >> queryLeft >> queryRight;
 
                 //QUERY(TREE, ARRAY-START, ARRAY-END, QUERY-LEFT, QUERY-RIGHT, TREE-STARTING-INDEX)
-                // cout << query(tree, 0, n - 1, queryLeft, queryRight, 1, numb) << endl;
-                int hj = query(tree, 0, n - 1, queryLeft - 1, queryRight - 1, 1, numb);
+                cout << query(tree, 0, n - 1, queryLeft, queryRight, 1) << endl;
 
             }
         }

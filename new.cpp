@@ -15,15 +15,21 @@ int BIT[10000];
 
 void update(int i, int inc, int N) {
     while (i <= N) {
-        BIT[i] += inc;
+        BIT[i] = max(BIT[i], inc);
         i += (i & (-i));
+        // cout << i << "==========" << endl;
     }
 }
 
 int query(int i) {
-    int ans = 0;
+    int ans;
+    int temp = 0;
     while (i > 0) {
-        ans += BIT[i];
+        // cout << temp << " " << BIT[i] << "==============" << endl << endl;
+        ans = max(BIT[i], temp);
+        // cout << ans << "----" << endl;
+        temp = ans;
+        // cout << temp << "+++++" << endl;
         i -= (i & (-i));
     }
     return ans;
@@ -53,11 +59,12 @@ int32_t main()
             cin >> a[i];
             update(i, a[i], n);
         }
+        // cout << query(7) << endl;
         cin >> q;
         while (q--) {
             int l, r;
-            cin >> l >> r;
-            cout << query(r) - query(l - 1) << endl;
+            cin >> l;
+            cout << query(l) << endl;
         }
     }
 }
