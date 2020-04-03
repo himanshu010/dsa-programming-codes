@@ -12,8 +12,8 @@ using namespace std;
 
 //a INDEXING : 1 BASED
 //tree INDEXING : 1 BASED
-int a[10000];
-int tree[10000] = {0};
+int a[100000];
+int tree[100000] = {0};
 
 
 
@@ -50,7 +50,7 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    // int t;cin>>t;while(t--)
+    int t; cin >> t; while (t--)
     {
         int i, j, k, n, no_of_query, left, right, m, ans = 0, cnt = 0, sum = 0;
 
@@ -67,11 +67,15 @@ int32_t main()
                 // cout << ans << "------>";
                 ans += query(a[i] - 1);
                 // cout << ans << endl;
+
+                // cout << endl;
+
                 update(a[i], 1, n);
             }
-            cout << ans;
+            cout << ans << endl;
         }
 
+        int tree[100000] = {0};
 
 
 

@@ -9,8 +9,8 @@ using namespace std;
 #define P pair<int,int>
 #define pb push_back
 
-int a[10000];
-int BIT[10000];
+int ARR[10000];
+int tree[10000];
 
 
 void update(int i, int inc, int N) {
