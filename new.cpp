@@ -7,12 +7,8 @@ using namespace std;
 #define F first
 #define S second
 #define P pair<int,int>
-#define mkp make_pair
 #define pb push_back
-
-bool compare(pair<int, int>p1, pair<int, int>p2) {
-    return p1.S < p2.S;
-}
+#define mkp make_pair
 
 
 int32_t main()
@@ -25,29 +21,25 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t; cin >> t; while (t--)
+    // int t;cin>>t;while(t--)
     {
         int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-        vector<pair<int, int>> v;
         cin >> n;
+        int B[n], W[n];
         for (int i = 0; i < n; ++i)
         {
-            int s, e;
-            cin >> s >> e;
-            v.pb(mkp(s, e));
+            cin >> B[i];
         }
-
-        sort(v.begin(), v.end(), compare);
-        int res = 1;
-        int fin = v[0].second;
-        for (int i = 1; i < n; i++) {
-            if ((v[i].F) >= fin) {
-                fin = v[i].S;
-                res++;
-            }
+        for (int i = 0; i < n; ++i)
+        {
+            cin >> W[i];
         }
-        cout << res << endl ;
-        v.clear();
-
+        sort(B, B + n);
+        sort(W, W + n);
+        for (int i = 0; i < n; ++i)
+        {
+            sum += abs(B[i] - W[i]);
+        }
+        cout << sum << endl;
     }
 }
