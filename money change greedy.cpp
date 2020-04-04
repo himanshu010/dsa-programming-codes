@@ -37,7 +37,8 @@ int32_t main()
     {
         int coins[] = {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000};
         int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-        n = sizeof(coins) / sizeof(int);
+        n = sizeof(coins) / sizeo
+            f(int);
         int money;
         cin >> money;
         ans = make_change(coins, money, n);
