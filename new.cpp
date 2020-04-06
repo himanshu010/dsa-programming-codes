@@ -10,10 +10,9 @@ using namespace std;
 #define pb push_back
 #define mkp make_pair
 
-bool compare(pair<string, int> p1, pair<string, int>p2) {
-    return (p1.S < p2.S);
+bool compare(pair<int, int> p1, pair<int, int> p2) {
+    return p1.S > p2.S;
 }
-
 
 int32_t main()
 {
@@ -27,26 +26,44 @@ int32_t main()
     cout.tie(NULL);
     int t; cin >> t; while (t--)
     {
-        int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+        // int b[] = {1, 2, 3, 4};
+        int i, j, k, n, m, d, ans = 0, cnt = 0, sum = 0;
         cin >> n;
-        vector<pair<string, int>> asked_rank;
+        vector<pair<int, int>> a;
         for (int i = 0; i < n; ++i)
         {
-            string name;
-            int rank;
-            cin >> name >> rank;
-            asked_rank.pb(mkp(name, rank));
-
+            int dist, max_cap;
+            cin >> dist >> max_cap;
+            a.pb(mkp(dist, max_cap));
+            // cout << a[i].F << "------" << endl;
         }
-        sort(asked_rank.begin(), asked_rank.end(), compare);
-        int rank = 1;
-        for (auto x : asked_rank) {
-            sum += abs(x.S - rank);
-            rank++;
+        int distance_to_cover, initial;
+        cin >> distance_to_cover >> initial;
+
+        sort(a.begin(), a.end(), compare);
+        for (int i = 0; i < n; ++i) {
+            a[i].F = distance_to_cover - a[i].F;
+        }
+        // for (auto x : a) {
+        //     cout << x.F << "  " << x.S << endl;
+        // }
+        j = 0;
+        d = 0;
+        while (cnt < n && ans < distance_to_cover) {
+            int act_dis = a[j].F - d;
+            if (initial >= act_dis) {
+                initial -= act_dis;
+                d += act_dis;
+                initial += a[j].S;
+                ans = initial + d;
+                sum++;
+            }
+            j++;
+            cnt++;
         }
         cout << sum << endl;
+        a.clear();
 
 
-        asked_rank.clear();
     }
 }
