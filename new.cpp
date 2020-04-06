@@ -10,9 +10,6 @@ using namespace std;
 #define pb push_back
 #define mkp make_pair
 
-bool compare(pair<int, int> p1, pair<int, int> p2) {
-    return p1.S > p2.S;
-}
 
 int32_t main()
 {
@@ -24,45 +21,43 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t; cin >> t; while (t--)
+    // int t;cin>>t;while(t--)
     {
-        // int b[] = {1, 2, 3, 4};
-        int i, j, k, n, m, d, ans = 0, cnt = 0, sum = 0;
-        cin >> n;
-        vector<pair<int, int>> a;
-        for (int i = 0; i < n; ++i)
-        {
-            int dist, max_cap;
-            cin >> dist >> max_cap;
-            a.pb(mkp(dist, max_cap));
-            // cout << a[i].F << "------" << endl;
-        }
-        int distance_to_cover, initial;
-        cin >> distance_to_cover >> initial;
+        int i, j, k, n, ans = 0, cnt = 0, sum = 0;
+        map<string, int> m;
+// 1.Insert
+        m.insert(mkp("mango", 100));
 
-        sort(a.begin(), a.end(), compare);
-        for (int i = 0; i < n; ++i) {
-            a[i].F = distance_to_cover - a[i].F;
+        //or
+        pair <string, int> p;
+        p.F = "apple";
+        p.S = 120;
+        m.insert(p);
+
+        //or
+        m["banana"] = 20;
+
+// 2. Search
+        string fruit;
+        cin >> fruit;
+
+        auto it = m.find(fruit);
+        if (it != m.end()) {
+            cout << m[fruit] << endl;
+        } else {
+            cout << "Not found" << endl;
         }
-        // for (auto x : a) {
-        //     cout << x.F << "  " << x.S << endl;
-        // }
-        j = 0;
-        d = 0;
-        while (cnt < n && ans < distance_to_cover) {
-            int act_dis = a[j].F - d;
-            if (initial >= act_dis) {
-                initial -= act_dis;
-                d += act_dis;
-                initial += a[j].S;
-                ans = initial + d;
-                sum++;
-            }
-            j++;
-            cnt++;
+
+        //or
+// 3. Erase
+        m.erase(fruit);
+
+        if (m.count(fruit)) {
+            cout << m[fruit] << endl;
         }
-        cout << sum << endl;
-        a.clear();
+        else {
+            cout << "not found" << endl;
+        }
 
 
     }
