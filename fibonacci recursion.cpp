@@ -1,37 +1,22 @@
 #include<bits/stdc++.h>
-
 using namespace std;
-
-#define int long long int
-#define ld long double
-#define F first
-#define S second
-#define P pair<int,int>
-#define pb push_back
-
-int fibonacci(int n) {
-    if (n == 0) {
-        return 0;
+#define int long long
+int32_t main() {
+  int t;
+  cin >> t; while (t--) {
+    int no , mu  , ko;
+    cin >> no >> mu >> ko;
+    for (int i = 0 ; i < no ; i++) {
+      for (int j = 0 ; j < ko ; j++) {
+        int a;
+        cin >> a;
+      }
     }
-    if (n == 1) {
-        return 1;
+    srand(time(0));
+    for (int i = 0 ; i < no; i++) {
+      cout << rand() % mu + 1 << " ";
     }
-    int ans = fibonacci(n - 1) + fibonacci(n - 2);
-    return ans;
-}
-
-int32_t main()
-{
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r" , stdin);
-    freopen("output.txt", "w" , stdout);
-#endif
-
-    ios_base:: sync_with_stdio(false);
-    cin.tie(NULL); cout.tie(NULL);
-    {
-        int i, j, k, n, m, cnt = 0, sum = 0;
-        cin >> n;
-        cout << fibonacci(n);
-    }
+    cout << endl;
+  }
+  return 0;
 }

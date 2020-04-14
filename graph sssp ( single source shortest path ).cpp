@@ -9,6 +9,7 @@ using namespace std;
 #define P pair<int,int>
 #define pb push_back
 #define mkp make_pair
+#define MAX INT_MAX
 
 template<typename T>
 class Graph {
@@ -31,27 +32,6 @@ public:
                 cout << entry << ",";
             }
             cout << endl;
-        }
-    }
-    void bfs(T src) {
-        queue<T> q;
-        map<T, bool> visited;
-
-        q.push(src);
-        visited[src] = 1;
-
-        while (!q.empty()) {
-            T node = q.front();
-            cout << node << " ";
-            q.pop();
-
-            //for neighbour of current node
-            for (auto neighbour : adjList[node]) {
-                if (!visited[neighbour]) {
-                    q.push(neighbour);
-                    visited[neighbour] = 1;
-                }
-            }
         }
     }
     void sssp(T src) {
@@ -114,7 +94,7 @@ int32_t main()
             g.addEdge(l, r, bidir);
         }
         g.print();
-        g.bfs(0);
+        g.sssp(0);
 
     }
 }

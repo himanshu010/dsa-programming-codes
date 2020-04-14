@@ -1,27 +1,40 @@
 #include<bits/stdc++.h>
-
 using namespace std;
-
-#define int long long int
-#define ld long double
-#define F first
-#define S second
-#define P pair<int,int>
-#define pb push_back
-
-
-int32_t main()
+int main()
 {
-    // #ifndef ONLINE_JUDGE
-    // freopen("input.txt", "r" , stdin);
-    // freopen("output.txt", "w" , stdout);
-    // #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
 
-    ios_base:: sync_with_stdio(false);
-    cin.tie(NULL); cout.tie(NULL);
-    // int t;cin>>t;while(t--)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-        cout<<"hello worldaa";
+        int n;
+        cin >> n;
+        if (n == 1) {
+            cout << 1 << endl;
+            cout << 1 << " " << 1 << endl;
+            continue;
+        }
+        cout << n / 2 << endl;
+        if (n % 2 == 0) {
+            int k = 1;
+            while (k < n) {
+                printf("%d %d %d\n", 2, k, k + 1);
+                //cout<<2<<" "<<k<<" "<<k+1<<endl;
+                k += 2;
+            }
+        } else {
+            cout << 3 << " " << 1 << " " << 2 << " " << n << endl;
+            int k = 3;
+            while (k < n) {
+                printf("%d %d %d\n", 2, k, k + 1);
+                //cout<<2<<' '<<k<<' '<<k+1<<endl;
+                k += 2;
+            }
+        }
     }
+    return 0;
 }
