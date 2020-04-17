@@ -158,7 +158,7 @@ int32_t main()
         Graph <string> g;
         cin >> n;
         for (int i = 0; i < n; ++i)
-        {   string l, r;
+        {   string l, r; w
             bool bidir;
             cin >> l >> r;
             g.addEdge(l, r);

@@ -1,91 +1,81 @@
+/*
+
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|                       (himanshu010)                       |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+
+
+*/
+
 #include<bits/stdc++.h>
-
-using namespace std;
-
+#define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
 #define P pair<int,int>
 #define pb push_back
-#define mkp make_pair
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define R return
 
-template<typename T>
+using namespace std;
+
+
 class Graph {
-    map<T, list<T> > adjList;
-
+    list<int> *l;
+    int V;
 public:
-    Graph() {
-
+    Graph(int V) {
+        this->V = V;
+        l = new list<int>[V];
     }
-
-
-    void addEdge(T u, T v, bool bidir) {
-        adjList[u].push_back(v);
-        if (bidir) {
-            adjList[v].push_back(u);
+    void addEdge(int x, int y) {
+        l[x].pb(y);
+        l[y].pb(x);
+    }
+    bool is_tree() {
+        bool *visited = new bool[V];
+        int *parent = new int[V];
+        queue<int> q;
+        for (int i = 0; i < V; ++i)
+        {
+            visited[i] = false;
+            parent[i] = i;
         }
-    }
 
-
-    void print() {
-        for (auto i : adjList) {
-            cout << i.F << " ---> ";
-            for (auto entry : i.S) {
-                cout << entry << ",";
-            }
-            cout << endl;
-        }
-    }
-
-
-    void bfs(T src) {
-        queue<T> q;
-        map<T, bool> visited;
-
+        int src = 0;
         q.push(src);
-        visited[src] = 1;
+        visited[src] = true;
 
+        //pop out one node and visite its neighbour
         while (!q.empty()) {
-            T node = q.front();
-            cout << node << " ";
+            int node = q.front();
             q.pop();
-
-            //for neighbour of current node
-            for (auto neighbour : adjList[node]) {
-                if (!visited[neighbour]) {
-                    q.push(neighbour);
-                    visited[neighbour] = 1;
+            for (auto nbr : l[node]) {
+                if (visited[nbr] == true && parent[node] != nbr) {
+                    return false;
+                }
+                else if (!visited[nbr]) {
+                    visited[nbr] = true;
+                    parent[nbr] = node;
+                    q.push(nbr);
                 }
             }
         }
-    }
-//Recursive function that will traverse the graph
-    void dfs_helper(T src, std::map<T, bool> &visited) {
-        cout << src << " ";
-        visited[src] = true;
+        return true;
 
-        //go to all neighbour of that is not visited
-        for (auto neighbour : adjList[src]) {
-            if (!visited[neighbour]) {
-                dfs_helper(neighbour, visited);
-            }
-        }
-    }
 
-    void dfs(T src) {
-        std::map<T, bool> visited;
-        //mark all the m=node as not visited
-        for (auto node_pair : adjList) {
-            T node = node_pair.F;
-            visited[node] = false;
-        }
-        //call the hepler function
-        dfs_helper(src, visited);
     }
 
 };
-
 
 
 int32_t main()
@@ -100,18 +90,23 @@ int32_t main()
     cout.tie(NULL);
     // int t;cin>>t;while(t--)
     {
-        int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-        Graph <int> g;
-        cin >> n;
+        int i, v, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+        cin >> v >> n;
+        Graph g(v);
         for (int i = 0; i < n; ++i)
-        {   int l, r;
-            bool bidir;
-            cin >> l >> r >> bidir;
-            g.addEdge(l, r, bidir);
+        {
+            int x, y;
+            cin >> x >> y;
+            g.addEdge(x, y);
         }
-        g.print();
-        // g.bfs(0);
-        g.dfs(0);
+        if (g.is_tree()) {
+            cout << "Yes it is a tree" << endl;
+        }
+        else {
+            cout << "Not a tree, its cyclic" << endl;
+        }
+
+
 
     }
 }
