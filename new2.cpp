@@ -1,14 +1,32 @@
+/*
+
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|                       (himanshu010)                       |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+
+
+*/
+
 #include<bits/stdc++.h>
-
-using namespace std;
-
+#define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
 #define P pair<int,int>
 #define pb push_back
-#define mkp make_pair
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define R return
+
+using namespace std;
 
 
 int32_t main()
@@ -21,26 +39,58 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    // int t;cin>>t;while(t--)
+    int t; cin >> t; while (t--)
     {
-        int x, y;
-        int R = 1;
-        int B = 1;
-        cin >> x >> y;
-        x = x - 1;
-        y = y - 1;
-        while (R <= x && B <= y) {
-            if (x < y) {
-                cout << "----" << endl;
-                R = R + B;
+        int i, j, k, n, r, m, ans = 0, cnt = 0, sum = 0;
+        cin >> n >> r;
+        int a[n];
+        for (int i = 0; i < n; ++i)
+        {
+            cin >> a[i];
+        }
+        bool isvisit[n];
+        for (int i = 0; i < n; ++i)
+        {
+            isvisit[i] = false;
+        }
+
+        for (int i = 0; i < n - r; ++i)
+        {
+            if (isvisit[i] == true) {
+                continue;
             }
-            else {
-                cout << "=====" << endl;
-                B = B + R;
+            vector<int> sorted;
+            for (int j = i; j < n; j = j + r)
+            {
+                sorted.pb(a[j]);
+                isvisit[j] = true;
+            }
+            int g = 0;
+            sort(sorted.begin(), sorted.end());
+            for (int j = i; j < n; j = j + r)
+            {
+                a[j] = sorted[g];
+                g++;
+            }
+
+        }
+
+        for (int i = 1; i < n; i++)
+        {
+
+            if (a[i] < a[i - 1])
+            {
+                cnt++;;
             }
         }
-        cout << R << " " << B << endl;
-        cout << B << R <<
+
+        if (cnt == 0) {
+            cout << "yes" << endl;
+        }
+        else {
+            cout << "no" << endl;
+        }
+
 
 
 

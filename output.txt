@@ -1,1 +1,2 @@
-Not a tree, its cyclic
+yes
+no
