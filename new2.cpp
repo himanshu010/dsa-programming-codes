@@ -28,6 +28,31 @@
 
 using namespace std;
 
+int mincoin(int n) {
+    int coins[] = {1, 4, 7, 10};
+    int dp[100] = {0};
+    for (auto x : coins) {
+        // cout << x << endl;
+        dp[x] = 1;
+    }
+    for (int i = 1; i <= n; ++i)
+    {
+        if (dp[i] == 0) {
+            int ans = INT_MAX;
+            for (auto x : coins) {
+                if (x < i) {
+                    int m = i - x;
+                    // cout << m << "----" << endl;
+                    ans = min(ans, dp[m]);
+                }
+            }
+            dp[i] = ans + 1;
+        }
+        // cout << i << " " << dp[i] << endl;
+    }
+    return dp[n];
+}
+
 
 int32_t main()
 {
@@ -39,58 +64,11 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t; cin >> t; while (t--)
+    // int t;cin>>t;while(t--)
     {
-        int i, j, k, n, r, m, ans = 0, cnt = 0, sum = 0;
-        cin >> n >> r;
-        int a[n];
-        for (int i = 0; i < n; ++i)
-        {
-            cin >> a[i];
-        }
-        bool isvisit[n];
-        for (int i = 0; i < n; ++i)
-        {
-            isvisit[i] = false;
-        }
-
-        for (int i = 0; i < n - r; ++i)
-        {
-            if (isvisit[i] == true) {
-                continue;
-            }
-            vector<int> sorted;
-            for (int j = i; j < n; j = j + r)
-            {
-                sorted.pb(a[j]);
-                isvisit[j] = true;
-            }
-            int g = 0;
-            sort(sorted.begin(), sorted.end());
-            for (int j = i; j < n; j = j + r)
-            {
-                a[j] = sorted[g];
-                g++;
-            }
-
-        }
-
-        for (int i = 1; i < n; i++)
-        {
-
-            if (a[i] < a[i - 1])
-            {
-                cnt++;;
-            }
-        }
-
-        if (cnt == 0) {
-            cout << "yes" << endl;
-        }
-        else {
-            cout << "no" << endl;
-        }
-
+        int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+        n = 15;
+        cout << mincoin(n);
 
 
 
