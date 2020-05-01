@@ -28,42 +28,61 @@
 
 using namespace std;
 
-int maxSum(int a[], int n) {
-  int dp[100] = {0};
-  dp[0] = a[0] > 0 ? a[0] : 0;
-  int max_so_far = dp[0];
-  for (int i = 1; i < n; ++i)
+
+int lcs(char X[], char Y[]) {
+  int m = strlen(X);
+  int n = strlen(Y);
+
+  int dp[100][100];
+
+
+  for (int i = 0; i <= m; ++i)
   {
-    dp[i] = dp[i - 1] + a[i];
-    if (dp[i] < 0) {
-      dp[i] = 0;
-    }
-    max_so_far = max(dp[i], max_so_far);
+    dp[i][0] = 0;
+    // cout << i << " " << dp[i][0] << endl;
+  }
+  for (int j = 0; j <= n; ++j)
+  {
+    dp[0][j] = 0;
   }
 
-  // for (auto x : dp) {
-  //   cout << x << " ";
+
+  // for (int i = 0; i <= m; ++i)
+  // {
+  //   for (int j = 0; j <= n; ++j)
+  //   {
+  //     cout << dp[i][j]<<" ";
+  //   }
+  //   cout << endl;
   // }
 
-  return dp[n] = max_so_far;
-}
-
-
-//kedane's algo
-
-int maxSum_kedanes(int a[], int n) {
-
-  int sum = 0;
-  int max_so_far = 0;
-  for (int i = 0; i < n; ++i)
+  for (int i = 1; i <= m; ++i)
   {
-    sum = sum + a[i];
-    if (sum < 0) {
-      sum = 0;
+    for (int j = 1; j <= n; ++j)
+    {
+      int q = 0;
+      if (X[i - 1] == Y[j - 1]) {
+        q = 1 + dp[i - 1][j - 1];
+      }
+      else {
+        q = max(dp[i - 1][j], dp[i][j - 1]);
+      }
+      dp[i][j] = q;
     }
-    max_so_far = max(max_so_far, sum);
   }
-  return max_so_far;
+
+  // for (int i = 0; i <= m; ++i)
+  // {
+  //   for (int j = 0; j <= n; ++j)
+  //   {
+  //     cout << dp[i][j] << " ";
+  //   }
+  //   cout << endl;
+  // }
+
+  return dp[m][n];
+
+
 }
 
 
@@ -79,11 +98,11 @@ int32_t main()
   cout.tie(NULL);
   // int t;cin>>t;while(t--)
   {
-    int i, j, k, m, ans = 0, cnt = 0, sum = 0;
-    int arr[] = { -3, 2, -15, 3, -2, 7, -5, 2};
-    int n = sizeof(arr) / sizeof(int);
-    cout << maxSum_kedanes(arr, n) << endl;
-    cout << maxSum(arr, n) << endl;
+    int i, j, k, n, m, ans, cnt = 0, sum = 0;
 
+    char str1[1010], str2[1010];
+    cin >> str1 >> str2;
+    ans = lcs(str1, str2);
+    cout << ans;
   }
 }

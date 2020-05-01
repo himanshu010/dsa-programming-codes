@@ -28,44 +28,26 @@
 
 using namespace std;
 
-int maxSum(int a[], int n) {
+int max_profit(int arr[], int n) {
+
   int dp[100] = {0};
-  dp[0] = a[0] > 0 ? a[0] : 0;
-  int max_so_far = dp[0];
-  for (int i = 1; i < n; ++i)
+
+  if (n == 0)
+    return 0;
+
+  if (dp[n] != 0)
+    return dp[n];
+
+  int best = 0;
+  for (int i = 1; i <= n; ++i)
   {
-    dp[i] = dp[i - 1] + a[i];
-    if (dp[i] < 0) {
-      dp[i] = 0;
-    }
-    max_so_far = max(dp[i], max_so_far);
+    int netprofit = arr[i] + max_profit(arr, n - i);
+    best = max(best, netprofit);
   }
 
-  // for (auto x : dp) {
-  //   cout << x << " ";
-  // }
-
-  return dp[n] = max_so_far;
+  dp[n] = best;
+  return best;
 }
-
-
-//kedane's algo
-
-int maxSum_kedanes(int a[], int n) {
-
-  int sum = 0;
-  int max_so_far = 0;
-  for (int i = 0; i < n; ++i)
-  {
-    sum = sum + a[i];
-    if (sum < 0) {
-      sum = 0;
-    }
-    max_so_far = max(max_so_far, sum);
-  }
-  return max_so_far;
-}
-
 
 int32_t main()
 {
@@ -79,11 +61,15 @@ int32_t main()
   cout.tie(NULL);
   // int t;cin>>t;while(t--)
   {
-    int i, j, k, m, ans = 0, cnt = 0, sum = 0;
-    int arr[] = { -3, 2, -15, 3, -2, 7, -5, 2};
-    int n = sizeof(arr) / sizeof(int);
-    cout << maxSum_kedanes(arr, n) << endl;
-    cout << maxSum(arr, n) << endl;
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cin >> n;
+    int priceofeachlen[100];
+    for (int i = 1; i <= n; ++i)
+    {
+      cin >> priceofeachlen[i];
+    }
+    cout << max_profit(priceofeachlen, n);
+
 
   }
 }
