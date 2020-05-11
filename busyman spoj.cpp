@@ -48,6 +48,5 @@ int32_t main()
         }
         cout << res << endl ;
         v.clear();
-
     }
 }

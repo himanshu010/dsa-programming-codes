@@ -27,51 +27,42 @@
 
 using namespace std;
 
+const int N = 100005, M = 22;
+vector<int> gr[N];
+int visited[N];
+bool odd_cycle = 0;
 
-int reset[100005];
-
-
-void KMPpreprocess(string pattern) {
-    int i = 0, j = -1;
-    reset[0] = -1;
-    while (i < pattern.size()) {
-
-        while (j >= 0 && pattern[i] != pattern[j]) {
-            j = reset[j];
+void dfs(int cur, int par, int col) {
+    for (auto child : gr[cur]) {
+        visited[cur] = col;
+        if (visited[child] == 0) {
+            dfs(child, cur, 3 - col);
         }
-        i++;
-        j++;
-        reset[i] = j;
-    }
-}
-
-void KMPsearch(string str, string pattern) {
-    KMPpreprocess(pattern);
-    cout << endl;
-    int i = 0; int j = 0;
-    while (i < str.size()) {
-        while (j >= 0 and str[i] != pattern[j]) {
-            j = reset[j];
-        }
-        i++;
-        j++;
-        if (j == pattern.size()) {
-            cout << "Pattern is found at " << i - j << endl;
-            j = reset[j];
+        else if (child != par && col == visited[child]) {
+            odd_cycle = 1;
         }
     }
+    return;
 }
 
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    for (int i = 0; i < 100005; ++i)
+    cin >> n >> m;
+    for (int i = 0; i < m; ++i)
     {
-        reset[i] = -1;
+        int x, y;
+        cin >> x >> y;
+        gr[x].pb(y);
+        gr[y].pb(x);
     }
-    string str, pat;
-    cin >> str >> pat;
-    KMPsearch(str, pat);
-
+    dfs(1, 0, 1);
+    // cout << odd_cycle << endl;
+    if (odd_cycle) {
+        cout <<  "Not Bipartite" << endl;
+    }
+    else {
+        cout << "Bipartite" << endl;
+    }
 
 }
 

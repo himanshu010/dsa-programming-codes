@@ -58,7 +58,7 @@ int32_t main()
         int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
         // cout << fib(5);
         cin >> n;
-        int dp[100] = {0};
+        int dp[1000] = {0};
         cout << fib(n, dp) << endl;
         return 0;
 

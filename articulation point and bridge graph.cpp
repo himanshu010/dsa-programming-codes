@@ -27,50 +27,64 @@
 
 using namespace std;
 
+const int N = 100005, M = 22;
 
-int reset[100005];
+vector<int> gr[N];
+set<int> art_p;
+vector<P> bridge;
 
+int disc[N], low[N], tme;
 
-void KMPpreprocess(string pattern) {
-    int i = 0, j = -1;
-    reset[0] = -1;
-    while (i < pattern.size()) {
+void dfs(int cur, int par) {
+    disc[cur] = low[cur] = tme ++;
+    int no_child = 0;
+    for (auto child : gr[cur]) {
+        if (disc[child] == 0) {
+            dfs(child, cur);
+            no_child++;
+            low[cur] = min(low[cur], low[child]);
 
-        while (j >= 0 && pattern[i] != pattern[j]) {
-            j = reset[j];
+            //art point
+
+            if (par != 0 && low[child] >= disc[cur]) {
+                art_p.insert(cur);
+            }
+
+            //bridge
+
+            if (low[child] > disc[cur]) {
+                bridge.pb({cur, child});
+            }
         }
-        i++;
-        j++;
-        reset[i] = j;
+        else if (child != par) {
+            //backedge
+            // cycle found
+            low[cur] = min(low[cur], disc[child]);
+        }
     }
-}
-
-void KMPsearch(string str, string pattern) {
-    KMPpreprocess(pattern);
-    cout << endl;
-    int i = 0; int j = 0;
-    while (i < str.size()) {
-        while (j >= 0 and str[i] != pattern[j]) {
-            j = reset[j];
-        }
-        i++;
-        j++;
-        if (j == pattern.size()) {
-            cout << "Pattern is found at " << i - j << endl;
-            j = reset[j];
-        }
+    if (par == 0 and no_child >= 2) {
+        art_p.insert(cur);
     }
+    return;
 }
 
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    for (int i = 0; i < 100005; ++i)
+    cin >> n >> m;
+    for (int i = 0; i < m; ++i)
     {
-        reset[i] = -1;
+        int x, y;
+        cin >> x >> y;
+        gr[x].pb(y);
+        gr[y].pb(x);
     }
-    string str, pat;
-    cin >> str >> pat;
-    KMPsearch(str, pat);
+
+    tme = 1;
+    dfs(1, 0);
+    for (auto x : art_p) {
+        cout << x << " ";
+    }
+
 
 
 }
