@@ -28,22 +28,37 @@
 using namespace std;
 
 const int N = 100005, M = 22;
-vector<int> gr[N];
-int visited[N];
-bool odd_cycle = 0;
+vector<int> gr[N], grr[N];
+vector<int> order;
+int vis[N];
+int comp[N];
 
-void dfs(int cur, int par, int col) {
-    for (auto child : gr[cur]) {
-        visited[cur] = col;
-        if (visited[child] == 0) {
-            dfs(child, cur, 3 - col);
-        }
-        else if (child != par && col == visited[child]) {
-            odd_cycle = 1;
-        }
+void dfs(int curr) {
+    vis[curr] = 1;
+    for (auto child : gr[curr]) {
+        if (!vis[child])
+            dfs(child);
     }
-    return;
+    // cout << curr << "-----" << endl;
+    order.pb(curr);
 }
+
+
+void dfs_reverse(int curr, int col) {
+    // cout << col << "------" << endl;
+    comp[curr] = col;
+    vis[curr] = 1;
+    for (auto child : grr[curr]) {
+        if (!vis[child])
+            dfs_reverse(child, col);
+    }
+    order.pb(curr);
+
+}
+
+
+
+
 
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
@@ -53,17 +68,27 @@ void solve() {
         int x, y;
         cin >> x >> y;
         gr[x].pb(y);
-        gr[y].pb(x);
+        grr[y].pb(x);
     }
-    dfs(1, 0, 1);
-    // cout << odd_cycle << endl;
-    if (odd_cycle) {
-        cout <<  "Not Bipartite" << endl;
+    for (int i = 1; i <= n; ++i)
+    {
+        if (!vis[i]) {
+            dfs(i);
+        }
     }
-    else {
-        cout << "Bipartite" << endl;
+    memset(vis, 0, sizeof(vis));
+    int col = 1;
+    for (i = n; i >= 1; i--) {
+        if (!vis[order[i]]) {
+            // cout << col << endl;
+            dfs_reverse(order[i], col);
+            col++;
+        }
     }
-
+    for (int i = 1; i <= n; ++i)
+    {
+        cout << i << "->" << comp[i] << '\n';
+    }
 }
 
 int32_t main()
