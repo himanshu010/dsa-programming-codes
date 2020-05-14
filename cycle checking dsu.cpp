@@ -60,18 +60,36 @@ struct dsu {
             total_comp--;
         }
     }
-} G;
+} ;
 
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+
     cin >> n >> m;
+    dsu G;
     G.init(n);
     int a[n];
+    int cycle = 0;
     for (int i = 0; i < m; ++i)
     {
         int x, y;
         cin >> x >> y;
-        G.unite(x, y);
+        x--;
+        y--;
+        if (G.get_superparent(x) != G.get_superparent(y)) {
+            G.unite(x, y);
+        }
+        else {
+            //there is a path from x to y, that means there is a cycle
+            cout << "Edge will give me a cycle --> " << x + 1 << "-----" << y + 1 << endl;
+            cycle++;
+        }
+    }
+    if (cycle != 0) {
+        cout << "Cycle present" << endl;
+    }
+    else {
+        cout << "No cycle" << endl;
     }
 
 }

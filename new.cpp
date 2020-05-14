@@ -29,17 +29,15 @@ using namespace std;
 
 
 struct dsu {
-    vector<int> par, sz;
+    vector<int> par;
     int total_comp;
 
     //initialise
     void init(int n) {
         par.resize(n);
-        sz.resize(n);
         for (int i = 0; i < n; ++i)
         {
             par[i] = i;
-            sz[i] = 1;
         }
         int total_comp = n;
     }
@@ -59,31 +57,58 @@ struct dsu {
         int superparent_y = get_superparent(y);
         if (superparent_x != superparent_y) {
             par[superparent_x] = superparent_y;
-            sz[superparent_y] += sz[superparent_x];
-            sz[superparent_x] = 0;
             total_comp--;
         }
     }
-} G;
+} ;
+
+bool compare(vector<int>a, vector<int> b) {
+    return (a[2] > b[2]);
+}
 
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+
     cin >> n >> m;
+    dsu G;
     G.init(n);
-    int a[n];
+    vector<vector<int>> edges(m);
+    int cycle = 0;
     for (int i = 0; i < m; ++i)
     {
-        int x, y;
-        cin >> x >> y;
-        G.unite(x, y);
+        int x, y, w;
+        cin >> x >> y >> w;
+        x--;
+        y--;
+        edges[i] = {w, x, y};
     }
-    //all elements are in there connected component
-    for (int i = 0; i < n; ++i)
+
+    sort(edges.begin(), edges.end());
+    for (int i = 0; i < m; ++i)
     {
-        int superparent_i = G.get_superparent(i);
-        ans += (n - G.sz[superparent_i]);
+        int x = edges[i][1];
+        int y = edges[i][2];
+        int w = edges[i][0];
+
+
+
+        if (G.get_superparent(x) != G.get_superparent(y)) {
+            //can take this edge
+            cout << w << " " << x << " " << y << endl;
+            G.unite(x, y);
+            //include all the edges which doesnt result in a cycle
+            ans += w;
+        }
+
     }
-    cout << ans / 2;
+    cout << ans;
+
+    // if (cycle != 0) {
+    //     cout << "Cycle present" << endl;
+    // }
+    // else {
+    //     cout << "No cycle" << endl;
+    // }
 
 }
 

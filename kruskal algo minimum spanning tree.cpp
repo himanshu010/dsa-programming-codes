@@ -60,19 +60,55 @@ struct dsu {
             total_comp--;
         }
     }
-} G;
+} ;
+
+bool compare(vector<int>a, vector<int> b) {
+    return (a[2] > b[2]);
+}
 
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+
     cin >> n >> m;
+    dsu G;
     G.init(n);
-    int a[n];
+    vector<vector<int>> edges(m);
+    int cycle = 0;
     for (int i = 0; i < m; ++i)
     {
-        int x, y;
-        cin >> x >> y;
-        G.unite(x, y);
+        int x, y, w;
+        cin >> x >> y >> w;
+        x--;
+        y--;
+        edges[i] = {w, x, y};
     }
+
+    sort(edges.begin(), edges.end());
+    for (int i = 0; i < m; ++i)
+    {
+        int x = edges[i][1];
+        int y = edges[i][2];
+        int w = edges[i][0];
+
+
+
+        if (G.get_superparent(x) != G.get_superparent(y)) {
+            //can take this edge
+            cout << w << " " << x << " " << y << endl;
+            G.unite(x, y);
+            //include all the edges which doesnt result in a cycle
+            ans += w;
+        }
+
+    }
+    cout << ans;
+
+    // if (cycle != 0) {
+    //     cout << "Cycle present" << endl;
+    // }
+    // else {
+    //     cout << "No cycle" << endl;
+    // }
 
 }
 
