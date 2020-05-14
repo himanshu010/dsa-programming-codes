@@ -28,88 +28,77 @@
 using namespace std;
 
 
-struct dsu {
-    vector<int> par;
-    int total_comp;
+class Graph
+{
+    int v;
+    list<pair<int, int>> *adj;
 
-    //initialise
-    void init(int n) {
-        par.resize(n);
-        for (int i = 0; i < n; ++i)
+public:
+    Graph(int v) {
+        this->v = v;
+        adj = new list<pair<int, int>>[v];
+    }
+    void addedge(int u, int v, int w) {
+        adj[u].push_back(make_pair(v, w));
+        adj[v].push_back(make_pair(u, w));
+    }
+
+    int findMInVERTEX(int *weight, bool *visited, int v) {
+        int minVertex = -1;
+        for (int i = 0; i < v; ++i)
         {
-            par[i] = i;
+            if (!visited[i] and (minVertex == -1 or weight[i] < weight[minVertex])) {
+                minVertex = i;
+            }
         }
-        int total_comp = n;
+        return minVertex;
     }
 
-    int get_superparent(int x) {
-        if (x == par[x]) {
-            return x;
+    void prims() {
+        bool *visited = new bool[v];
+        int *parent = new int[v];
+        int *weight = new int [v];
+        for (int i = 0; i < v; ++i)
+        {
+            visited[i] = false;
+            weight[i] = INT_MAX;
         }
-        else {
-            //path compression is used
-            return par[x] = get_superparent(par[x]);
+        parent[0] = -1;
+        weight[0] = 0;
+        for (int i = 0; i < v; ++i)
+        {
+            int minVertex = findMInVERTEX(weight, visited, v);
+            visited[minVertex] = true;
+            for (auto nbr : adj[minVertex]) {
+                if (!visited[nbr.F]) {
+                    if (weight[nbr.F] > nbr.S) {
+                        parent[nbr.F] = minVertex;
+                        weight[nbr.F] = nbr.S;
+                    }
+                }
+            }
         }
+
+        for (int i = 1; i < v; ++i)
+        {
+            cout << i << "---" << parent[i] << " with weight = " << weight[i] << endl;
+        }
+
     }
 
-    void unite(int x, int y) {
-        int superparent_x = get_superparent(x);
-        int superparent_y = get_superparent(y);
-        if (superparent_x != superparent_y) {
-            par[superparent_x] = superparent_y;
-            total_comp--;
-        }
-    }
-} ;
-
-bool compare(vector<int>a, vector<int> b) {
-    return (a[2] > b[2]);
-}
+};
 
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-
     cin >> n >> m;
-    dsu G;
-    G.init(n);
-    vector<vector<int>> edges(m);
-    int cycle = 0;
+    Graph g(n);
     for (int i = 0; i < m; ++i)
     {
         int x, y, w;
         cin >> x >> y >> w;
-        x--;
-        y--;
-        edges[i] = {w, x, y};
+        g.addedge(x, y, w);
     }
-
-    sort(edges.begin(), edges.end());
-    for (int i = 0; i < m; ++i)
-    {
-        int x = edges[i][1];
-        int y = edges[i][2];
-        int w = edges[i][0];
-
-
-
-        if (G.get_superparent(x) != G.get_superparent(y)) {
-            //can take this edge
-            cout << w << " " << x << " " << y << endl;
-            G.unite(x, y);
-            //include all the edges which doesnt result in a cycle
-            ans += w;
-        }
-
-    }
-    cout << ans;
-
-    // if (cycle != 0) {
-    //     cout << "Cycle present" << endl;
-    // }
-    // else {
-    //     cout << "No cycle" << endl;
-    // }
-
+    g.prims();
 }
 
 int32_t main()
@@ -122,7 +111,7 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    // int t;cin>>t;while(t--)
+    // int t; cin >> t; while (t--)
     {
         solve();
     }
