@@ -1,6 +1,2 @@
-1---0 with weight = 6
-2---1 with weight = 5
-3---0 with weight = 4
-4---3 with weight = 2
-5---6 with weight = 1
-6---4 with weight = 3
+0 will give 1: 50
+1

@@ -27,78 +27,73 @@
 
 using namespace std;
 
-
-class Graph
-{
-    int v;
-    list<pair<int, int>> *adj;
-
-public:
-    Graph(int v) {
-        this->v = v;
-        adj = new list<pair<int, int>>[v];
-    }
-    void addedge(int u, int v, int w) {
-        adj[u].push_back(make_pair(v, w));
-        adj[v].push_back(make_pair(u, w));
-    }
-
-    int findMInVERTEX(int *weight, bool *visited, int v) {
-        int minVertex = -1;
-        for (int i = 0; i < v; ++i)
-        {
-            if (!visited[i] and (minVertex == -1 or weight[i] < weight[minVertex])) {
-                minVertex = i;
-            }
-        }
-        return minVertex;
-    }
-
-    void prims() {
-        bool *visited = new bool[v];
-        int *parent = new int[v];
-        int *weight = new int [v];
-        for (int i = 0; i < v; ++i)
-        {
-            visited[i] = false;
-            weight[i] = INT_MAX;
-        }
-        parent[0] = -1;
-        weight[0] = 0;
-        for (int i = 0; i < v; ++i)
-        {
-            int minVertex = findMInVERTEX(weight, visited, v);
-            visited[minVertex] = true;
-            for (auto nbr : adj[minVertex]) {
-                if (!visited[nbr.F]) {
-                    if (weight[nbr.F] > nbr.S) {
-                        parent[nbr.F] = minVertex;
-                        weight[nbr.F] = nbr.S;
-                    }
-                }
-            }
-        }
-
-        for (int i = 1; i < v; ++i)
-        {
-            cout << i << "---" << parent[i] << " with weight = " << weight[i] << endl;
-        }
-
-    }
-
-};
-
 void solve() {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    Graph g(n);
-    for (int i = 0; i < m; ++i)
-    {
-        int x, y, w;
-        cin >> x >> y >> w;
-        g.addedge(x, y, w);
+    int i, j, k, n, ans = 0, cnt = 0, sum = 0;
+    int no_of_transactions, friends;
+    cin >> no_of_transactions >> friends;
+
+    int x, y, amount;
+
+    int net[100000] = {0};
+
+    while (no_of_transactions--) {
+        cin >> x >> y >> amount;
+        net[x] -= amount;
+        net[y] += amount;
     }
-    g.prims();
+
+    multiset<P> m;
+
+    for (int i = 0; i < friends; ++i)
+    {
+        if (net[i] != 0) {
+            m.insert(make_pair(net[i], i));
+        }
+    }
+
+    cnt = 0;
+    //Pop Out two person from left and right and try to settle them
+    while (!m.empty()) {
+        auto low = m.begin();
+        auto high = prev(m.end());
+        P debit = *low;
+
+        int debit_amount = debit.F;
+        int debiter = debit.S;
+
+        P credit = *high;
+
+        int credit_amount = credit.F;
+        int crediter = credit.S;
+
+        //Erase
+        m.erase(low);
+        m.erase(high);
+
+        int settlement_amount = min(-debit_amount, credit_amount);
+
+        //Settle amount from debiter to accepter
+
+        debit_amount += settlement_amount;
+        credit_amount -= settlement_amount;
+
+        cout << debiter << " will give " << crediter << ": " << settlement_amount << endl;
+
+        if (credit_amount != 0) {
+            m.insert({credit_amount, crediter});
+        }
+        if (debit_amount != 0) {
+            m.insert({debit_amount, debiter});
+        }
+        cnt++;
+
+    }
+
+    cout << cnt << endl;
+
+
+
+
 }
 
 int32_t main()
@@ -111,7 +106,7 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    // int t; cin >> t; while (t--)
+    // int t;cin>>t;while(t--)
     {
         solve();
     }
