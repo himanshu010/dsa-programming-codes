@@ -27,71 +27,170 @@
 
 using namespace std;
 
-void solve() {
-    int i, j, k, n, ans = 0, cnt = 0, sum = 0;
-    int no_of_transactions, friends;
-    cin >> no_of_transactions >> friends;
+char charlist[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-    int x, y, amount;
+const int N = 100005, M = 22;
+vector<char> ansVector;
+vector<vector<int>> graph(N);
 
-    int net[100000] = {0};
+void addEdge(int x, int y) {
+    graph[x].pb(y);
+}
 
-    while (no_of_transactions--) {
-        cin >> x >> y >> amount;
-        net[x] -= amount;
-        net[y] += amount;
+
+void TopologicalBFS( int v, int *required, vector<int>vertices) {
+    int sum = 0;
+    for (auto x : graph) {
+        for (auto y : x) {
+            required[y]++;
+        }
     }
 
-    multiset<P> m;
+    // for (int i = 0; i < v; ++i)
+    // {
+    //     cout << required[i] << " ";
+    // }
+    queue<int> q;
 
-    for (int i = 0; i < friends; ++i)
+    for (int i = 0; i < v; ++i)
     {
-        if (net[i] != 0) {
-            m.insert(make_pair(net[i], i));
+        //Jiske liye kisi bhi chij ki jarurat nhi he ussey nikal lenge
+        if (required[vertices[i]] == 0) {
+            q.push(vertices[i]);
         }
-    }
-
-    cnt = 0;
-    //Pop Out two person from left and right and try to settle them
-    while (!m.empty()) {
-        auto low = m.begin();
-        auto high = prev(m.end());
-        P debit = *low;
-
-        int debit_amount = debit.F;
-        int debiter = debit.S;
-
-        P credit = *high;
-
-        int credit_amount = credit.F;
-        int crediter = credit.S;
-
-        //Erase
-        m.erase(low);
-        m.erase(high);
-
-        int settlement_amount = min(-debit_amount, credit_amount);
-
-        //Settle amount from debiter to accepter
-
-        debit_amount += settlement_amount;
-        credit_amount -= settlement_amount;
-
-        cout << debiter << " will give " << crediter << ": " << settlement_amount << endl;
-
-        if (credit_amount != 0) {
-            m.insert({credit_amount, crediter});
-        }
-        if (debit_amount != 0) {
-            m.insert({debit_amount, debiter});
-        }
-        cnt++;
 
     }
 
-    cout << cnt << endl;
+    while (!q.empty()) {
+        int top = q.front();
+        // cout << charlist[top];
+        ansVector.pb(charlist[top]);
+        q.pop();
+
+        for (auto x : graph[top]) {
+            required[x]--;
+            if (required[x] == 0) {
+                q.push(x);
+            }
+        }
+    }
+
+}
 
 
+void solve(int tc) {
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+
+    int r, c;
+    cin >> r >> c;
+    char a[r][c];
+
+    set<pair<char, char>> v;
+    vector<pair<int, int>> st;
+    set<int> vert;
+    vector<int> vertices;
+    set<char> set2;
+
+    for (int i = 0; i < r; ++i)
+    {
+        for (int j = 0; j < c; ++j)
+        {
+            cin >> a[i][j];
+            set2.insert(a[i][j]);
+        }
+    }
+
+
+    for (int i = 0; i < r; ++i)
+    {
+        for (int j = 0; j < c; ++j)
+        {
+            if (i != r - 1) {
+
+                if (a[i + 1][j] != a[i][j]) {
+                    v.insert({a[i + 1][j], a[i][j]});
+                }
+            }
+        }
+    }
+    vector<char> set3, set4;
+    for (auto x : set2) {
+        set3.pb(x);
+    }
+    if (v.size() != 0) {
+        for (auto y : v) {
+            set4.pb(y.F);
+            set4.pb(y.S);
+        }
+
+        for (int i = 0; i < set3.size(); ++i)
+        {   int cnt = 0;
+            for (int j = 0; j < set4.size(); ++j)
+            {
+                if (set3[i] == set4[j]) {
+                    // cout << "----";
+                    cnt++;
+                }
+            }
+            if (cnt == 0) {
+                ansVector.pb(set3[i]);
+            }
+            // cout << endl;
+        }
+    }
+    else {
+        for (auto x : set3) {
+            ansVector.pb(x);
+        }
+    }
+
+    int numff, numss;
+    for (auto x : v) {
+        // cout << x.F << " " << x.S << endl;
+        for (int i = 0; i < 26; ++i)
+        {
+            if (x.F == charlist[i]) {
+                numff = i;
+                // cout << "---";
+            }
+            if (x.S == charlist[i]) {
+                numss = i;
+            }
+        }
+
+        st.pb(make_pair(numff, numss));
+        vert.insert(numff);
+
+        vert.insert(numss);
+    }
+
+    for (auto x : vert) {
+        vertices.pb(x);
+        // cout << x << "--" << endl;
+    }
+
+    // cin >> v >> m;
+    int verticesNum = vertices.size();
+    int edges = st.size();
+    for (auto x : st) {
+        addEdge(x.F, x.S);
+    }
+    int required[26] = {0};
+    TopologicalBFS(verticesNum, required, vertices);
+    // cout << sum << endl;
+    if (ansVector.size() != set3.size()) {
+        cout << "Case #" << tc << ": -1" << endl;
+    }
+    else {
+        cout << "Case #" << tc << ": ";
+        for (auto x : ansVector) {
+            cout << x;
+        }
+        cout << endl;
+    }
+    graph.clear();
+    ansVector.clear();
+    graph.resize(N + 1);
 
 
 }
@@ -106,8 +205,10 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    // int t;cin>>t;while(t--)
+    int tc = 1;
+    int t; cin >> t; while (t--)
     {
-        solve();
+        solve(tc);
+        tc++;
     }
 }
