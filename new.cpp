@@ -17,7 +17,7 @@
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+// #define P pair<int,int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -27,78 +27,117 @@
 
 using namespace std;
 
+struct point
+{
+    int x, y;
+    bool operator < (point &P) {
+        if (P.x == x) return y < P.y;
+        else return x < P.x;
+    }
 
-const int N = 100005, M = 22;
+    bool operator == (point &P) {
+        return (x == P.x && y == P.y);
+    }
 
-vvi graph(N);
+};
 
-vi parent(N);
-
-vb visited(N, 0);
-
-void addEdge(int x, int y) {
-    graph[x].pb(y);
+bool cw(point a, point b, point c) {
+    return a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y) > 0;
 }
 
-
-void DFS(int cur, int par) {
-    visited[cur] = 1;
-    if (cur != 1) {
-        parent[cur] = par;
-    }
-    else {
-        parent[1] = -1;
-    }
-
-    for (auto child : graph[cur]) {
-        DFS(child, cur);
-    }
-
+bool ccw(point a, point b, point c) {
+    return a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y) < 0;
 }
 
+bool collinear(point a, point b, point c) {
+    return a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y) == 0;
+}
 
+void convex_hull(vector<point> &p) {
+    if (p.size() <= 2) return;
 
+    sort(p.begin(), p.end());
 
+    //p[0] is p1, p[n-1] is p2
+
+    int i, n = p.size();
+    point p1 = p[0], p2 = p[n - 1];
+
+    vector<point> up, down;
+    up.pb(p1);
+    down.pb(p1);
+
+    //p1 is bottom left and p2 in top right
+
+    for (int i = 1; i < n; ++i)
+    {
+        //Now i have to check that my point is in upper half or lower half
+
+        if (i == n - 1 || !ccw(p1, p[i], p2)) {
+            //It is in upper half
+
+            while (up.size() >= 2 && ccw(up[up.size() - 2], up[up.size() - 1], p[i])) {
+                up.pop_back();
+            }
+            up.pb(p[i]);
+
+        }
+        if (i == n - 1 || !cw(p1, p[i], p2)) {
+            //p[i] is in the lower half
+
+            while (down.size() >= 2 && cw(down[down.size() - 2], down[down.size() - 1], p[i])) {
+                down.pop_back();
+            }
+            down.pb(p[i]);
+        }
+    }
+    //up and down vector contains all point includint the points p1 and p2 repeatedly
+    p.clear();
+    for (int i = 0; i < up.size(); ++i)
+    {
+        p.pb(up[i]);
+    }
+    for (int i = 0; i < down.size(); ++i)
+    {
+        p.pb(down[i]);
+    }
+
+    sort(p.begin(), p.end());
+    p.resize(unique(p.begin(), p.end()) - p.begin());
+}
 
 void solve() {
-    int i, j, k, q, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> q;
-    for (int i = 0; i < n - 1; ++i)
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cin >> n;
+    vector<point> p(n);
+    for (int i = 0; i < n; ++i)
     {
-        int x, y;
-        cin >> x >> y;
-
-        addEdge(x, y);
-    }
-    DFS(1, 0);
-
-    // for (int i = 0; i < 10; ++i)
-    // {
-    //     cout << parent[i] << endl;
-    // }
-
-    while (q--) {
-        int node, d;
-        cin >> node >> d;
-        int curParent = 0;
-        while (d--) {
-
-            // cout << curParent << " " << node << endl;
-            if (node == -1 or curParent == -1) {
-                break;
-            }
-            curParent = parent[node];
-            node = curParent;
-        }
-        if (curParent == 0) {
-            cout << -1 << endl;
-        }
-        else {
-            cout << curParent << endl;
-        }
-
+        cin >> p[i].x >> p[i].y;
     }
 
+    map <pair<int, int>, int> mp;
+
+
+    cin >> m;
+    for (int i = 0; i < m; ++i)
+    {
+        point temp;
+        cin >> temp.x >> temp.y;
+        mp[ {temp.x, temp.y}]++;
+        p.pb(temp);
+    }
+    convex_hull(p);
+
+
+    //Now p contains all the point of convex hull
+    for (auto x : p) {
+        // cout << x.x << " " << x.y << '\n';
+        if (mp.count({x.x, x.y})) {
+            cout << "NO";
+            return;
+        }
+    }
+    cout << "YES";
 
 }
 

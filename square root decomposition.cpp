@@ -50,6 +50,13 @@ int query(int *blocks, int *a, int l, int r, int rn) {
     return ans;
 }
 
+void update(int index, int rn, int *blocks, int *a, int update) {
+    int block_id = index / rn;
+    blocks[block_id] -= a[index];
+    blocks[block_id] += update;
+
+}
+
 void solve() {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
 
@@ -79,8 +86,14 @@ void solve() {
 
 
     //Query
-
     cout << query(blocks, a, 2, 8, rn);
+
+    int x, y;
+
+    //Update
+    update(3, rn, blocks, a, 15);
+
+
 
 }
 
