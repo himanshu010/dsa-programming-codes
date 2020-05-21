@@ -31,9 +31,9 @@ using namespace std;
 bool checkIfSubarrayWithSumZero(int *a, int n) {
     int pre = 0;
     unordered_set<int> s;
-    for (int i = 0;i < n; ++i)
+    for (int i = 0; i < n; ++i)
     {
-        pre +=a[i];
+        pre += a[i];
         if (pre == 0 or s.find(pre) != s.end()) {
             return true;
         }
