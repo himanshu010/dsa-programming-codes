@@ -23,47 +23,55 @@
 #define vvi vector<vector<int>>
 #define vb vector<bool>
 #define um unordered_map
-#define R return
 
 using namespace std;
 
+int longestSubarrayWithSumK(int *a, int n, int k) {
+    unordered_map<int, int> mp;
 
-bool checkIfSubarrayWithSumZero(int *a, int n) {
-    int pre = 0;
-    unordered_set<int> s;
+    int prefixSum = 0;
+    int length = 0;
+
     for (int i = 0; i < n; ++i)
     {
-        pre += a[i];
-        if (pre == 0 or s.find(pre) != s.end()) {
-            return true;
-        }
-        s.insert(pre);
-    }
+        prefixSum += a[i];
 
-    return false;
+        if (prefixSum == k and length == 0) {
+            length = 1;
+        }
+        if (prefixSum == k) {
+            length = max(length, i + 1);
+        }
+
+        if (mp.find(prefixSum - k) != mp.end()) {
+            length = max(length, i - mp[prefixSum - k]);
+        }
+        else {
+            mp[prefixSum] = i;
+        }
+    }
+    return length;
+
 }
 
-
-
-void solve() {
+void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+
     cin >> n;
-    int *a = new int[n];
+    int a[n];
     for (int i = 0; i < n; ++i)
     {
         cin >> a[i];
     }
 
-    bool b = checkIfSubarrayWithSumZero(a, n);
+    cin >> k;
 
-    if (b == 0) {
-        cout << "No" << endl;
-    }
-    else {
-        cout << "Yes" << endl;
-    }
+    cout << longestSubarrayWithSumK(a, n, k);
+
+
 
 }
+
 
 int32_t main()
 {
@@ -77,6 +85,8 @@ int32_t main()
     cout.tie(NULL);
     // int t;cin>>t;while(t--)
     {
-        solve();
+        int tc = 1;
+        solve(tc);
+        tc++;
     }
 }

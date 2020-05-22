@@ -1,15 +1,37 @@
 <snippet>
-	<content><![CDATA[
+    <content><![CDATA[
+/*
+
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|     ( website: himanshu010.github.io/Portfolio_website )  |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+
+*/
+
 #include<bits/stdc++.h>
-
-using namespace std;
-
+#define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
 #define P pair<int,int>
 #define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+
+using namespace std;
+
+void solve(int tc){
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    
+}
 
 
 int32_t main()
@@ -24,15 +46,14 @@ int32_t main()
     cout.tie(NULL);
     // int t;cin>>t;while(t--)
     {
-         int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-
-
-
+        int tc=1;
+        solve(tc);
+        tc++;
     }
 }
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>new</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.c++</scope>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>new</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
 </snippet>
