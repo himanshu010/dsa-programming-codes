@@ -1,2 +1,9 @@
-4
-1 0 5 -2 3
+7
+b batman
+a apple
+b boat
+c cat
+a angry
+c cat
+d dog
+e elephant

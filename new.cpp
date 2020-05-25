@@ -26,47 +26,14 @@
 
 using namespace std;
 
-int longestSubarrayWithSumK(int *a, int n, int k) {
-    unordered_map<int, int> mp;
-
-    int prefixSum = 0;
-    int length = 0;
-
-    for (int i = 0; i < n; ++i)
-    {
-        prefixSum += a[i];
-
-        if (prefixSum == k and length == 0) {
-            length = 1;
-        }
-        if (prefixSum == k) {
-            length = max(length, i + 1);
-        }
-
-        if (mp.find(prefixSum - k) != mp.end()) {
-            length = max(length, i - mp[prefixSum - k]);
-        }
-        else {
-            mp[prefixSum] = i;
-        }
-    }
-    return length;
-
-}
-
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    vector<int> v = {1, 2, 3, 3, 3, 4, 5, 6};
 
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; ++i)
-    {
-        cin >> a[i];
-    }
+    auto low = lower_bound(v.begin(), v.end(), 3);
+    auto upper = upper_bound(v.begin(), v.end(), 3);
 
-    cin >> k;
-
-    cout << longestSubarrayWithSumK(a, n, k);
+    cout << upper - low;
 
 
 
