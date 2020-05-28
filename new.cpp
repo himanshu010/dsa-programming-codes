@@ -27,16 +27,29 @@
 using namespace std;
 
 void solve(int tc) {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    vector<int> v = {1, 2, 3, 3, 3, 4, 5, 6};
+    int i, j, k, n, ans = 0, cnt = 0, sum = 0;
+    float x = 1.0;
 
-    auto low = lower_bound(v.begin(), v.end(), 3);
-    auto upper = upper_bound(v.begin(), v.end(), 3);
+    int people = 0;
+    float num = 365;
+    float denom = 365;
 
-    cout << upper - low;
+    float p;
 
+    cin >> p;
+    if (p == 1) {
+        cout << 356 << endl;
+    }
+    else {
+        while (x > 1 - p) {
+            x = x * num / denom;
+            num--;
+            people++;
+            cout << x << endl;
 
-
+        }
+        cout << people << endl;
+    }
 }
 
 

@@ -1,9 +1,1 @@
-7
-b batman
-a apple
-b boat
-c cat
-a angry
-c cat
-d dog
-e elephant
+1
