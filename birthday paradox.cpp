@@ -26,63 +26,26 @@
 
 using namespace std;
 
-
-bool CanPlaceAtThisGap(int *a, int gap, int cows, int a_size) {
-    int last_pos = a[0];
-    int cnt = 1;
-    for (int i = 0; i < a_size; ++i)
-    {
-        if ((a[i] - last_pos) >= gap) {
-            last_pos = a[i];
-            cnt++;
-            if (cnt == cows) {
-                return true;
-            }
-        }
-    }
-
-
-    return false;
-
-}
-
-
-int searching_max_gap(int *a, int s, int e, int cows, int a_size) {
-
-    int ans;
-    while (s <= e) {
-        int mid = (s + e) / 2;
-
-        if (CanPlaceAtThisGap(a, mid, cows, a_size)) {
-            s = mid + 1;
-            ans = mid;
-        }
-        else {
-            e = mid - 1;
-        }
-    }
-
-    return ans;
-
-
-}
-
 void solve(int tc) {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    int a[n];
+    int i, j, k, n, ans = 0, cnt = 0, sum = 0;
+    float x = 1.0;
 
+    int people = 0;
+    float num = 365;
+    float denom = 365;
 
-    for (int i = 0; i < n; ++i)
-    {
-        cin >> a[i];
+    float p;
+
+    cin >> p;
+
+    while (x > 1 - p) {
+        x = x * num / denom;
+        num--;
+        people++;
+        cout << x << endl;
+
     }
-
-    sort(a, a + n);
-
-
-    cout << searching_max_gap(a, 0, a[n - 1], m, n) << endl;
-
+    cout << people << endl;
 }
 
 
@@ -96,7 +59,7 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t; cin >> t; while (t--)
+    // int t;cin>>t;while(t--)
     {
         int tc = 1;
         solve(tc);

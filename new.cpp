@@ -26,30 +26,80 @@
 
 using namespace std;
 
-void solve(int tc) {
-    int i, j, k, n, ans = 0, cnt = 0, sum = 0;
-    float x = 1.0;
+vector<int> dif(3, 0);
+vector<int> multi_factor(3, 0);
 
-    int people = 0;
-    float num = 365;
-    float denom = 365;
 
-    float p;
+void Check(int *a, int *b) {
 
-    cin >> p;
-    if (p == 1) {
-        cout << 356 << endl;
+    set<int> sd, sf;
+
+    int diff_same = 0;
+    int factor_same = 0;
+
+    int d1;
+    int d2;
+
+    for (int i = 0; i < 3; ++i)
+    {
+        diff[i] = b[i] - a[i];
+        if (b[i] % a[i] == 0) {
+            multi_factor[i] = b[i] / a[i];
+        }
     }
-    else {
-        while (x > 1 - p) {
-            x = x * num / denom;
-            num--;
-            people++;
-            cout << x << endl;
+
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            if (i != j and multi_factor[i] == multi_factor[j] and multi_factor[i] == 0) {
+                factor_same++;
+                d1 = multi_factor[i];
+                sf.insert(i);
+                sf.insert(j);
+            }
+
+            if (i != j and dif[i] == dif[j] and dif[i] == 0) {
+                d2 = dif[i];
+                sd.insert(i);
+                sd.insert(j);
+            }
+        }
+
+        if (diff_same > factor_same) {
+            for (auto x : sd) {
+                a[x] = a[x] + d2;
+            }
+        }
+        else if (diff_same < factor_same) {
+            for (auto x : sf) {
+                a[x] = a[x] * d2;
+            }
+        }
+        else {
 
         }
-        cout << people << endl;
     }
+}
+
+void solve(int tc) {
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    int a[3];
+    int b[3];
+
+    for (int i = 0; i < 3; ++i)
+    {
+        cin >> a[i];
+    }
+
+    for (int i = 0; i < 3; ++i)
+    {
+        cin >> b[i];
+    }
+
+
+    Check(a, b);
+
 }
 
 
