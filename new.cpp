@@ -26,97 +26,53 @@
 
 using namespace std;
 
-vector<int> dif(3, 0);
-vector<int> multi_factor(3, 0);
-
-
-void Check(int *a, int *b) {
-
-    set<int> sd, sf;
-
-    int diff_same = 0;
-    int factor_same = 0;
-
-    int d1;
-    int d2;
-
-    for (int i = 0; i < 3; ++i)
-    {
-        diff[i] = b[i] - a[i];
-        if (b[i] % a[i] == 0) {
-            multi_factor[i] = b[i] / a[i];
-        }
-    }
-
-    for (int i = 0; i < 3; ++i)
-    {
-        for (int j = 0; j < 3; ++j)
-        {
-            if (i != j and multi_factor[i] == multi_factor[j] and multi_factor[i] == 0) {
-                factor_same++;
-                d1 = multi_factor[i];
-                sf.insert(i);
-                sf.insert(j);
-            }
-
-            if (i != j and dif[i] == dif[j] and dif[i] == 0) {
-                d2 = dif[i];
-                sd.insert(i);
-                sd.insert(j);
-            }
-        }
-
-        if (diff_same > factor_same) {
-            for (auto x : sd) {
-                a[x] = a[x] + d2;
-            }
-        }
-        else if (diff_same < factor_same) {
-            for (auto x : sf) {
-                a[x] = a[x] * d2;
-            }
-        }
-        else {
-
-        }
-    }
-}
-
 void solve(int tc) {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    int a[3];
-    int b[3];
+  int k, n, m, ans = 0, cnt = 0, sum = 0;
+  vector<int> a{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
 
-    for (int i = 0; i < 3; ++i)
-    {
-        cin >> a[i];
+  n = a.size();
+  int target;
+  cin >> target;
+  int i = 0; int j = n - 1;
+
+  int product;
+  while (i < j) {
+    product = a[i] * a[j];
+
+    if (product < target) {
+      cnt++;
+      i++;
+    }
+    else if (product == target) {
+      cnt++;
+      j--;
+    }
+    else {
+      j--;
     }
 
-    for (int i = 0; i < 3; ++i)
-    {
-        cin >> b[i];
-    }
-
-
-    Check(a, b);
+  }
+  cout << cnt << endl;
 
 }
+
+
 
 
 int32_t main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 #endif
 
-    ios_base:: sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    // int t;cin>>t;while(t--)
-    {
-        int tc = 1;
-        solve(tc);
-        tc++;
-    }
+  ios_base:: sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  int tc = 1;
+  // int t;cin>>t;while(t--)
+  {
+    solve(tc);
+    tc++;
+  }
 }

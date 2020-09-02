@@ -19,7 +19,7 @@ public:
     Graph() {
 
     }
-    void addEdge(T u, T v, bool bidir) {
+    void addEdge(T u, T v, bool bidir = 0) {
         adjList[u].push_back(v);
         if (bidir) {
             adjList[v].push_back(u);

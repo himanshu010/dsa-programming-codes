@@ -26,35 +26,52 @@
 
 using namespace std;
 
+
+const int N = 100000000;
+
+vector<int> bit(N, 0);
+
+void update(int i, int increment, int n) {
+
+    if (i > n) {
+        return;
+    }
+
+    bit[i] += increment;
+    i += i & (-i);
+    update(i, increment, n);
+}
+
+int query(int index) {
+
+    int sum = 0;
+    while (index > 0) {
+        sum += bit[index];
+        index -= index & (-index);
+    }
+
+    return sum;
+}
+
 void solve(int tc) {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    int i, j, k, n, q, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
-    vector<int>a(n), b(n);
-    for (int i = 0; i < n; ++i)
+    vector<int> a(n);
+    int maximum = -1;
+    for (int i = 1; i <= n; ++i)
     {
-        int temp;
-        cin >> temp;
-        a[i] = temp;
+        cin >> a[i];
+        maximum = max(maximum, a[i]);
     }
-
-
-    for (int i = 0; i < n; ++i)
+    for (int i = n; i >= 1 ; --i)
     {
-        cnt = 1;
-        for (int j = 0; j < n; ++j)
-        {
-            if (a[i] > a[j]) {
-                cnt++;
-            }
-        }
-
-        b[i] = cnt;
+        ans += query(a[i] - 1);
+        update(a[i], 1, maximum);
     }
 
-
-    for (auto x : b) {
-        cout << x << " ";
-    }
+    // cin >> q;
+    // cout << bit[2] << "---" << endl;
+    cout << ans << endl;
 
 }
 
@@ -71,8 +88,12 @@ int32_t main()
     cout.tie(NULL);
     // int t;cin>>t;while(t--)
     {
+        bit.clear();
+        bit.resize(N);
+        fill(bit.begin(), bit.end(), 0);
         int tc = 1;
         solve(tc);
         tc++;
+
     }
 }

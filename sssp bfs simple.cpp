@@ -4,11 +4,10 @@
 |                                                           |
 |                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|                       (himanshu010)                       |
+|     ( website: himanshu010.github.io/Portfolio_website )  |
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*
-
 
 */
 
@@ -24,41 +23,61 @@
 #define vvi vector<vector<int>>
 #define vb vector<bool>
 #define um unordered_map
-#define R return
 
 using namespace std;
 
 
-int lis(int *a, int n) {
+vector < vector<int> >graph(100005);
+vector<bool> visited(100005, 0);
 
-  int dp[100];
-  for (int i = 0; i <= 100; ++i)
-  {
-    dp[i] = 1;
-  }
+vector<int> dist(100005, INT_MAX);
+vector<int> parent(100005, 0);
 
-  for (int i = 1; i <= n; ++i)
-  {
-    int maximum = 1;
-    for (int j = 1; j < i; ++j)
-    {
-      if (a[j] <= a[i]) {
+void addEdge(int l, int r) {
+  graph[l].pb(r);
+}
 
-        int temp = dp[j] + 1;
-        // cout << temp << "--" << endl;
-        maximum = max(maximum, temp);
+
+void sssp(int src) {
+  dist[src] = 0;
+  queue<int> qu;
+  qu.push(src);
+
+
+  while (!qu.empty()) {
+    int cur = qu.front();
+    qu.pop();
+    cout << "distance of " << cur << " from source is " << dist[cur] << endl;
+    for (auto x : graph[cur]) {
+      if (!visited[x]) {
+        visited[x] = 1;
+        qu.push(x);
+        parent[x] = cur;
+        dist[x] = dist[parent[x]] + 1;
       }
     }
-    dp[i] = maximum;
+  }
 
+
+
+
+}
+
+
+void solve(int tc) {
+  int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+  cin >> n;
+  cin >> m;
+  for (int i = 0; i < m; ++i)
+  {
+    int l, r;
+    cin >> l >> r;
+    addEdge(l, r);
   }
-  int ans = 1;
-  for (auto x : dp) {
-    cout << x << " ";
-    ans = max(ans, x);
-  }
-  cout << endl;
-  return ans;
+
+
+  sssp(0);
+
 }
 
 
@@ -72,18 +91,10 @@ int32_t main()
   ios_base:: sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
+  int tc = 1;
   // int t;cin>>t;while(t--)
   {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n;
-    int a[n + 1];
-    for (int i = 1; i <= n; ++i)
-    {
-      cin >> a[i];
-    }
-    cout << lis(a, n);
-
-
-
+    solve(tc);
+    tc++;
   }
 }

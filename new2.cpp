@@ -1,76 +1,71 @@
-/*
-
-*-----------------------------------------------------------*
-|                                                           |
-|                                                           |
-|               AUTHOR: Himanshu Aswal                      |
-|                       (himanshu010)                       |
-|                                                           |
-|                                                           |
-*-----------------------------------------------------------*
-
-
-*/
-
-#include<bits/stdc++.h>
-#define moduli 998244353
-#define int long long int
-#define ld long double
-#define F first
-#define S second
-#define P pair<int,int>
-#define pb push_back
-#define vi vector<int>
-#define vvi vector<vector<int>>
-#define vb vector<bool>
-#define um unordered_map
-#define R return
-
+#include<iostream>
+#include<map>
+#include<list>
+#include<queue>
+#include<climits>
 using namespace std;
 
-int mincoin(int n) {
-    int coins[] = {1, 4, 7, 10};
-    int dp[100] = {0};
-    for (auto x : coins) {
-        // cout << x << endl;
-        dp[x] = 1;
+class Graph {
+    map<int, list<int>> mp;
+public:
+    void addEdge(int x, int y) {
+        mp[x].push_back(y);
     }
-    for (int i = 1; i <= n; ++i)
-    {
-        if (dp[i] == 0) {
-            int ans = INT_MAX;
-            for (auto x : coins) {
-                if (x < i) {
-                    int m = i - x;
-                    // cout << m << "----" << endl;
-                    ans = min(ans, dp[m]);
+
+    void bfs(int src, int destination) {
+        map<int, int> dis;
+        queue<int> q;
+
+        for (auto x : mp) {
+            dis[x.first] = INT_MAX;
+        }
+        dis[src] = 0;
+        q.push(src);
+
+        while (!q.empty()) {
+            int node = q.front();
+            q.pop();
+
+            for (auto nbr : mp[node]) {
+                if (dis[nbr] == INT_MAX) {
+                    q.push(nbr);
+                    dis[nbr] = dis[node] + 1;
                 }
             }
-            dp[i] = ans + 1;
         }
-        // cout << i << " " << dp[i] << endl;
+        cout << dis[destination] << endl;
     }
-    return dp[n];
-}
+};
 
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int board[100] = {0};
+        int ladders, snakes, s, e;
+        cin >> ladders;
+        while (ladders--) {
+            cin >> s >> e;
+            board[s] = (e - s);
+        }
+        cin >> snakes;
+        while (snakes--) {
+            cin >> e >> s;
+            board[e] = (s - e);
+        }
 
-int32_t main()
-{
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-
-    ios_base:: sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    // int t;cin>>t;while(t--)
-    {
-        int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-        n = 15;
-        cout << mincoin(n);
-
-
-
+        Graph g;
+        for (int i = 1; i <= 100; i++) {
+            for (int dice = 1; dice <= 6; dice++) {
+                int j = i + dice;
+                j = j + board[j];
+                if (j <= 100) {
+                    g.addEdge(i, j);
+                }
+            }
+        }
+        g.addEdge(100, 100);
+        g.bfs(1, 100);
     }
+    return 0;
 }

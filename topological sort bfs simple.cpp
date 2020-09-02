@@ -26,35 +26,59 @@
 
 using namespace std;
 
+
+
+vector<vector<int>> graph(100005);
+vector<bool> visited(100005, 0);
+vector<int> required(100005, 0);
+
+void addEdge(int l, int r) {
+    graph[l].pb(r);
+    required[r]++;
+}
+
+
+void bfs(int src) {
+    visited[src] = 1;
+
+    queue<int> qu;
+    qu.push(src);
+
+    while (!qu.empty()) {
+        int cur = qu.front();
+        cout << cur << "--->";
+        qu.pop();
+        for (auto x : graph[cur]) {
+            required[x]--;
+            if (required[x] == 0 and visited[x] == 0) {
+                qu.push(x);
+                visited[x] = 1;
+            }
+        }
+    }
+}
+
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
-    vector<int>a(n), b(n);
-    for (int i = 0; i < n; ++i)
+    cin >> m;
+    for (int i = 0; i < m; ++i)
     {
-        int temp;
-        cin >> temp;
-        a[i] = temp;
+        int l, r;
+        cin >> l >> r;
+        addEdge(l, r);
     }
 
 
     for (int i = 0; i < n; ++i)
     {
-        cnt = 1;
-        for (int j = 0; j < n; ++j)
-        {
-            if (a[i] > a[j]) {
-                cnt++;
-            }
+        if (required[i] == 0 and visited[i] == 0) {
+            bfs(i);
         }
-
-        b[i] = cnt;
     }
 
 
-    for (auto x : b) {
-        cout << x << " ";
-    }
+
 
 }
 
@@ -69,9 +93,9 @@ int32_t main()
     ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+    int tc = 1;
     // int t;cin>>t;while(t--)
     {
-        int tc = 1;
         solve(tc);
         tc++;
     }

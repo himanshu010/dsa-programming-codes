@@ -72,7 +72,7 @@ int32_t main()
 
                 update(a[i], 1, n);
             }
-            cout << ans << endl;
+            cout << ans << "---" << endl;
         }
 
         int tree[100000] = {0};

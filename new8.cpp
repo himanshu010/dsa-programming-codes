@@ -1,105 +1,46 @@
-/*
-
-*-----------------------------------------------------------*
-|                                                           |
-|                                                           |
-|               AUTHOR: Himanshu Aswal                      |
-|     ( website: himanshu010.github.io/Portfolio_website )  |
-|                                                           |
-|                                                           |
-*-----------------------------------------------------------*
-
-*/
-
 #include<bits/stdc++.h>
-#define moduli 998244353
-#define int long long int
-#define ld long double
-#define F first
-#define S second
-#define P pair<int,int>
-#define pb push_back
-#define vi vector<int>
-#define vvi vector<vector<int>>
-#define vb vector<bool>
-#define um unordered_map
-
 using namespace std;
-
-
-bool CanPlaceAtThisGap(int *a, int gap, int cows, int a_size) {
-    int last_pos = a[0];
-    int cnt = 1;
-    for (int i = 0; i < a_size; ++i)
+#define ll long long int
+#define arr 100006
+#define FIO ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define loop(i,x,n) for(int i=x;i<n;i++)
+ll sumn(ll x)
+{   ll s = 0;
+    while (x != 0)
     {
-        if ((a[i] - last_pos) >= gap) {
-            last_pos = a[i];
-            cnt++;
-            if (cnt == cows) {
-                return true;
-            }
-        }
+        s += (x % 10);
+        x /= 10;
     }
-
-
-    return false;
-
+    return s;
 }
 
-
-int searching_max_gap(int *a, int s, int e, int cows, int a_size) {
-
-    int ans;
-    while (s <= e) {
-        int mid = (s + e) / 2;
-
-        if (CanPlaceAtThisGap(a, mid, cows, a_size)) {
-            s = mid + 1;
-            ans = mid;
-        }
-        else {
-            e = mid - 1;
-        }
-    }
-
-    return ans;
-
-
-}
-
-void solve(int tc) {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    int a[n];
-
-
-    for (int i = 0; i < n; ++i)
-    {
-        cin >> a[i];
-    }
-
-    sort(a, a + n);
-
-
-    cout << searching_max_gap(a, 0, a[n - 1], m, n) << endl;
-
-}
-
-
-int32_t main()
-{
+int main() {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-
-    ios_base:: sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int t; cin >> t; while (t--)
+    FIO;
+    string s;
+    cin >> s;
+    ll sum = 0;
+    if (s.length() == 1)
     {
-        int tc = 1;
-        solve(tc);
-        tc++;
+        cout << 0;
+        return 0;
     }
+    for (ll i = 0; i < s.length(); i++)
+    {
+        sum = sum + (s[i] - '0');
+    }
+
+    ll c = 1;
+
+    while (sum / 10 != 0)
+    {
+        cout << sum << endl;
+        sum = sumn(sum);
+        c++;
+    }
+    cout << c << endl;
+    return 0;
 }

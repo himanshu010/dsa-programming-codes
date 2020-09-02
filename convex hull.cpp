@@ -107,7 +107,7 @@ void convex_hull(vector<point> &p) {
 }
 
 void solve() {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    int i, j, q, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
     vector<point> p(n);
     for (int i = 0; i < n; ++i)

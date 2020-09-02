@@ -28,75 +28,67 @@
 
 using namespace std;
 
-template<typename T>
-class Graph
-{
-    unordered_map<T, list<pair<T, int>>> m;
-public:
-    // Graph();
-    void addEdge(T u, T v, int dist, bool bidir = true) {
-        m[u].push_back(make_pair(v, dist));
-        if (bidir) {
-            m[v].pb(make_pair(u, dist));
+vector<vector<P>> graph(100005);
+void addEdge(int u, int v, int dist) {
+    graph[u].pb({v, dist});
+}
+
+void printAdj(int n) {
+    for (int i = 0; i < n; ++i)
+    {
+        cout << i << "---->";
+        for (auto k : graph[i]) {
+            cout << "(" << k.F << ", " << k.S << "), ";
         }
+        cout << endl;
     }
-    void printAdj() {
-        for (auto j : m) {
-            cout << j.F << "---->";
-            for (auto k : j.S) {
-                cout << "(" << k.F << ", " << k.S << "), ";
-            }
-            cout << endl;
-        }
+}
+
+void dijkstra(int src, int n) {
+    unordered_map<int, int> dist;
+
+    //Set all distances to infinity;
+    for (int i = 0; i < n; ++i)
+    {
+        dist[i] = INT_MAX;
     }
 
-    void dijkstra(T src) {
-        unordered_map<T, int> dist;
+    //Make a set to find out node with the minimum distance
+    set<pair<int, int>> s;
+    dist[src] = 0;
+    s.insert({0, src});
+    while (!s.empty()) {
+        //Find the pair at the front
 
-        //Set all distances to infinity;
+        auto p = *(s.begin());
+        int node = p.S;
+        int nodeDistance = p.F;
+        s.erase(s.begin());
 
-        for (auto j : m) {
-            dist[j.F] = INT_MAX;
-        }
-
-        //Make a set to find out node with the minimum distance
-        set<pair<int, T>> s;
-        dist[src] = 0;
-        s.insert(make_pair(0, src));
-        while (!s.empty()) {
-            //Find the pair at the front
-
-            auto p = *(s.begin());
-            T node = p.S;
-            int nodeDistance = p.F;
-            s.erase(s.begin());
-
-            //Iterate over the neighbour of the current node
-            for (auto childPair : m[node]) {
-                if (nodeDistance + childPair.S < dist[childPair.F]) {
+        //Iterate over the neighbour of the current node
+        for (auto childPair : graph[node]) {
+            if (nodeDistance + childPair.S < dist[childPair.F]) {
 
 
-                    //In the set, updation is not possible,
-                    //then we have to remove the old pair and insert the new pair
-                    T dest = childPair.F;
-                    auto f = s.find(make_pair(dist[dest], dest));
-                    if (f != s.end()) {
-                        s.erase(f);
-                    }
-
-                    //Insert the new pair
-                    dist[dest] = nodeDistance + childPair.S;
-                    s.insert(make_pair(dist[dest], dest));
+                //In the set, updation is not possible,
+                //then we have to remove the old pair and insert the new pair
+                int dest = childPair.F;
+                auto f = s.find({dist[dest], dest});
+                if (f != s.end()) {
+                    s.erase(f);
                 }
+
+                //Insert the new pair
+                dist[dest] = nodeDistance + childPair.S;
+                s.insert({dist[dest], dest});
             }
         }
-        //print distance
-        for (auto d : dist) {
-            cout << d.F << " is located at " << d.S << endl;
-        }
     }
-
-};
+    //print distance
+    for (auto d : dist) {
+        cout << d.F << " is located at " << d.S << endl;
+    }
+}
 
 
 int32_t main()
@@ -112,17 +104,19 @@ int32_t main()
     // int t;cin>>t;while(t--)
     {
         int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-        Graph<string> g;
         cin >> n;
-        for (int i = 0; i < n; ++i)
+        cin >> m;
+        for (int i = 0; i < m; ++i)
         {
-            string temp, temp1;
+            int temp, temp1;
             int temp2;
             cin >> temp >> temp1 >> temp2;
-            g.addEdge(temp, temp1, temp2);
+            addEdge(temp, temp1, temp2);
         }
         // g.printAdj();
-        g.dijkstra("Amritsar");
+        dijkstra(0, n);
+
+        printAdj(n);
 
 
 

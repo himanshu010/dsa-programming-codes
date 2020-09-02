@@ -102,7 +102,9 @@ void solve(int tc) {
     }
 
 
+
     cout << inversion_count(a, 0, n - 1);
+
 
 }
 
