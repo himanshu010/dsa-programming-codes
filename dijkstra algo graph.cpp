@@ -114,7 +114,7 @@ int32_t main()
             addEdge(temp, temp1, temp2);
         }
         // g.printAdj();
-        dijkstra(0, n);
+        dijkstra(1, n);
 
         printAdj(n);
 

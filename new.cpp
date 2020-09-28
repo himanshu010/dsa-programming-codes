@@ -4,7 +4,7 @@
 |                                                           |
 |                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|     ( website: himanshu010.github.io/Portfolio_website )  |
+|               ( himanshuaswal.codes )                     |
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*
@@ -26,37 +26,70 @@
 
 using namespace std;
 
-void solve(int tc) {
-  int k, n, m, ans = 0, cnt = 0, sum = 0;
-  vector<int> a{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
+class Node {
+public:
+  int data;
+  Node* left;
+  Node* right;
 
-  n = a.size();
-  int target;
-  cin >> target;
-  int i = 0; int j = n - 1;
-
-  int product;
-  while (i < j) {
-    product = a[i] * a[j];
-
-    if (product < target) {
-      cnt++;
-      i++;
-    }
-    else if (product == target) {
-      cnt++;
-      j--;
-    }
-    else {
-      j--;
-    }
-
+  Node(int d) {
+    data = d;
+    left = right = NULL;
   }
-  cout << cnt << endl;
+};
+vector<Node*> q1, q2;
+int maximum = INT_MIN;
+
+void width() {
+
+  for (auto x : q1) {
+    cout << x->data << ' ';
+  }
+  cout << endl;
+
+  while (!q1.empty()) {
+    Node* f = q1[q1.size() - 1];
+    q1.pop_back();
+    if (f->left) {
+      q2.push_back(f->left);
+    }
+
+    if (f->right) {
+      q2.push_back(f->right);
+    }
+  }
+
+  int wid = q2.size();
+  maximum = max(maximum, wid);
+
+  q1 = q2;
+  q2.clear();
+
+  if (!q1.empty()) {
+    width();
+  }
 
 }
 
+void solve(int tc) {
+  int i, j, k, n, m, cnt = 0, sum = 0;
+  Node *root = new Node(1);
+  root->left = new Node(2);
+  root->right = new Node(3);
+  root->left->left = new Node(4);
+  root->left->right = new Node(5);
+  root->right->right = new Node(8);
+  root->right->right->left = new Node(6);
+  root->right->right->right = new Node(7);
 
+  q1.push_back(root);
+  width();
+
+
+  cout << maximum << endl;
+
+
+}
 
 
 int32_t main()
