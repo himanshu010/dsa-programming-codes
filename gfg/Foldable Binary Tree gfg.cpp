@@ -26,66 +26,50 @@
 
 using namespace std;
 
-class Node {
+class Node
+{
 public:
   int data;
   Node* left;
   Node* right;
   Node(int d) {
     data = d;
-    left = NULL;
-    right = NULL;
+    left = right = NULL;
   }
 };
 
+bool check_mirror(Node* ll, Node* rr) {
 
-void preorder(Node* temp) {
-
-  if (temp == NULL) {
-    return;
+  if (ll and !rr) {
+    return false;
+  }
+  if (!ll and rr) {
+    return false;
   }
 
-  cout << temp->data << " ";
-  preorder(temp->left);
-  preorder(temp->right);
-}
-
-
-void postorder(Node* temp) {
-  if (temp == NULL) {
-    return;
+  if (!ll and !rr) {
+    return true;
   }
 
-  postorder(temp->left);
-  postorder(temp->right);
-  cout << temp->data << " ";
-}
-
-
-void inorder(Node *temp) {
-  if (temp == NULL) {
-    return;
+  if (check_mirror(ll->left, rr->right) and check_mirror(ll->right, rr->left)) {
+    return true;
   }
+  return false;
 
-  inorder(temp->left);
-  cout << temp->data << " ";
-  inorder(temp->right);
 }
 
-void solve(int tc) {
+bool solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
   Node* root = new Node(1);
-  root->left             = new Node(2);
-  root->right         = new Node(3);
-  root->left->left     = new Node(4);
+  root->left = new Node(2);
+  root->right = new Node(3);
+  root->right->left = new Node(4);
   root->left->right = new Node(5);
-  root->right->left = new Node(7);
-  root->right->right = new Node(9);
-  root->right->left->left = new Node(11);
 
-
-  inorder(root);
-
+  if (root == NULL) {
+    return true;
+  }
+  return check_mirror(root->left, root->right);
 
 }
 
@@ -103,7 +87,7 @@ int32_t main()
   int tc = 1;
   // int t;cin>>t;while(t--)
   {
-    solve(tc);
+    cout << solve(tc);
     tc++;
   }
 }

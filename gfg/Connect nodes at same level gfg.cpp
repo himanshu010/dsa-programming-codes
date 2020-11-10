@@ -25,68 +25,73 @@
 #define um unordered_map
 
 using namespace std;
-
 class Node {
 public:
   int data;
   Node* left;
   Node* right;
+  Node* nextRight;
+
   Node(int d) {
     data = d;
-    left = NULL;
-    right = NULL;
+    left = right = nextRight = NULL;
   }
 };
 
+list<Node*> temp1, temp2;
+vector<Node*> temp3;
 
-void preorder(Node* temp) {
+void bfs() {
 
-  if (temp == NULL) {
-    return;
+  for (auto x : temp1) {
+    temp3.push_back(x);
   }
 
-  cout << temp->data << " ";
-  preorder(temp->left);
-  preorder(temp->right);
+  // cout << temp3.size();
+  for (int i = 0; i < temp3.size() - 1; ++i)
+  {
+    temp3[i]->nextRight = temp3[i + 1];
+  }
+
+  temp3[temp3.size() - 1]->nextRight = NULL;
+
+  temp3.clear();
+
+
+  while (!temp1.empty()) {
+    auto cur1 = temp1.begin();
+    temp1.pop_front();
+
+    auto cur = *cur1;
+
+    if (cur->left) {
+      temp2.push_back(cur->left);
+    }
+    if (cur->right) {
+      temp2.push_back(cur->right);
+    }
+  }
+
+  temp1 = temp2;
+  temp2.clear();
+  if (!temp1.empty()) {
+    bfs();
+  }
 }
 
 
-void postorder(Node* temp) {
-  if (temp == NULL) {
-    return;
-  }
-
-  postorder(temp->left);
-  postorder(temp->right);
-  cout << temp->data << " ";
-}
 
 
-void inorder(Node *temp) {
-  if (temp == NULL) {
-    return;
-  }
-
-  inorder(temp->left);
-  cout << temp->data << " ";
-  inorder(temp->right);
-}
 
 void solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  Node* root = new Node(1);
-  root->left             = new Node(2);
-  root->right         = new Node(3);
-  root->left->left     = new Node(4);
-  root->left->right = new Node(5);
-  root->right->left = new Node(7);
-  root->right->right = new Node(9);
-  root->right->left->left = new Node(11);
+  Node* root = new Node(10);
+  root->left = new Node(8);
+  root->right = new Node(2);
+  root->left->left = new Node(3);
+  temp1.push_back(root);
 
-
-  inorder(root);
-
-
+  bfs();
 }
 
 

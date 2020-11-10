@@ -26,67 +26,54 @@
 
 using namespace std;
 
-class Node {
+map <int, vector<int>> mp;
+class Node
+{
 public:
   int data;
   Node* left;
   Node* right;
   Node(int d) {
     data = d;
-    left = NULL;
-    right = NULL;
+    left = right = NULL;
   }
 };
 
-
-void preorder(Node* temp) {
-
-  if (temp == NULL) {
-    return;
+void vertical_traversal(Node*temp, int i) {
+  mp[i].push_back(temp->data);
+  if (temp->left) {
+    vertical_traversal(temp->left, i - 1);
   }
-
-  cout << temp->data << " ";
-  preorder(temp->left);
-  preorder(temp->right);
-}
-
-
-void postorder(Node* temp) {
-  if (temp == NULL) {
-    return;
+  if (temp->right) {
+    vertical_traversal(temp->right, i + 1);
   }
-
-  postorder(temp->left);
-  postorder(temp->right);
-  cout << temp->data << " ";
-}
-
-
-void inorder(Node *temp) {
-  if (temp == NULL) {
-    return;
-  }
-
-  inorder(temp->left);
-  cout << temp->data << " ";
-  inorder(temp->right);
 }
 
 void solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  Node* root = new Node(1);
-  root->left             = new Node(2);
-  root->right         = new Node(3);
-  root->left->left     = new Node(4);
+  vector<int> a;
+  Node *root = new Node(1);
+  root->left = new Node(2);
+  root->right = new Node(3);
+  root->left->left = new Node(4);
   root->left->right = new Node(5);
-  root->right->left = new Node(7);
-  root->right->right = new Node(9);
-  root->right->left->left = new Node(11);
+  root->right->left = new Node(6);
+  root->right->right = new Node(7);
+  root->right->left->right = new Node(8);
+  root->right->right->right = new Node(9);
+  vertical_traversal(root, 0);
 
+  for (auto x : mp) {
+    sum = 0;
+    for ( auto y : x.second) {
+      sum += y;
+    }
+    a.push_back(sum);
+  }
 
-  inorder(root);
-
-
+  for (auto x : sum) {
+    cout << x << ' ';
+  }
 }
 
 
