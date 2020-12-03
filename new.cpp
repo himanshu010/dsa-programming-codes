@@ -21,36 +21,19 @@
 #define vb vector<bool>
 #define um unordered_map
 using namespace std;
+bool findTarget(vi a, int n, int sum) {
 
-int getMinDif(vector<int> a, int n, int k) {
-    if (n <= 1) {
-        return 0;
+    if (sum == 0) {
+        return true;
+    }
+    if (n < 0) {
+        return false;
+    }
+    if (a[n] > sum) {
+        return findTarget(a, n - 1, sum);
     }
 
-    sort(a.begin(), a.end());
-    int ans = a[n - 1] - a[0];
-    vector<int> mn(n), mx(n);
-    for (int i = 0; i < n; ++i)
-    {
-        mn[i] = a[i] - k;
-        mx[i] = a[i] + k;
-    }
-
-    int i = 0;
-    while (i < n and mn[i] < 0) {
-        i++;
-    }
-
-    if (i == n) {
-        return ans;
-    }
-    if (i == 0) i++;
-
-    for (int j = i; j < n; ++j)
-    {
-        ans = min(ans, max(mn[n - 1], mx[j - 1]) - min(mx[0], mn[j]));
-    }
-    return ans;
+    return findTarget(a, n - 1, sum) || findTarget(a, n - 1, sum - a[n]);
 }
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
@@ -60,10 +43,13 @@ void solve(int tc) {
     {
         cin >> a[i];
     }
-    cin >> k;
-
-    cout << getMinDif(a, n, k);
-
+    cin >> sum;
+    if (findTarget(a, n - 1, sum)) {
+        cout << "Found Subset of target sum" << endl;
+    }
+    else {
+        cout << "Not Found" << endl;
+    }
 }
 int32_t main()
 {

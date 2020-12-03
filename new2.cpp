@@ -1,112 +1,142 @@
+
+/*
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|     ( website: himanshu010.github.io/Portfolio_website )  |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+*/
 #include<bits/stdc++.h>
-
+#define moduli 998244353
+#define GforGiraffe long long int
+#define ld long double
+#define F first
+#define S second
+#define ZforZebra queue
+#define P pair<GforGiraffe,GforGiraffe>
+#define pb push_back
+#define vi vector<GforGiraffe>
+#define vvi vector<vector<GforGiraffe>>
+#define vb vector<bool>
+#define um unordered_map
+#define Guddi while
 using namespace std;
-
-#define ll long long
-bool compa(const pair<ll, pair<ll, ll>> &a,
-           const pair<ll, pair<ll, ll>> &b)
+vector<vector<bool>>GoneBefore;
+vector<vector<GforGiraffe>>ArrayHehmari;
+GforGiraffe n;
+GforGiraffe Youtube(GforGiraffe x, GforGiraffe y)
 {
-    return a.first > b.first;
-}
-ll pts[200005][7] = {0};
-ll unionset[200002];
-ll mnht(ll kth, ll idx, ll d)
-{
-    ll dist = 0;
-
-    for (ll i = 0; i < d; i++)
+    vector<GforGiraffe>AAA, BBB;
+    for (GforGiraffe i = 0; i < 10; ++i)
     {
-        dist += abs(pts[kth][i] - pts[idx][i]);
+        AAA.pb(i);
+        BBB.pb(i);
     }
-
-    return dist;
-}
-ll findpar(ll ch)
-{
-    if (unionset[ch] == -1)return ch;
-    return unionset[ch] = findpar(unionset[ch]);
-}
-ll max_cmb(ll cmbn[6],  ll n, ll d)
-{
-    ll pk = -19372273028659; ll idx = 0;
-
-    for (ll i = 0; i < n; i++)
+    GforGiraffe i, j, k, n, m, ans = 0, cnt = 0, sum = 0, cOrdinate1, cOrdinate11, forestPoGforGiraffe = 1;
+    ZforZebra<P >OverPowered;
+    OverPowered.push({x, y});
+    Guddi (OverPowered.size() != 0)
     {
-        ll val = 0;
+        P NaamnhiJante = OverPowered.front();
+        OverPowered.pop();
+        GforGiraffe x = NaamnhiJante.first;
+        GforGiraffe y = NaamnhiJante.second;
+        cnt++;
+        GoneBefore[x][y] = true;
 
-        for (ll j = 0; j < d; j++)
-        {
-            val += (1 - 2 * cmbn[j]) * pts[i][j];
+        if (x - 1 >= 0 && GoneBefore[x - 1][y] == false && ArrayHehmari[x - 1][y] == 1)
+        {   OverPowered.push({x - 1, y});
+            GoneBefore[x - 1][y] = true;
         }
-
-        if (val > pk)
-        {
-            pk = val;
-            idx = i;
+        if (x + 1 < n && GoneBefore[x + 1][y] == false && ArrayHehmari[x + 1][y] == 1)
+        {   OverPowered.push({x + 1, y});
+            GoneBefore[x + 1][y] = true;
+        }
+        if (y - 1 >= 0 && GoneBefore[x][y - 1] == false && ArrayHehmari[x][y - 1] == 1)
+        {   OverPowered.push({x, y - 1});
+            GoneBefore[x][y - 1] = true;
+        }
+        if (y + 1 < n && GoneBefore[x][y + 1] == false && ArrayHehmari[x][y + 1] == 1)
+        {   OverPowered.push({x, y + 1});
+            GoneBefore[x][y + 1] = true;
         }
     }
+    for (GforGiraffe i = 0; i < 10; ++i)
+    {
+        AAA.pb(i);
+        BBB.pb(i);
+    }
 
-    return idx;
+    return cnt;
 }
 
-int main()
+void solve(GforGiraffe tc) {
+    GforGiraffe i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    vector<GforGiraffe> AAA, BBB;
+    for (GforGiraffe i = 0; i < 100; ++i)
+    {
+        AAA.pb(i);
+        BBB.pb(i);
+    }
+
+
+}
+void getMyanser() {
+    cin >> n;
+    vector<GforGiraffe> AAA, BBB;
+    for (GforGiraffe i = 0; i < 100; ++i)
+    {
+        AAA.pb(i);
+        BBB.pb(i);
+    }
+    GoneBefore = vector<vector<bool>>(n, vector<bool>(n, false));
+    ArrayHehmari = vector<vector<GforGiraffe>>(n, vector<GforGiraffe>(n));
+
+    for (GforGiraffe i = 0; i < n; i++)
+    {
+        for (GforGiraffe j = 0; j < n; j++)
+            cin >> ArrayHehmari[i][j];
+    }
+
+    GforGiraffe p; cin >> p;
+    for (GforGiraffe i = 0; i < n; i++)
+    {
+        for (GforGiraffe j = 0; j < n; j++)
+        {
+            if (ArrayHehmari[i][j] == 1 && GoneBefore[i][j] == false)
+            {
+                GforGiraffe x;
+                x = Youtube(i, j);
+
+                if (x == p)
+                {
+                    cout << i << ' ' << j << endl;
+                    return ;
+                }
+
+            }
+        }
+    }
+
+
+
+    cout << "-1 -1" << endl;
+}
+int32_t main()
 {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    ll n, d;
-    cin >> n >> d;
-
-    for (ll i = 0; i < n; i++)
+    ios_base:: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    GforGiraffe tc = 1;
+    GforGiraffe t; cin >> t; Guddi (t--)
     {
-        for (ll j = 0; j < d; j++)
-            cin >> pts[i][j];
+        getMyanser();
     }
-
-    ll pk[2 << d];
-
-    for (ll j = 0; j < 1 << (d); j++)
-    {
-        ll cmbn[6] = {0};
-        for (ll dig = 0; dig < d; dig++)
-        {
-            if (j & 1 << dig)
-                cmbn[dig] = 1;
-            // cout<<cmbn[dig]<<" ";
-        }
-//cout<<endl;
-        pk[j] = max_cmb(cmbn, n, d);
-    }
-    vector <pair<ll, pair<ll, ll>>> graph;
-    ll maxd = 0;
-    for (ll i = 0; i < n; i++)
-    {
-        for (ll j = 0; j < 1 << (d); j++)
-        {
-            ll x = mnht(i, pk[j], d);
-            graph.push_back({x, {i, pk[j]}});
-        }
-    }
-    ll tw = 0;
-    sort(graph.begin(), graph.end(), compa);
-    memset(unionset, -1, sizeof(unionset));
-//cout<<graph.size()<<endl;
-    for (ll i = 0; i < graph.size(); i++)
-    {
-        //cout<<graph[0].second.first<<" "<<graph[0].second.second<<endl;
-        ll s1 = findpar(graph[i].second.first);
-        ll s2 = findpar(graph[i].second.second);
-        if (s1 != s2)
-        {
-            tw += graph[i].first;
-            unionset[s1] = s2;
-        }
-    }
-    cout << tw << endl;
-//cout<<"d";
-    return 0;
 }
