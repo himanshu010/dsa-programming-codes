@@ -21,35 +21,45 @@
 #define vb vector<bool>
 #define um unordered_map
 using namespace std;
-bool findTarget(vi a, int n, int sum) {
 
-    if (sum == 0) {
-        return true;
+int attempts_needed(int n, int k, vvi &dp) {
+    if (n <= 1 or k <= 1) {
+        return dp[n][k];
     }
-    if (n < 0) {
-        return false;
+    int minimum = INT_MAX;
+    for (int i = 2; i <= n; ++i)
+    {
+        for (int j = 2; j <= k; ++j)
+        {
+            int minimum = INT_MAX;
+            for (int l = 1; l <= j; ++l)
+            {
+                minimum = min(minimum, max(dp[i - 1][j - l], dp[i][l - 1]));
+            }
+            dp[i][j] = minimum + 1;
+        }
     }
-    if (a[n] > sum) {
-        return findTarget(a, n - 1, sum);
-    }
-
-    return findTarget(a, n - 1, sum) || findTarget(a, n - 1, sum - a[n]);
+    return dp[n][k];
 }
+
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; ++i)
+    cin >> n >> k;
+    vector<vector<int>>dp(n + 1, vector<int>(k + 1));
+    for (int i = 0; i <= k; ++i)
     {
-        cin >> a[i];
+        dp[0][i] = 0;
+        dp[1][i] = i;
     }
-    cin >> sum;
-    if (findTarget(a, n - 1, sum)) {
-        cout << "Found Subset of target sum" << endl;
+    for (int i = 0; i <= n; ++i)
+    {
+        dp[i][0] = 0;
+        dp[i][1] = 1;
     }
-    else {
-        cout << "Not Found" << endl;
-    }
+    cout << attempts_needed(n, k, dp);
+
+
+
 }
 int32_t main()
 {
