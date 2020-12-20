@@ -5,4 +5,4 @@
 
 ### Setting of sublimeatyle Formatter
 
-Make sure that your PC have ```Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)```
+Make sure that your PC have `Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)`
