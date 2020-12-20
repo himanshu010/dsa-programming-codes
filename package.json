@@ -1,0 +1,23 @@
+{
+  "name": "cpp",
+  "version": "1.0.0",
+  "description": "1. Snippets are in snippets folder above.\r 2. Set up sublimeastyleformatter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier * --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanshu010/cpp-programs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/himanshu010/cpp-programs/issues"
+  },
+  "homepage": "https://github.com/himanshu010/cpp-programs#readme",
+  "dependencies": {
+    "prettier": "^2.2.1"
+  }
+}
