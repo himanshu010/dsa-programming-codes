@@ -11,13 +11,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 1000000007
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -30,37 +30,31 @@ using namespace std;
 int dp[1001][1001];
 
 int numWays(int n, int m) {
-  //Base case
+  // Base case
   if (dp[0][0] == -1) {
     return 0;
   }
 
-  //first column
-  for (int i = 0; i < m; ++i)
-  {
+  // first column
+  for (int i = 0; i < m; ++i) {
     if (dp[0][i] == -1) {
       break;
     }
     dp[0][i] = 1;
   }
 
-  //first row
-  for (int i = 0; i < n; ++i)
-  {
+  // first row
+  for (int i = 0; i < n; ++i) {
     if (dp[i][0] == -1) {
       break;
     }
     dp[i][0] = 1;
   }
 
+  for (int i = 1; i < n; ++i) {
+    for (int j = 1; j < m; ++j) {
 
-
-  for (int i = 1; i < n; ++i)
-  {
-    for (int j = 1; j < m; ++j)
-    {
-
-      //if cell is blocked then leave it
+      // if cell is blocked then leave it
       if (dp[i][j] == -1) {
         continue;
       }
@@ -77,14 +71,11 @@ int numWays(int n, int m) {
         // cout << "---" << endl;
         dp[i][j] = (dp[i][j] + dp[i - 1][j]) % moduli;
       }
-
     }
-
   }
   if (dp[n - 1][m - 1] == -1) {
     return 0;
   }
-
 
   // for (int i = 0; i < n; ++i)
   // {
@@ -102,8 +93,7 @@ void solve() {
   memset(dp, 0, sizeof dp);
 
   cin >> n >> m >> k;
-  for (int i = 0; i < k; ++i)
-  {
+  for (int i = 0; i < k; ++i) {
     int x, y;
     cin >> x >> y;
     dp[x - 1][y - 1] = -1;
@@ -112,18 +102,15 @@ void solve() {
   cout << numWays(n, m) << endl;
 }
 
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   // int t;cin>>t;while(t--)
-  {
-    solve();
-  }
+  { solve(); }
 }

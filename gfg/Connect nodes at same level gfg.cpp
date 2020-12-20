@@ -11,13 +11,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -28,9 +28,9 @@ using namespace std;
 class Node {
 public:
   int data;
-  Node* left;
-  Node* right;
-  Node* nextRight;
+  Node *left;
+  Node *right;
+  Node *nextRight;
 
   Node(int d) {
     data = d;
@@ -38,8 +38,8 @@ public:
   }
 };
 
-list<Node*> temp1, temp2;
-vector<Node*> temp3;
+list<Node *> temp1, temp2;
+vector<Node *> temp3;
 
 void bfs() {
 
@@ -48,15 +48,13 @@ void bfs() {
   }
 
   // cout << temp3.size();
-  for (int i = 0; i < temp3.size() - 1; ++i)
-  {
+  for (int i = 0; i < temp3.size() - 1; ++i) {
     temp3[i]->nextRight = temp3[i + 1];
   }
 
   temp3[temp3.size() - 1]->nextRight = NULL;
 
   temp3.clear();
-
 
   while (!temp1.empty()) {
     auto cur1 = temp1.begin();
@@ -79,13 +77,9 @@ void bfs() {
   }
 }
 
-
-
-
-
 void solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  Node* root = new Node(10);
+  Node *root = new Node(10);
   root->left = new Node(8);
   root->right = new Node(2);
   root->left->left = new Node(3);
@@ -94,15 +88,13 @@ void solve(int tc) {
   bfs();
 }
 
-
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   int tc = 1;

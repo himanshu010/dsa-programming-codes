@@ -12,13 +12,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -28,24 +28,19 @@
 
 using namespace std;
 
-
 int lcs(char X[], char Y[]) {
   int m = strlen(X);
   int n = strlen(Y);
 
   int dp[100][100];
 
-
-  for (int i = 0; i <= m; ++i)
-  {
+  for (int i = 0; i <= m; ++i) {
     dp[i][0] = 0;
     // cout << i << " " << dp[i][0] << endl;
   }
-  for (int j = 0; j <= n; ++j)
-  {
+  for (int j = 0; j <= n; ++j) {
     dp[0][j] = 0;
   }
-
 
   // for (int i = 0; i <= m; ++i)
   // {
@@ -56,15 +51,12 @@ int lcs(char X[], char Y[]) {
   //   cout << endl;
   // }
 
-  for (int i = 1; i <= m; ++i)
-  {
-    for (int j = 1; j <= n; ++j)
-    {
+  for (int i = 1; i <= m; ++i) {
+    for (int j = 1; j <= n; ++j) {
       int q = 0;
       if (X[i - 1] == Y[j - 1]) {
         q = 1 + dp[i - 1][j - 1];
-      }
-      else {
+      } else {
         q = max(dp[i - 1][j], dp[i][j - 1]);
       }
       dp[i][j] = q;
@@ -81,19 +73,15 @@ int lcs(char X[], char Y[]) {
   // }
 
   return dp[m][n];
-
-
 }
 
-
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   // int t;cin>>t;while(t--)

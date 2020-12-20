@@ -11,13 +11,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -29,8 +29,8 @@ class Node {
 
 public:
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int d) {
     data = d;
@@ -38,8 +38,7 @@ public:
   }
 };
 
-
-int convert_to_sum_tree(Node* temp) {
+int convert_to_sum_tree(Node *temp) {
   if (temp->left == NULL and temp->right == NULL) {
     int val = temp->data;
     temp->data = 0;
@@ -59,8 +58,7 @@ int convert_to_sum_tree(Node* temp) {
   return temp->data + initial;
 }
 
-void printInorder(Node* Node)
-{
+void printInorder(Node *Node) {
   if (Node == NULL)
     return;
   printInorder(Node->left);
@@ -70,7 +68,7 @@ void printInorder(Node* Node)
 
 void solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  Node* root = new Node(10);
+  Node *root = new Node(10);
   root->left = new Node(-2);
   root->right = new Node(6);
   root->left->left = new Node(8);
@@ -79,18 +77,15 @@ void solve(int tc) {
   root->right->right = new Node(5);
   convert_to_sum_tree(root);
   printInorder(root);
-
 }
 
-
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   int tc = 1;

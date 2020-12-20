@@ -11,13 +11,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -26,20 +26,19 @@
 
 using namespace std;
 
-map <int, vector<int>> mp;
-class Node
-{
+map<int, vector<int>> mp;
+class Node {
 public:
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
   Node(int d) {
     data = d;
     left = right = NULL;
   }
 };
 
-void vertical_traversal(Node*temp, int i) {
+void vertical_traversal(Node *temp, int i) {
   mp[i].push_back(temp->data);
   if (temp->left) {
     vertical_traversal(temp->left, i - 1);
@@ -65,7 +64,7 @@ void solve(int tc) {
 
   for (auto x : mp) {
     sum = 0;
-    for ( auto y : x.second) {
+    for (auto y : x.second) {
       sum += y;
     }
     a.push_back(sum);
@@ -76,15 +75,13 @@ void solve(int tc) {
   }
 }
 
-
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   int tc = 1;

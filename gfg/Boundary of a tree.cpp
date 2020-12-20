@@ -11,13 +11,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -28,10 +28,9 @@ using namespace std;
 
 class Node {
 public:
-
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int d) {
     data = d;
@@ -40,8 +39,7 @@ public:
   }
 };
 
-
-void print_left(Node* root) {
+void print_left(Node *root) {
   if (root == NULL) {
     return;
   }
@@ -49,15 +47,13 @@ void print_left(Node* root) {
   if (root->left) {
     cout << root->data << " ";
     print_left(root->left);
-  }
-  else if (root->right) {
+  } else if (root->right) {
     cout << root->data << " ";
     print_left(root->right);
   }
 }
 
-
-void print_right(Node* root) {
+void print_right(Node *root) {
   if (root == NULL) {
     return;
   }
@@ -73,8 +69,7 @@ void print_right(Node* root) {
   }
 }
 
-
-void print_leaf(Node* root) {
+void print_leaf(Node *root) {
 
   if (root == NULL) {
     return;
@@ -88,16 +83,14 @@ void print_leaf(Node* root) {
   if (root->left) {
     print_leaf(root->left);
   }
-  if (root->right)
-  {
+  if (root->right) {
     print_leaf(root->right);
   }
-
 }
 
 void solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  Node* root = new Node(20);
+  Node *root = new Node(20);
   root->left = new Node(8);
   root->left->left = new Node(4);
   root->left->right = new Node(12);
@@ -109,18 +102,15 @@ void solve(int tc) {
   print_left(root->left);
   print_leaf(root);
   print_right(root->right);
-
 }
 
-
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   int tc = 1;

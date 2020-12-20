@@ -11,13 +11,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -49,8 +49,7 @@ void solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
   cin >> n;
   cin >> m;
-  for (int i = 0; i < m; ++i)
-  {
+  for (int i = 0; i < m; ++i) {
     int l, r;
     cin >> l >> r;
     addEdge(l, r);
@@ -61,21 +60,15 @@ void solve(int tc) {
       dfs(i);
     }
   }
-
-
-
-
 }
 
-
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   int tc = 1;

@@ -11,13 +11,13 @@
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -26,12 +26,10 @@
 
 using namespace std;
 
-
 class Node {
 public:
-
   int data;
-  Node* left, *right;
+  Node *left, *right;
 
   Node(int d) {
     data = d;
@@ -39,9 +37,7 @@ public:
   }
 };
 
-
-
-void vertical_traversal(Node* temp, int i, map<int, vector<int>>&mp) {
+void vertical_traversal(Node *temp, int i, map<int, vector<int>> &mp) {
   if (temp == NULL) {
     return;
   }
@@ -52,10 +48,7 @@ void vertical_traversal(Node* temp, int i, map<int, vector<int>>&mp) {
   if (temp->right) {
     vertical_traversal(temp->right, i + 1, mp);
   }
-
-
 }
-
 
 void solve(int tc) {
   int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
@@ -69,7 +62,7 @@ void solve(int tc) {
   root->right->left->right = new Node(8);
   root->right->right->right = new Node(9);
 
-  map<int, vector<int>>mp;
+  map<int, vector<int>> mp;
 
   vertical_traversal(root, 0, mp);
 
@@ -79,18 +72,15 @@ void solve(int tc) {
     }
     cout << endl;
   }
-
 }
 
-
-int32_t main()
-{
+int32_t main() {
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base:: sync_with_stdio(false);
+  ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
   int tc = 1;
