@@ -27,20 +27,24 @@
 
 using namespace std;
 
-void solve() {
-  int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  system("C:\\windows\\system32\\shutdown /s");
+void solve()
+{
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    system("C:\\windows\\system32\\shutdown /s");
 }
 
-int32_t main() {
+int32_t main()
+{
 #ifndef ONLINE_JUDGE
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
-  cout.tie(NULL);
-  // int t;cin>>t;while(t--)
-  { solve(); }
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    // int t;cin>>t;while(t--)
+    {
+        solve();
+    }
 }

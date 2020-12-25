@@ -26,40 +26,43 @@
 
 using namespace std;
 
-void solve(int tc) {
-  int i, j, k, n, ans = 0, cnt = 0, sum = 0;
-  float x = 1.0;
+void solve(int tc)
+{
+    int i, j, k, n, ans = 0, cnt = 0, sum = 0;
+    float x = 1.0;
 
-  int people = 0;
-  float num = 365;
-  float denom = 365;
+    int people = 0;
+    float num = 365;
+    float denom = 365;
 
-  float p;
+    float p;
 
-  cin >> p;
+    cin >> p;
 
-  while (x > 1 - p) {
-    x = x * num / denom;
-    num--;
-    people++;
-    cout << x << endl;
-  }
-  cout << people << endl;
+    while (x > 1 - p)
+    {
+        x = x * num / denom;
+        num--;
+        people++;
+        cout << x << endl;
+    }
+    cout << people << endl;
 }
 
-int32_t main() {
+int32_t main()
+{
 #ifndef ONLINE_JUDGE
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
-  cout.tie(NULL);
-  // int t;cin>>t;while(t--)
-  {
-    int tc = 1;
-    solve(tc);
-    tc++;
-  }
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    // int t;cin>>t;while(t--)
+    {
+        int tc = 1;
+        solve(tc);
+        tc++;
+    }
 }

@@ -21,81 +21,95 @@
 #define vb vector<bool>
 #define um unordered_map
 using namespace std;
-void solve(int tc) {
-  int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  string s;
-  cin >> s;
-  n = s.size();
-  cin >> k;
-  i = 0;
-  j = n - 1;
-  while (i < j) {
-    if (s[i] != s[j]) {
-      cnt++;
+void solve(int tc)
+{
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    string s;
+    cin >> s;
+    n = s.size();
+    cin >> k;
+    i = 0;
+    j = n - 1;
+    while (i < j)
+    {
+        if (s[i] != s[j])
+        {
+            cnt++;
+        }
+        i++;
+        j--;
     }
-    i++;
-    j--;
-  }
 
-  if (cnt > k) {
-    cout << -1 << endl;
-    return;
-  }
-  i = 0;
-  j = n - 1;
-  while (k > cnt) {
-    if (s[i] != s[j]) {
-      cnt--;
+    if (cnt > k)
+    {
+        cout << -1 << endl;
+        return;
     }
-    if (k - 2 < cnt) {
-      break;
-    }
-    if (s[i] == '9') {
-      k++;
-    }
-    if (s[j] == '9') {
-      k++;
-    }
-    s[i] = '9';
-    s[j] = '9';
+    i = 0;
+    j = n - 1;
+    while (k > cnt)
+    {
+        if (s[i] != s[j])
+        {
+            cnt--;
+        }
+        if (k - 2 < cnt)
+        {
+            break;
+        }
+        if (s[i] == '9')
+        {
+            k++;
+        }
+        if (s[j] == '9')
+        {
+            k++;
+        }
+        s[i] = '9';
+        s[j] = '9';
 
-    i++;
-    j--;
-    k -= 2;
-  }
-
-  i = 0;
-  j = n - 1;
-
-  while (i < j) {
-    if (s[i] != s[j]) {
-      s[i] = max(s[i], s[j]);
-      s[j] = s[i];
-      k--;
+        i++;
+        j--;
+        k -= 2;
     }
-    i++;
-    j--;
-  }
 
-  if (k > 0) {
-    if (n & 1) {
-      s[n / 2] = '9';
+    i = 0;
+    j = n - 1;
+
+    while (i < j)
+    {
+        if (s[i] != s[j])
+        {
+            s[i] = max(s[i], s[j]);
+            s[j] = s[i];
+            k--;
+        }
+        i++;
+        j--;
     }
-  }
-  cout << s << endl;
+
+    if (k > 0)
+    {
+        if (n & 1)
+        {
+            s[n / 2] = '9';
+        }
+    }
+    cout << s << endl;
 }
-int32_t main() {
+int32_t main()
+{
 #ifndef ONLINE_JUDGE
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
-  cout.tie(NULL);
-  int tc = 1;
-  // int t;cin>>t;while(t--)
-  {
-    solve(tc);
-    tc++;
-  }
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int tc = 1;
+    // int t;cin>>t;while(t--)
+    {
+        solve(tc);
+        tc++;
+    }
 }

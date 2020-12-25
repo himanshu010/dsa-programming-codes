@@ -21,43 +21,49 @@
 #define vb vector<bool>
 #define um unordered_map
 using namespace std;
-void solve(int tc) {
-  int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-  cin >> n >> k;
-  vector<int> a(n);
-  for (int i = 0; i < n; ++i) {
-    cin >> a[i];
-  }
-  cin >> ans;
-  i = 0;
-  while (i < n) {
-
-    if (a[i] == ans) {
-      cout << i << endl;
-      return;
+void solve(int tc)
+{
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cin >> n >> k;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> a[i];
     }
-    int step = abs(a[i] - ans) / k;
-    if (step < 1) {
-      step = 1;
+    cin >> ans;
+    i = 0;
+    while (i < n)
+    {
+        if (a[i] == ans)
+        {
+            cout << i << endl;
+            return;
+        }
+        int step = abs(a[i] - ans) / k;
+        if (step < 1)
+        {
+            step = 1;
+        }
+        i += step;
     }
-    i += step;
-  }
-  cout << -1 << endl;
+    cout << -1 << endl;
 }
 
-int32_t main() {
+int32_t main()
+{
 #ifndef ONLINE_JUDGE
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
-  ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
-  cout.tie(NULL);
-  int tc = 1;
-  int t;
-  cin >> t;
-  while (t--) {
-    solve(tc);
-    tc++;
-  }
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int tc = 1;
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve(tc);
+        tc++;
+    }
 }
