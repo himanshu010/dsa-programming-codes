@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -27,21 +27,25 @@ using namespace std;
 vvi graph;
 vb visited;
 
-
-void addEdge(int l, int r) {
+void addEdge(int l, int r)
+{
     graph[l].pb(r);
     graph[r].pb(l);
 }
 
-void bfs(int src) {
+void bfs(int src)
+{
     queue<int> qu;
     qu.push(src);
     visited[src] = 1;
-    while (!qu.empty()) {
+    while (!qu.empty())
+    {
         int cur = qu.front();
         qu.pop();
-        for (auto nbr : graph[cur]) {
-            if (!visited[nbr]) {
+        for (auto nbr : graph[cur])
+        {
+            if (!visited[nbr])
+            {
                 qu.push(nbr);
                 visited[nbr] = 1;
             }
@@ -49,7 +53,8 @@ void bfs(int src) {
     }
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
 
@@ -70,7 +75,8 @@ void solve(int tc) {
     {
         for (int j = 0; j < n; ++j)
         {
-            if (mat[i][j] == 'Y') {
+            if (mat[i][j] == 'Y')
+            {
                 addEdge(i, j);
             }
         }
@@ -78,13 +84,13 @@ void solve(int tc) {
 
     for (int i = 0; i < n; ++i)
     {
-        if (!visited[i]) {
+        if (!visited[i])
+        {
             ans++;
             bfs(i);
         }
     }
     cout << ans << endl;
-
 }
 int32_t main()
 {
@@ -92,7 +98,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

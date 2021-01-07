@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -25,28 +25,34 @@ using namespace std;
 
 vvi graph;
 
-void addEdge(int l, int r) {
+void addEdge(int l, int r)
+{
     graph[l].pb(r);
 }
 
-int bfs(int src, int dst) {
+int bfs(int src, int dst)
+{
     int total = 0;
     queue<int> qu;
     qu.push(src);
-    while (!qu.empty()) {
+    while (!qu.empty())
+    {
         int cur = qu.front();
-        if (cur == dst) {
+        if (cur == dst)
+        {
             total += 1;
         }
         qu.pop();
-        for (auto nbr : graph[cur]) {
+        for (auto nbr : graph[cur])
+        {
             qu.push(nbr);
         }
     }
     return total;
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> m;
     graph.clear();
@@ -62,7 +68,6 @@ void solve(int tc) {
     int cur, dst;
     cin >> cur >> dst;
     cout << bfs(cur, dst) << endl;
-
 }
 int32_t main()
 {
@@ -70,7 +75,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

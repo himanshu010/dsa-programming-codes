@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -27,23 +27,27 @@ vector<bool> visited;
 vector<int> dist;
 int mx = 0;
 
-void addEdge(int l, int r) {
+void addEdge(int l, int r)
+{
     graph[l].pb(r);
 }
 
-int longestPathBFS(int src) {
-    unordered_map<int, int>mp;
+int longestPathBFS(int src)
+{
+    unordered_map<int, int> mp;
     int mm = 0;
     visited[src] = 1;
 
-    queue<P>qu;
+    queue<P> qu;
     qu.push({src, 0});
     dist[src] = 0;
 
-    while (!qu.empty()) {
+    while (!qu.empty())
+    {
         P cur = qu.front();
         qu.pop();
-        for (auto nbr : graph[cur.F]) {
+        for (auto nbr : graph[cur.F])
+        {
             dist[nbr] = max(dist[nbr], cur.S + 1);
             qu.push({nbr, dist[nbr]});
             mm = max(dist[nbr], mm);
@@ -53,8 +57,8 @@ int longestPathBFS(int src) {
     return mm;
 }
 
-
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> m;
 
@@ -74,14 +78,13 @@ void solve(int tc) {
 
     for (int i = 0; i < n; ++i)
     {
-        if (!visited[i]) {
+        if (!visited[i])
+        {
             mx = max(mx, longestPathBFS(i));
         }
     }
 
     cout << mx << endl;
-
-
 }
 int32_t main()
 {
@@ -89,7 +92,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

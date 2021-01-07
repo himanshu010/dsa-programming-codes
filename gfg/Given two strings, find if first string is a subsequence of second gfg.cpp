@@ -1,35 +1,42 @@
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 
+bool solve()
+{
+    string a, b;
+    cin >> a >> b;
+    int n = a.size();
+    int m = b.size();
 
-bool solve() {
-  string a, b;
-  cin >> a >> b;
-  int n = a.size();
-  int m = b.size();
+    int i = 0, j = 0;
 
-  int i = 0, j = 0;
-
-  while (i < n and j < m) {
-    if (a[i] == b[j]) {
-      i++;
-      j++;
+    while (i < n and j < m)
+    {
+        if (a[i] == b[j])
+        {
+            i++;
+            j++;
+        }
+        else
+        {
+            j++;
+        }
     }
-    else {
-      j++;
+    if (i == n)
+    {
+        return true;
     }
-  }
-  if (i == n) {
-    return true;
-  }
-  return false;
+    return false;
 }
 
-int main() {
-  int t; cin >> t; while (t--)
-  {
-    cout << solve() << endl;
-  }
-  return 0;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        cout << solve() << endl;
+    }
+    return 0;
 }
