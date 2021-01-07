@@ -1,71 +1,101 @@
-#include <bits/stdc++.h>
+/*
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|     ( website: himanshu010.github.io/Portfolio_website )  |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+*/
+#include<bits/stdc++.h>
+#define moduli 998244353
+#define int long long int
+#define ld long double
+#define F first
+#define S second
+#define P pair<int,int>
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
 using namespace std;
-#define MOD 1000000007
-int ad[1003][1003];
-int factorial[1000003];
-int n, m;
-int visit[1003][1003];
-int dir [8][2] = { {2 , 1}, {2 , -1}, { -2 , 1}, { -2, -1}, {1 , 2}, {1 , -2}, { -1, 2}, { -1, -2} };
-long long sol(int a, int b) {
-    visit[a][b] = 1;
-    long long count = 1;
-    queue <pair<int , int > > q;
-    q.push(make_pair(a, b));
-    while (!q.empty()) {
-        a = q.front().first;
-        b = q.front().second;
-        q.pop();
-        for (int i = 0; i < 8; i++) {
-            int x = a + dir[i][0];
-            int y = b + dir[i][1];
-            if (x <= 0 || x > n || y <= 0 || y > m) continue;
-            if (ad[x][y] == 3 and !visit[x][y]) {
-                count++;
-                q.push(make_pair(x, y));
-                visit[x][y] = 1;
-            }
 
+vector<vector<P>>graph(100005);
+vector<int>dist(100005, INT_MAX);
 
-        }
-
-    }
-    return count;
-}
-void initialize() {
-    for (int i = 0; i < 1003; i++) {
-        for (int j = 0; j < 1003; j++) {
-            ad[i][j] = 1;
-            visit[i][j] = 0;
-        }
-    }
-}
-int main()
+class ComparePQ
 {
-    int t, q;
-    cin >> t;
-    factorial[0] = 1;
-    for (long long i = 1; i <= 1e6; i++) {
-        factorial[i] = (factorial[i - 1] * i) % MOD;
+public:
+    bool operator()(P a, P b) {
+        return a.S > b.S;
     }
-    while (t--) {
-        initialize();
-        cin >> n >> m >> q;
-        int x, y;
-        while (q--) {
-            cin >> x >> y;
-            ad[x][y] = 3;
-        }
-        long long c ;
-        long long ans = 1;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= m; j++) {
-                if (ad[i][j] == 3 and !visit[i][j]) {
-                    c = sol(i, j);
-                    ans = (ans * factorial[c]) % MOD;
+
+};
+
+void dijkstra(int src, int n) {
+    map<int, int>mp;
+    priority_queue<P, vector<P>, ComparePQ> pq;
+    dist[src] = 0;
+
+    pq.push({src, 0});
+    while (!pq.empty() and mp.size() < n) {
+
+        P cur = pq.top();
+        int node = cur.F;
+        int d = cur.S;
+        // cout << node << ' ' << d << endl;
+        if (mp.find(node) == mp.end()) {
+            mp[node] = d;
+            for (auto x : graph[node]) {
+                if (dist[x.F] > d + x.S) {
+                    dist[x.F] = d + x.S;
+                    pq.push({x.F, dist[x.F]});
                 }
             }
         }
-        cout << ans % MOD << "\n";
+        pq.pop();
+
     }
-    return 0;
+
+    for (auto x : mp) {
+        cout << x.F << ' ' << x.S << endl;
+    }
+}
+
+void addEgde(int l, int r, int w) {
+    graph[l].pb({r, w});
+    graph[r].pb({l, w});
+}
+
+void solve(int tc) {
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cin >> n >> m;
+    for (int i = 0; i < m; ++i)
+    {
+        int l, r, w;
+        cin >> l >> r >> w;
+
+        addEgde(l, r, w);
+    }
+
+
+    dijkstra(0, n);
+}
+int32_t main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    ios_base:: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int tc = 1;
+    // int t;cin>>t;while(t--)
+    {
+        solve(tc);
+        tc++;
+    }
 }
