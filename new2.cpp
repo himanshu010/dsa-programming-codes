@@ -1,4 +1,5 @@
 /*
+
 *-----------------------------------------------------------*
 |                                                           |
 |                                                           |
@@ -7,7 +8,9 @@
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*
+
 */
+
 #include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
@@ -20,88 +23,98 @@
 #define vvi vector<vector<int>>
 #define vb vector<bool>
 #define um unordered_map
+#define R return
+
 using namespace std;
 
-vector<vector<P>> graph(100005);
-vector<int> dist(100005, INT_MAX);
+int reset[5000];
 
-class ComparePQ
+void KMPpreprocess(string pattern)
 {
-  public:
-    bool operator()(P a, P b)
+    int i = 0, j = -1;
+    reset[0] = -1;
+    while (i < pattern.size())
     {
-        return a.S > b.S;
-    }
-};
-
-void dijkstra(int src, int n)
-{
-    map<int, int> mp;
-    priority_queue<P, vector<P>, ComparePQ> pq;
-    dist[src] = 0;
-
-    pq.push({src, 0});
-    while (!pq.empty() and mp.size() < n)
-    {
-
-        P cur = pq.top();
-        int node = cur.F;
-        int d = cur.S;
-        // cout << node << ' ' << d << endl;
-        if (mp.find(node) == mp.end())
+        while (j >= 0 && pattern[i] != pattern[j])
         {
-            mp[node] = d;
-            for (auto x : graph[node])
-            {
-                if (dist[x.F] > d + x.S)
-                {
-                    dist[x.F] = d + x.S;
-                    pq.push({x.F, dist[x.F]});
-                }
-            }
+            j = reset[j];
         }
-        pq.pop();
+        i++;
+        j++;
+        reset[i] = j;
     }
-
-    for (auto x : mp)
-    {
-        cout << x.F << ' ' << x.S << endl;
+}
+set<P>st;
+void check(int l, int r, int n) {
+    for (int i = 0; i <= l; i++) {
+        for (int j = r; j < n; ++j)
+        {
+            st.insert({i, j});
+        }
     }
 }
 
-void addEgde(int l, int r, int w)
+
+vector<P> pp;
+void KMPsearch(string str, string pattern, int n)
 {
-    graph[l].pb({r, w});
-    graph[r].pb({l, w});
+    KMPpreprocess(pattern);
+    int i = 0;
+    int j = 0;
+    int sum = INT_MIN;
+    while (i < str.size())
+    {
+        while (j >= 0 and str[i] != pattern[j])
+        {
+            j = reset[j];
+        }
+        i++;
+        j++;
+        if (j == pattern.size())
+        {
+            int left = i - j;
+            int right = i - j + pattern.size() - 1;
+
+            pp.pb({left, right});
+
+            j = reset[j];
+        }
+    }
 }
 
-void solve(int tc)
+void solve()
 {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    for (int i = 0; i < m; ++i)
+    for (int i = 0; i < 5000; ++i)
     {
-        int l, r, w;
-        cin >> l >> r >> w;
-
-        addEgde(l, r, w);
+        reset[i] = -1;
+    }
+    string str, pat;
+    cin >> str;
+    pat = "bear";
+    n = str.size();
+    KMPsearch(str, pat, n);
+    for (auto x : pp) {
+        check(x.F, x.S, n);
     }
 
-    dijkstra(0, n);
+    cout << st.size() << endl;
+
 }
+
+
 int32_t main()
 {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
+
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int tc = 1;
     // int t;cin>>t;while(t--)
     {
-        solve(tc);
-        tc++;
+        solve();
     }
 }
