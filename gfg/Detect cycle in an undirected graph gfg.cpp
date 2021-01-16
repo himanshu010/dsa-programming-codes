@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -27,25 +27,32 @@ vvi graph;
 vb visited;
 vi par;
 
-void addEdge(int l, int r) {
+void addEdge(int l, int r)
+{
     graph[l].pb(r);
     graph[r].pb(l);
     par[r] = l;
 }
 
-bool dfs(int cur, int par) {
+bool dfs(int cur, int par)
+{
     visited[cur] = 1;
     bool ans = 0;
-    for (auto child : graph[cur]) {
-        if (!visited[child]) {
+    for (auto child : graph[cur])
+    {
+        if (!visited[child])
+        {
             ans = ans | dfs(child, cur);
         }
-        else {
-            if (child != par) {
+        else
+        {
+            if (child != par)
+            {
                 ans = ans | 1;
             }
         }
-        if (ans) {
+        if (ans)
+        {
             break;
         }
     }
@@ -53,7 +60,8 @@ bool dfs(int cur, int par) {
     return ans;
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> m;
     graph.clear();
@@ -76,8 +84,10 @@ void solve(int tc) {
 
     for (int i = 0; i < n; ++i)
     {
-        if (!visited[i]) {
-            if (dfs(i, par[i])) {
+        if (!visited[i])
+        {
+            if (dfs(i, par[i]))
+            {
                 cout << "Yes" << endl;
                 return;
             }
@@ -91,7 +101,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

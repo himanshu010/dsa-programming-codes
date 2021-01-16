@@ -44,16 +44,17 @@ void KMPpreprocess(string pattern)
         reset[i] = j;
     }
 }
-set<P>st;
-void check(int l, int r, int n) {
-    for (int i = 0; i <= l; i++) {
+set<P> st;
+void check(int l, int r, int n)
+{
+    for (int i = 0; i <= l; i++)
+    {
         for (int j = r; j < n; ++j)
         {
             st.insert({i, j});
         }
     }
 }
-
 
 vector<P> pp;
 void KMPsearch(string str, string pattern, int n)
@@ -94,14 +95,13 @@ void solve()
     pat = "bear";
     n = str.size();
     KMPsearch(str, pat, n);
-    for (auto x : pp) {
+    for (auto x : pp)
+    {
         check(x.F, x.S, n);
     }
 
     cout << st.size() << endl;
-
 }
-
 
 int32_t main()
 {
