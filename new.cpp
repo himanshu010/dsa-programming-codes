@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int, int>
+#define P pair<int,int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -23,118 +23,74 @@
 #define PQ priority_queue
 using namespace std;
 
-vector<P> moves = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+int ans = INT_MAX;
 
-int mn = INT_MAX;
-
-bool isValid(int r, int c, vector<vb> &a, int n, int m)
-{
-    if (r >= 0 and c >= 0 and r < n and c < m and a[r][c])
+bool check(int s, vi &a, int k, int n, int t) {
+    int sum = 0;
+    int cnt = 1;
+    for (int i = 0; i < n; ++i)
     {
-        for (auto x : moves)
-        {
-            int next_r = r + x.F;
-            int next_c = c + x.S;
+        if (cnt > k) {
+            return false;
         }
-        return true;
+
+        if (sum + (a[i]*t) <= s) {
+            sum += (a[i] * t);
+        }
+        else {
+            cnt += 1;
+            if ((a[i]*t) > s) {
+                return false;
+            }
+            else {
+                sum = (a[i] * t);
+            }
+        }
     }
-
-    return false;
-}
-
-bool checkPath(int r, int c, vector<vb> &a, int n, int m, int len)
-{
-    if (len > mn)
-    {
+    if (cnt > k) {
         return false;
     }
-
-    if (c == m - 1)
-    {
-        mn = min(mn, len);
-        return true;
-    }
-
-    for (auto x : moves)
-    {
-        int next_r = r + x.F;
-        int next_c = c + x.S;
-
-        if (isValid(next_r, next_c, a, n, m))
-        {
-            a[r][c] = 0;
-            if (checkPath(next_r, next_c, a, n, m, len + 1))
-            {
-                return true;
-            }
-            else
-            {
-                a[r][c] = 1;
-            }
-        }
-    }
-    return false;
+    return true;
 }
 
-void solve(int tc)
-{
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    vector<vb> a(n, vb(m));
-    vector<vb> b(n, vb(m));
-    for (int i = 0; i < n; ++i)
-    {
-        for (int j = 0; j < m; ++j)
-        {
-            bool temp;
-            cin >> temp;
-            a[i][j] = temp;
-            b[i][j] = a[i][j];
-        }
-    }
+void binarySearch(int s, int e, vi &a, int k, int n, int t) {
 
-    for (int i = 0; i < n; ++i)
-    {
-        for (int j = 0; j < m; ++j)
-        {
-            if (!a[i][j])
-            {
-                for (auto x : moves)
-                {
-                    int next_r = i + x.F;
-                    int next_c = j + x.S;
-
-                    if (next_r >= 0 and next_c >= 0 and next_r < n and next_c < m)
-                    {
-                        b[next_r][next_c] = 0;
-                    }
-                }
-            }
-        }
-    }
-
-    a = b;
-
-    bool flag = 0;
-
-    for (int i = 0; i < n; ++i)
-    {
-        if (a[i][0])
-        {
-            if (checkPath(i, 0, a, n, m, 0))
-            {
-                flag = 1;
-            }
-            a = b;
-        }
-    }
-    if (!flag)
-    {
-        cout << -1 << endl;
+    if (s > e) {
         return;
     }
 
-    cout << mn << endl;
+    if (s == e) {
+        if (check(s, a, k, n, t)) {
+            ans = min(ans, s);
+        }
+        return;
+    }
+
+    int mid = (s + e) / 2;
+
+    if (check(mid, a, k, n, t)) {
+        ans = min(ans, mid);
+        binarySearch(s, mid, a, k, n, t);
+    }
+    else {
+        binarySearch(mid + 1, e, a, k, n, t);
+    }
+}
+
+void solve(int tc) {
+    int i, j, k, n, m, t, mn = INT_MAX, cnt = 0, sum = 0;
+    cin >> k >> t >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> a[i];
+        sum += a[i];
+        mn = min(a[i], mn);
+    }
+
+    binarySearch(mn * t, sum * t, a, k, n, t);
+    cout << ans << endl;
+
 }
 int32_t main()
 {
@@ -142,7 +98,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
+    ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;
@@ -152,3 +108,7 @@ int32_t main()
         tc++;
     }
 }
+
+// Input type
+// 4 5 6
+// 10 7 8 12 6 8
