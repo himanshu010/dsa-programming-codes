@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -25,42 +25,53 @@ using namespace std;
 
 int ans = INT_MAX;
 
-bool check(int s, vi &a, int k, int n, int t) {
+bool check(int s, vi &a, int k, int n, int t)
+{
     int sum = 0;
     int cnt = 1;
     for (int i = 0; i < n; ++i)
     {
-        if (cnt > k) {
+        if (cnt > k)
+        {
             return false;
         }
 
-        if (sum + (a[i]*t) <= s) {
+        if (sum + (a[i] * t) <= s)
+        {
             sum += (a[i] * t);
         }
-        else {
+        else
+        {
             cnt += 1;
-            if ((a[i]*t) > s) {
+            if ((a[i] * t) > s)
+            {
                 return false;
             }
-            else {
+            else
+            {
                 sum = (a[i] * t);
             }
         }
     }
-    if (cnt > k) {
+    if (cnt > k)
+    {
         return false;
     }
     return true;
 }
 
-void binarySearch(int s, int e, vi &a, int k, int n, int t) {
+void binarySearch(int s, int e, vi &a, int k, int n, int t)
+{
 
-    if (s > e) {
+    if (s > e)
+    {
         return;
     }
 
-    if (s == e) {
-        if (check(s, a, k, n, t)) {
+    if (s == e)
+    {
+        if (check(s, a, k, n, t))
+        {
             ans = min(ans, s);
         }
         return;
@@ -68,16 +79,19 @@ void binarySearch(int s, int e, vi &a, int k, int n, int t) {
 
     int mid = (s + e) / 2;
 
-    if (check(mid, a, k, n, t)) {
+    if (check(mid, a, k, n, t))
+    {
         ans = min(ans, mid);
         binarySearch(s, mid, a, k, n, t);
     }
-    else {
+    else
+    {
         binarySearch(mid + 1, e, a, k, n, t);
     }
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, t, mn = INT_MAX, cnt = 0, sum = 0;
     cin >> k >> t >> n;
     vector<int> a(n);
@@ -90,7 +104,6 @@ void solve(int tc) {
 
     binarySearch(mn * t, sum * t, a, k, n, t);
     cout << ans << endl;
-
 }
 int32_t main()
 {
@@ -98,7 +111,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;
