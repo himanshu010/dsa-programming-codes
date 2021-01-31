@@ -23,56 +23,37 @@
 #define PQ priority_queue
 using namespace std;
 
-
-processing(int cur, int fin, int choosed) {
-
-    bool ans = 0;
-    done[canChoose[cur].F] = 1;
-    ans = processing(cur + 1, fin - 1);
-
-    if (ans == 0 and ) {
-
-    }
-}
-
-
 void solve(int tc) {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    vector<bool> done(n + 1);
-    vector<P> a(m);
-    for (int i = 0; i < ; ++i)
-    {
-        int l, r;
-        cin >> l >> r;
-        a[i] = {l, r};
-    }
+	int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+	cin >> n >> k;
+	vector<int> a(n);
+	for (int i = 0; i < n; ++i)
+	{
+		cin >> a[i];
+	}
 
-    cin >> k;
-    vector<P>canChoose(k);
-    for (int i = 0; i < k; ++i)
-    {
-        int l, r;
-        cin >> l >> r;
-        canChoose[i] = {l, r};
-    }
-
-
+	sort(a.begin(), a.end());
+	int b = ceil((float)n / (float)(k + 1));
+	for (int i = 0; i < b; ++i)
+	{
+		sum += a[i];
+	}
+	cout << sum << endl;
 
 }
 int32_t main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int tc = 1;
-    // int t;cin>>t;while(t--)
-    {
-        solve(tc);
-        tc++;
-    }
+	ios_base:: sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int tc = 1;
+	// int t;cin>>t;while(t--)
+	{
+		solve(tc);
+		tc++;
+	}
 }

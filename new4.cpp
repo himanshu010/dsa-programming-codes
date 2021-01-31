@@ -1,41 +1,85 @@
-#include <bits/stdc++.h>
-using namespace std;
-int main()
+void solve(int tc) {
+
+
+    int a, b, k; cin >> a >> b >> k;
+
+    vi boys(k);
+    vi girls(k);
+
+    for (int i = 0; i < k; i++)
+        cin >> boys[i];
+
+    for (int i = 0; i < k; i++)
+        cin >> girls[i];
+
+    vector<int>graph1[a + 5];
+    vector<int>graph2(b + 5, 0);
+
+    for (int i = 0; i < k; i++)
+    {
+        graph1[boys[i]].pb(girls[i]);
+        graph2[girls[i]]++;
+
+    }
+
+    vi suffix(a + 5, 0);
+    suffix[a] = graph1[a].size();
+    for (int i = a - 1; i > 0; i--)
+    {
+        suffix[i] = suffix[i + 1] + graph1[i].size();
+    }
+
+    int ans = 0;
+    for (int i = 1; i <= a; i++)
+    {
+
+        for (auto j : graph1[i])
+        {
+            int temp = graph2[j] - 1;
+            ans += suffix[i + 1] - temp;
+            graph2[j]--;
+        }
+
+
+    }
+    cout << ans << endl;
+
+
+
+}
+
+
+int32_t main()
 {
-    int t;
+
+
+
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+
+
+
+    int t = 1;
+
     cin >> t;
+    int tc = 1;
+
+
+
+
     while (t--)
     {
-        int n;
-        cin >> n;
-        if (n == 1)
-        {
-            cout << 1 << endl;
-            cout << 1 << " " << 1 << endl;
-            continue;
-        }
-        cout << n / 2 << endl;
-        if (n % 2 == 0)
-        {
-            int k = 1;
-            while (k < n)
-            {
-                printf("%d %d %d\n", 2, k, k + 1);
-                // cout<<2<<" "<<k<<" "<<k+1<<endl;
-                k += 2;
-            }
-        }
-        else
-        {
-            cout << 3 << " " << 1 << " " << 2 << " " << n << endl;
-            int k = 3;
-            while (k < n)
-            {
-                printf("%d %d %d\n", 2, k, k + 1);
-                // cout<<2<<' '<<k<<' '<<k+1<<endl;
-                k += 2;
-            }
-        }
+
+        solve(tc);
+
+
+        tc++;
     }
     return 0;
 }

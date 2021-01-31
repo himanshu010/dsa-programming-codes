@@ -23,42 +23,39 @@
 #define PQ priority_queue
 using namespace std;
 
-
-processing(int cur, int fin, int choosed) {
-
-    bool ans = 0;
-    done[canChoose[cur].F] = 1;
-    ans = processing(cur + 1, fin - 1);
-
-    if (ans == 0 and ) {
-
-    }
-}
-
-
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    vector<bool> done(n + 1);
-    vector<P> a(m);
-    for (int i = 0; i < ; ++i)
+    unordered_map<char, int>mp, pr;
+    string s;
+    cin >> s;
+    n = s.size();
+    for (int i = 0; i < n; ++i)
     {
-        int l, r;
-        cin >> l >> r;
-        a[i] = {l, r};
+        mp[s[i]]++;
     }
 
-    cin >> k;
-    vector<P>canChoose(k);
-    for (int i = 0; i < k; ++i)
-    {
-        int l, r;
-        cin >> l >> r;
-        canChoose[i] = {l, r};
+    int mx = INT_MIN;
+
+    for (auto x : mp) {
+        mx = max(x.S, mx);
     }
 
-
-
+    if (n & 1) {
+        if (mx <= ((n + 1) / 2)) {
+            cout << 1 << endl;
+            return;
+        }
+        cout << 0 << endl;
+        return;
+    }
+    else {
+        if (mx <= n / 2) {
+            cout << 1 << endl;
+            return;
+        }
+        cout << 0 << endl;
+        return;
+    }
 }
 int32_t main()
 {
@@ -70,7 +67,7 @@ int32_t main()
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;
-    // int t;cin>>t;while(t--)
+    int t; cin >> t; while (t--)
     {
         solve(tc);
         tc++;
