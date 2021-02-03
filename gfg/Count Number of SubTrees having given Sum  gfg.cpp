@@ -8,6 +8,7 @@ int cntSubtree(Node* root, int n) {
         }
         return (root->data);
     }
+
     int l = 0, r = 0;
     if (root->left) {
         l = cntSubtree(root->left, n);

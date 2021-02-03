@@ -23,43 +23,61 @@
 #define PQ priority_queue
 using namespace std;
 
+
+class Node
+{
+public:
+    int data;
+    Node *left, *right;
+    Node(int d) {
+        this->data = d;
+        left = NULL;
+        right = NULL;
+    }
+
+};
+
+
+int sumLeftSubtree(Node *root) {
+    if (!root->left and !root->right) {
+        return root->data;
+    }
+
+    int l = 0, r = 0;
+
+    if (root->left) {
+        l = sumLeftSubtree(root->left);
+    }
+    if (root->right) {
+        r = sumLeftSubtree(root->right);
+    }
+
+    int d = root->data;
+    root->data += l;
+    return l + r + d;
+}
+
+void inorder(Node* node)
+{
+    if (node == NULL)
+        return;
+    inorder(node->left);
+    cout << node->data << " ";
+    inorder(node->right);
+}
+
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; ++i)
-    {
-        cin >> a[i];
-    }
 
+    Node *root = new Node(1);
+    root->left     = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+    root->right->right = new Node(6);
 
-    vector<bool> b(n, 0);
-    if (a[0] & 1) {
-        b[0] = 1;
-    }
-
-
-    for (int i = 1; i < n; ++i)
-    {
-        if (b[i - 1]) {
-            if (a[i] % 2 == 0) {
-                b[i] = 1;
-            }
-        }
-        else {
-            if (a[i] & 1) {
-                b[i] = 1;
-            }
-        }
-    }
-
-    if (b[n - 1]) {
-        cout << 2 << endl;
-        return;
-    }
-    cout << 1 << endl;
-    return;
-
+    sumLeftSubtree(root);
+    inorder(root);
 
 }
 int32_t main()
@@ -72,7 +90,7 @@ int32_t main()
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;
-    int t; cin >> t; while (t--)
+    // int t;cin>>t;while(t--)
     {
         solve(tc);
         tc++;
