@@ -1,5 +1,6 @@
-class Solution {
-public:
+class Solution
+{
+  public:
     vector<long long int> minimumSquares(long long int L, long long int B)
     {
         vector<long long int> ans;

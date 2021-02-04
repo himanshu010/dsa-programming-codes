@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -37,20 +37,24 @@ Node *newNode(int key)
     return temp;
 }
 
-
-int diameter(Node *root) {
+int diameter(Node *root)
+{
     int mx1 = 0, mx2 = 0;
-    if (root->child.size() == 0) {
+    if (root->child.size() == 0)
+    {
         return 1;
     }
 
-    for (auto x : root->child) {
+    for (auto x : root->child)
+    {
         int temp = diameter(x);
-        if (temp > mx1) {
+        if (temp > mx1)
+        {
             mx1 = temp;
             mx2 = mx1;
         }
-        else if (temp > mx2) {
+        else if (temp > mx2)
+        {
             mx2 = temp;
         }
     }
@@ -59,7 +63,8 @@ int diameter(Node *root) {
     return mx1 + 1;
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     Node *root = newNode('A');
     (root->child).push_back(newNode('B'));
@@ -76,10 +81,8 @@ void solve(int tc) {
     (root->child[0]->child[0]->child).push_back(newNode('M'));
     (root->child[3]->child[2]->child).push_back(newNode('L'));
 
-
     mx = max(mx, diameter(root));
     cout << mx << endl;
-
 }
 int32_t main()
 {
@@ -87,7 +90,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

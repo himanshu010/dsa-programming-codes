@@ -1,7 +1,8 @@
-void solve(int tc) {
+void solve(int tc)
+{
 
-
-    int a, b, k; cin >> a >> b >> k;
+    int a, b, k;
+    cin >> a >> b >> k;
 
     vi boys(k);
     vi girls(k);
@@ -12,14 +13,13 @@ void solve(int tc) {
     for (int i = 0; i < k; i++)
         cin >> girls[i];
 
-    vector<int>graph1[a + 5];
-    vector<int>graph2(b + 5, 0);
+    vector<int> graph1[a + 5];
+    vector<int> graph2(b + 5, 0);
 
     for (int i = 0; i < k; i++)
     {
         graph1[boys[i]].pb(girls[i]);
         graph2[girls[i]]++;
-
     }
 
     vi suffix(a + 5, 0);
@@ -39,21 +39,12 @@ void solve(int tc) {
             ans += suffix[i + 1] - temp;
             graph2[j]--;
         }
-
-
     }
     cout << ans << endl;
-
-
-
 }
-
 
 int32_t main()
 {
-
-
-
 
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -62,22 +53,15 @@ int32_t main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-
-
-
     int t = 1;
 
     cin >> t;
     int tc = 1;
 
-
-
-
     while (t--)
     {
 
         solve(tc);
-
 
         tc++;
     }
