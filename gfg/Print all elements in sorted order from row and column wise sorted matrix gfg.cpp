@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -23,36 +23,40 @@
 #define PQ priority_queue
 using namespace std;
 
-
-void changeMatrix(vvi &a, int n, int m, int i, int j) {
+void changeMatrix(vvi &a, int n, int m, int i, int j)
+{
     int rightValue = j + 1 < m ? a[i][j + 1] : INT_MAX;
     int downValue = i + 1 < n ? a[i + 1][j] : INT_MAX;
 
-    if (rightValue == INT_MAX and downValue == INT_MAX) {
+    if (rightValue == INT_MAX and downValue == INT_MAX)
+    {
         return;
     }
 
-
-    if (downValue < rightValue) {
+    if (downValue < rightValue)
+    {
         a[i][j] = downValue;
         a[i + 1][j] = INT_MAX;
         changeMatrix(a, n, m, i + 1, j);
     }
-    else {
+    else
+    {
         a[i][j] = rightValue;
         a[i][j + 1] = INT_MAX;
         changeMatrix(a, n, m, i, j + 1);
     }
 }
 
-int calculateSmallest(vvi &a, int n, int m) {
+int calculateSmallest(vvi &a, int n, int m)
+{
 
     changeMatrix(a, n, m, 0, 0);
 
     return a[0][0];
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> m;
     vector<vector<int>> a(n, vector<int>(m));
@@ -69,11 +73,10 @@ void solve(int tc) {
     {
         cout << calculateSmallest(a, n, m) << ' ';
     }
-
 }
 int32_t main()
 {
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

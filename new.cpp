@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -23,12 +23,14 @@
 #define PQ priority_queue
 using namespace std;
 
-int quickSortHelper(int *a, int s, int e) {
+int quickSortHelper(int *a, int s, int e)
+{
     int k = s;
     int pi = e;
-    for (int i = s; i < e ; ++i)
+    for (int i = s; i < e; ++i)
     {
-        if (a[i] <= a[pi]) {
+        if (a[i] <= a[pi])
+        {
             swap(a[i], a[k]);
             k++;
         }
@@ -37,9 +39,10 @@ int quickSortHelper(int *a, int s, int e) {
     return k;
 }
 
-
-void quickSort(int *a, int s, int e) {
-    if (s >= e) {
+void quickSort(int *a, int s, int e)
+{
+    if (s >= e)
+    {
         return;
     }
 
@@ -48,7 +51,8 @@ void quickSort(int *a, int s, int e) {
     quickSort(a, pivot + 1, e);
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
     int a[n];
@@ -61,12 +65,10 @@ void solve(int tc) {
     {
         cout << a[i] << ' ';
     }
-
-
 }
 int32_t main()
 {
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

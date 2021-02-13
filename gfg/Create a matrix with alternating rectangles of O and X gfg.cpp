@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -23,18 +23,14 @@
 #define PQ priority_queue
 using namespace std;
 
-vector<P> dir = {
-    {0, 1},
-    {1, 0},
-    {0, -1},
-    { -1, 0}
-};
+vector<P> dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> m;
 
-    vector<vector<char>>a(n, vector<char>(m));
+    vector<vector<char>> a(n, vector<char>(m));
 
     // for (int i = 0; i < n; ++i)
     // {
@@ -44,20 +40,29 @@ void solve(int tc) {
     //     }
     // }
     int sr, er, sc, ec;
-    sr = 0; er = n - 1; sc = 0; ec = m - 1;
-    i = 0; j = 0;
+    sr = 0;
+    er = n - 1;
+    sc = 0;
+    ec = m - 1;
+    i = 0;
+    j = 0;
     P cur_dir = dir[0];
-    while (sum < n * m) {
-        if (j == ec and cur_dir == dir[0]) {
+    while (sum < n * m)
+    {
+        if (j == ec and cur_dir == dir[0])
+        {
             cur_dir = dir[1];
         }
-        if (i == er and cur_dir == dir[1]) {
+        if (i == er and cur_dir == dir[1])
+        {
             cur_dir = dir[2];
         }
-        if (j == sc and cur_dir == dir[2]) {
+        if (j == sc and cur_dir == dir[2])
+        {
             cur_dir = dir[3];
         }
-        if (i == sr and cur_dir == dir[3]) {
+        if (i == sr and cur_dir == dir[3])
+        {
             cnt += 1;
             cur_dir = dir[0];
             sr++;
@@ -68,10 +73,12 @@ void solve(int tc) {
             j += 1;
         }
 
-        if (cnt % 2 == 0) {
+        if (cnt % 2 == 0)
+        {
             a[i][j] = 'X';
         }
-        else {
+        else
+        {
             a[i][j] = 'O';
         }
 
@@ -80,13 +87,14 @@ void solve(int tc) {
         sum += 1;
     }
 
-    for (auto x : a) {
-        for (char y : x) {
+    for (auto x : a)
+    {
+        for (char y : x)
+        {
             cout << y << ' ';
         }
         cout << endl;
     }
-
 }
 int32_t main()
 {
@@ -94,7 +102,7 @@ int32_t main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;
