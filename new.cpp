@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int, int>
+#define P pair<int,int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -23,72 +23,50 @@
 #define PQ priority_queue
 using namespace std;
 
-class Node
-{
-  public:
-    int data;
-    Node *left, *right;
-    Node(int d)
+int quickSortHelper(int *a, int s, int e) {
+    int k = s;
+    int pi = e;
+    for (int i = s; i < e ; ++i)
     {
-        this->data = d;
-        left = NULL;
-        right = NULL;
+        if (a[i] <= a[pi]) {
+            swap(a[i], a[k]);
+            k++;
+        }
     }
-};
-
-int sumLeftSubtree(Node *root)
-{
-    if (!root->left and !root->right)
-    {
-        return root->data;
-    }
-
-    int l = 0, r = 0;
-
-    if (root->left)
-    {
-        l = sumLeftSubtree(root->left);
-    }
-    if (root->right)
-    {
-        r = sumLeftSubtree(root->right);
-    }
-
-    int d = root->data;
-    root->data += l;
-    return l + r + d;
+    swap(a[k], a[pi]);
+    return k;
 }
 
-void inorder(Node *node)
-{
-    if (node == NULL)
+
+void quickSort(int *a, int s, int e) {
+    if (s >= e) {
         return;
-    inorder(node->left);
-    cout << node->data << " ";
-    inorder(node->right);
+    }
+
+    int pivot = quickSortHelper(a, s, e);
+    quickSort(a, s, pivot - 1);
+    quickSort(a, pivot + 1, e);
 }
 
-void solve(int tc)
-{
+void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> a[i];
+    }
+    quickSort(a, 0, n - 1);
+    for (int i = 0; i < n; ++i)
+    {
+        cout << a[i] << ' ';
+    }
 
-    Node *root = new Node(1);
-    root->left = new Node(2);
-    root->right = new Node(3);
-    root->left->left = new Node(4);
-    root->left->right = new Node(5);
-    root->right->right = new Node(6);
 
-    sumLeftSubtree(root);
-    inorder(root);
 }
 int32_t main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(false);
+    ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

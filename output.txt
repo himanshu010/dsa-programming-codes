@@ -1,1 +1,1 @@
-4 6 5 12 3 6 
+Elements of matrix in sorted order n10 15 20 25 27 29 30 32 33 35 37 39 40 45 48 50 
