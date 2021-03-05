@@ -1,0 +1,30 @@
+name: test
+
+on:
+  push:
+    branches:
+      - master
+      - st3_windows_x32
+      - st3_windows_x64
+
+jobs:
+  windows:
+    if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/st3_windows')
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x32, x64]
+    env:
+      SUBLIME_TEXT_ARCH: ${{ matrix.arch }}
+      UNITTESTING_TAG: master
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup
+        run:  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/SublimeText/UnitTesting/master/sbin/github.ps1" -OutFile "github.ps1"
+      - name: Run tests
+        run: |
+          # make sure we don't depend on any DLLs in the system
+          $env:PATH = "C:\Program Files\Git\bin;C:\windows\system32;C:\windows;"
+          ./github.ps1 "bootstrap" -verbose
+          ./github.ps1 "run_tests" -coverage -verbose

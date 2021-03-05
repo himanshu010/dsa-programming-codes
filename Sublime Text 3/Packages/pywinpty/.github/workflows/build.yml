@@ -1,0 +1,92 @@
+name: build
+
+on: repository_dispatch
+
+jobs:
+  windows:
+    if: github.event.action == 'build'
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x32, x64]
+    steps:
+      - name: Setup Miniconda
+        run: |
+          $ErrorActionPreference = "Continue"
+          $env:PATH = "$env:CONDA;$env:CONDA\Scripts;$env:PATH"
+          conda init powershell
+      - name: Build
+        run: |
+          $ErrorActionPreference = "Continue"
+          conda config --set allow_conda_downgrades true
+          conda install conda=4.5.12 -y
+          If ('${{ matrix.arch }}' -eq 'x32') {
+            $env:CONDA_FORCE_32BIT = 1
+          }
+          conda create -n py33 python=3.3 -c conda-forge -y
+          conda activate py33
+          conda install cython winpty m2w64-toolchain libpython -y
+          python -m pip install -U -I setuptools==39
+          # python -m pip install pip==10
+          # pip download --python-version 33 --no-deps pywinpty
+          # or a specific version
+          pip download pywinpty==0.5.7
+          $TAR = $(Get-ChildItem pywinpty*tar.gz).name
+          tar xzf $TAR
+          cd $($TAR -replace ".tar.gz", "")
+          $env:LIBRARY_INC = "$env:CONDA\envs\py33\Library\include"
+          $env:LIBRARY_LIB = "$env:CONDA\envs\py33\Library\lib"
+          python setup.py build_ext -i
+
+          # https://github.com/spyder-ide/pywinpty/blob/master/appveyor/publish.ps1
+          $LIB_BIN_PATH = "Library\bin"
+          $CONDA_ENV_PATH = split-path -Path ((Get-Command python).Path)
+          $CONDA_ENV_PATH
+          $CONDA_ENV_BIN = join-path $CONDA_ENV_PATH $LIB_BIN_PATH
+          $WINPTY_EXE = join-path $CONDA_ENV_BIN "winpty-agent.exe"
+          $WINPTY_DLL = join-path $CONDA_ENV_BIN "winpty.dll"
+
+          $MINGW_PATH = split-path -Path ((Get-Command gcc).Path)
+          $MINGW_PATH
+          $LIB_GCC_32 = join-path $MINGW_PATH "libgcc_s_dw2-1.dll"
+          $LIB_GCC_64 = join-path $MINGW_PATH "libgcc_s_seh-1.dll"
+          $LIBPTHREAD = join-path $MINGW_PATH "libwinpthread-1.dll"
+
+          $FOLDER = "winpty\"
+          # Copy winpty binaries to winpty folder
+          copy-item $WINPTY_EXE $FOLDER
+          # copy-item $WINPTY_DEBUG $FOLDER
+          copy-item $WINPTY_DLL $FOLDER
+          copy-item $LIBPTHREAD $FOLDER
+          If ('${{ matrix.arch }}' -eq 'x64') {
+              copy-item $LIB_GCC_64 $FOLDER
+          } else  {
+              copy-item $LIB_GCC_32 $FOLDER
+          }
+          python setup.py bdist_wheel
+
+      - name: Push to branch
+        run: |
+          TAR=$(echo pywinpty*.tar.gz)
+          cd ${TAR%.tar.gz}
+          mkdir -p /tmp/pywinpty
+          LICENSE=$(echo LICENS*) && [ -f "$LICENSE" ] && cp "$LICENSE" /tmp/pywinpty
+          cd dist
+          WHL=$(echo pywinpty*.whl)
+          unzip -d /tmp/pywinpty $WHL
+          rm -rf /tmp/pywinpty/*.dist-info
+          git config --global user.email bot@packagecontrol.github.io
+          git config --global user.name packagecontrol
+          git clone https://${{github.actor}}:${{secrets.GITHUB_PAT}}@github.com/${{github.repository}}.git project
+          ARCH=${{ matrix.arch }}
+          cd project
+          git checkout -b "st3_windows_$ARCH"
+          rm -rf "st3_windows_$ARCH"
+          mkdir -p "st3_windows_$ARCH"
+          cp -r /tmp/pywinpty/* "st3_windows_$ARCH/"
+          git add -A
+          git commit -m "build st3_windows_$ARCH"
+          git push -f -u origin st3_windows_$ARCH
+        shell:
+          bash

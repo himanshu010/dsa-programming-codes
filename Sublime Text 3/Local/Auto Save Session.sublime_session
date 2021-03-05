@@ -1,0 +1,2981 @@
+{
+	"folder_history":
+	[
+	],
+	"last_version": 3211,
+	"last_window_id": 11,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 416.666666667,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"in",
+						"insert"
+					],
+					[
+						"n",
+						"new\tnew"
+					],
+					[
+						"mod",
+						"modulusTree"
+					],
+					[
+						"upd",
+						"updateModulusTree"
+					],
+					[
+						"qu",
+						"query"
+					],
+					[
+						"build",
+						"buildModulusTree"
+					],
+					[
+						"up",
+						"updateTree"
+					],
+					[
+						"sumTr",
+						"sumTree"
+					],
+					[
+						"buil",
+						"buildSumTree"
+					],
+					[
+						"quick",
+						"quickSort_Helper"
+					],
+					[
+						"pi",
+						"pivot"
+					],
+					[
+						"qui",
+						"quickSort"
+					],
+					[
+						"mer",
+						"merge"
+					],
+					[
+						"m",
+						"m"
+					],
+					[
+						"re",
+						"requireUmbrellas"
+					],
+					[
+						"begi",
+						"beginend\t$1.begin(), $1.end()"
+					],
+					[
+						"io",
+						"iostream\tstandard header"
+					],
+					[
+						"s",
+						"s"
+					],
+					[
+						"sum",
+						"sumLeftSubtree"
+					],
+					[
+						"par",
+						"parR"
+					],
+					[
+						"pa",
+						"parL"
+					],
+					[
+						"fla",
+						"float"
+					],
+					[
+						"dst",
+						"dst_c"
+					],
+					[
+						"ds",
+						"dst_c"
+					],
+					[
+						"ne",
+						"next_c"
+					],
+					[
+						"fi",
+						"findMaxPath"
+					],
+					[
+						"sr",
+						"src_r"
+					],
+					[
+						"src",
+						"src_c"
+					],
+					[
+						"nex",
+						"next_r"
+					],
+					[
+						"e",
+						"endif"
+					],
+					[
+						"next",
+						"next_r"
+					],
+					[
+						"ma",
+						"marked"
+					],
+					[
+						"str",
+						"string"
+					],
+					[
+						"ti",
+						"tillNow"
+					],
+					[
+						"i",
+						"i"
+					],
+					[
+						"che",
+						"chessboard"
+					],
+					[
+						"query",
+						"queryLeft"
+					],
+					[
+						"se",
+						"segmenttree\tsegment tree snippet"
+					],
+					[
+						"que",
+						"queryRight"
+					],
+					[
+						"a",
+						"alpha"
+					],
+					[
+						"pri",
+						"printOrder"
+					],
+					[
+						"p",
+						"push"
+					],
+					[
+						"ans",
+						"ans3b"
+					],
+					[
+						"input",
+						"input3"
+					],
+					[
+						"inp",
+						"input1"
+					],
+					[
+						"max",
+						"maxDistance"
+					],
+					[
+						"long",
+						"longestPathBFS"
+					],
+					[
+						"st",
+						"students"
+					],
+					[
+						"visi",
+						"visited"
+					],
+					[
+						"end",
+						"endTime"
+					],
+					[
+						"be",
+						"beginend\t$1.begin(), $1.end()"
+					],
+					[
+						"pare",
+						"parent"
+					],
+					[
+						"pre",
+						"parentR"
+					],
+					[
+						"vi",
+						"visited"
+					],
+					[
+						"beg",
+						"begin"
+					],
+					[
+						"su",
+						"sub"
+					],
+					[
+						"cou",
+						"countSubsequences"
+					],
+					[
+						"__",
+						"____INCREASING___"
+					],
+					[
+						"fir",
+						"first_Part"
+					],
+					[
+						"bi",
+						"binarySearch"
+					],
+					[
+						"INT",
+						"INT_MAX"
+					],
+					[
+						"min",
+						"minSteps"
+					],
+					[
+						"cur",
+						"cur_Y"
+					],
+					[
+						"ste",
+						"steps-1"
+					],
+					[
+						"co",
+						"continue"
+					],
+					[
+						"inu",
+						"input2"
+					],
+					[
+						"inpu",
+						"input1"
+					],
+					[
+						"lo",
+						"longestPalindrome"
+					],
+					[
+						"de",
+						"dec"
+					],
+					[
+						"inc",
+						"increasing"
+					],
+					[
+						"int",
+						"INT_MIN"
+					],
+					[
+						"mi",
+						"minimums"
+					]
+				]
+			},
+			"build_system_choices":
+			[
+				[
+					[
+						[
+							"Packages/C++/C++ Single File.sublime-build",
+							""
+						],
+						[
+							"Packages/C++/C++ Single File.sublime-build",
+							"Run"
+						]
+					],
+					[
+						"Packages/C++/C++ Single File.sublime-build",
+						"Run"
+					]
+				],
+				[
+					[
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							""
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"All Syntaxes"
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"Performance"
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"Regex Compatibility"
+						]
+					],
+					[
+						"Packages/Default/Syntax Tests.sublime-build",
+						""
+					]
+				]
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"Snippet: ",
+						"Snippet: #include <…>"
+					],
+					[
+						"waka",
+						"WakaTime: Open Dashboard"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"ins",
+						"Package Control: Install Package"
+					],
+					[
+						"termin",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"inst",
+						"Package Control: Install Package"
+					],
+					[
+						"shell",
+						"Set Syntax: Bourne Again Shell (bash)"
+					]
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 288.0,
+				"history":
+				[
+					"git"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/C/Users/him97/Desktop/C++/out05.txt",
+				"/C/Users/him97/Desktop/C++/new3.cpp",
+				"/C/Users/him97/Desktop/C++/new2.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Non Repeating Numbers gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Incremental queries HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/snippets/segment tree snippet.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/segment tree.cpp",
+				"/C/Users/him97/Desktop/C++/gcd-recursive-modulus.cpp",
+				"/C/Users/him97/Desktop/C++/new5.cpp",
+				"/C/Users/him97/Desktop/C++/lcs longest common subsequence dp.cpp",
+				"/C/Users/him97/Desktop/C++/sorts/quick sort.cpp",
+				"/C/Users/him97/Desktop/C++/sorts/merge sort.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print all elements in sorted order from row and column wise sorted matrix gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new4.cpp",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/new.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/C++ (without extra line).sublime-build",
+				"/C/Users/him97/Desktop/C++/output.txt",
+				"/C/Users/him97/Desktop/C++/input.txt",
+				"/C/Users/him97/Desktop/C++/gfg/Create a matrix with alternating rectangles of O and X gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print Diagonally gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Change a Binary Tree so that every node stores sum of all nodes in left subtree including its own gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Construct Binary Tree from given Parent Array representation gfg.cpp",
+				"/C/Users/him97/Desktop/C++/preorder inorder postorder traversal.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Construct tree from ancestor matrix gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Vertical Traversal of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diagonal Traversal of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Number of SubTrees having given Sum  gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diameter of an N-ary tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diameter of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/dsu disjoint set union.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Boundary of a tree.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/7 Segment Display gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/reverse a linked list gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find k pairs with smallest sums in two arrays gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new5.exe",
+				"/C/Users/him97/Desktop/C++/gfg/Minimum cost for acquiring all coins with k extra coins allowed with every coin gfg.cpp",
+				"/C/Users/him97/Desktop/C++/prime-factorization-sieve.cpp",
+				"/C/Users/him97/Desktop/C++/out",
+				"/C/Users/him97/Desktop/C++/gfg/Rearrange characters gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Min sum formed by digits gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Cutting Rectangles gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find minimum time to finish all jobs with given constraints gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Max length chain gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Fractional Knapsack gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Common Subsequence gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Job Sequencing Problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/N meetings in one room gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Possible Route in a Matrix with Hurdles gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Combinational Sum gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/The Knight’s tour problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find shortest safe route in a path with landmines gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Word Break - Part 2 gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/word break problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Remove Invalid Parentheses gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Sudoku Backtracking gfg.cpp",
+				"/C/Users/him97/Desktop/C++/kmp pattern matching.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Implement two stacks in an array gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Jumping Numbers gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Alien Dictionary gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Snake and Ladder Problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Max Circular Subarray Sum gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Detect cycle in a directed graph gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Detect cycle in an undirected graph gfg.cpp",
+				"/C/Users/him97/Desktop/C++/kruskal mst simplified.cpp",
+				"/C/Users/him97/Desktop/C++/articulation point and bridge graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count all possible paths between two vertices gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Find a Mother Vertex in a Graph gfg.cpp",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/fenwick ( BIT ) tree snippet.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/graph weighted.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/graph.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/new.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/graph weighted.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/graph.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest path in a directed Acyclic graph (without edge weight) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Word Ladder LeetCode.cpp",
+				"/C/Users/him97/Desktop/C++/sssp bfs simple.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Strongly Connected Components (Kosaraju's Algo) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/perfect friends PepCoding.cpp",
+				"/C/Users/him97/Desktop/C++/kosaraju algo graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Friend Circles Problem iDeserve.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Oliver and the Game HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/dijkstra algo graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Minimizing Path Cost HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Chocolate Journey HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/dijkstra simplified.cpp",
+				"/C/Users/him97/Desktop/C++/kruskal mst simplified",
+				"/C/Users/him97/Desktop/C++/kruskal algo minimum spanning tree.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/We Are On Fire HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Connected Horses HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Monk and the Islands HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Dhoom 4 HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Cheapest Flights Within K Stops Leetcode.cpp",
+				"/C/Users/him97/Desktop/C++/Course Schedule II Leetcode.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Even Tree HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Journey to the Moon HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/new.exe",
+				"/C/Users/him97/Desktop/C++/gfg/Roads and Libraries HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find all the patterns of “1(0+)1” in a given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Given a string, find its first non-repeating character gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Distinct Subsequences gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find number of times a string occurs as a subsequence in given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Number of subsequences of the form a^i b^j c^k gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Search a Word in a 2D Grid of characters gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Given two strings, find if first string is a subsequence of second gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find largest word in dictionary by deleting some characters of given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Min flips of continuous characters to make all characters same in a string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/shortest common supersequence gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count binary strings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count of total anagram substrings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Queries on Strings gfg dp accepted.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Queries on Strings gfg TLE.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Distinct palindromic substrings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count of words whose i-th letter is either (i-1)-th, i-th, or (i+1)-th letter of given word gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find k’th character of decrypted string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/String Merging STRMRG codechef.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Non-palindromic substring gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Make largest palindrome by changing at most K-digits gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Longest Palindrome in a String gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Check if two strings are k-anagrams or not gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Occurences of Anagrams gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print Anagrams Together gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Consecutive 1's not allowed gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Probability of Knight gfg.cpp",
+				"/C/Users/him97/Desktop/C++/agressive cows spoj.cpp",
+				"/C/Users/him97/Desktop/C++/floyd warshall algo shortest distance.cpp",
+				"/C/Users/him97/Desktop/C++/lazy propagation in segment tree.cpp"
+			],
+			"find":
+			{
+				"height": 23.0
+			},
+			"find_in_files":
+			{
+				"height": 430.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"a",
+					"d",
+					"ll",
+					"int ",
+					"prime",
+					"nextPrime",
+					"isPrime",
+					"64",
+					"string",
+					"'",
+					"i",
+					"tree",
+					"INT_MIN",
+					"n",
+					"b",
+					"a1",
+					"sum",
+					"push_back",
+					"mpb",
+					",",
+					"sa",
+					"i",
+					"int",
+					"= 1000000",
+					"1000001",
+					"t",
+					"string",
+					"int",
+					"meeting_time",
+					"node",
+					"inorder",
+					"nod",
+					"y",
+					"       ",
+					"      ",
+					"int",
+					"       ",
+					"INT_MIN",
+					"x",
+					"temp ",
+					"d",
+					"init",
+					"arr",
+					"(float)",
+					",",
+					"n",
+					"a",
+					"int",
+					"ans",
+					"sieve",
+					"d1",
+					"d",
+					"ong long int",
+					"  ",
+					",",
+					"}",
+					"{",
+					" ",
+					"c",
+					"r",
+					"[",
+					"]",
+					"queue",
+					"stack",
+					",",
+					"a",
+					"100005",
+					"flag",
+					"int",
+					"8",
+					"5",
+					"8",
+					"5",
+					"8",
+					"i",
+					"n",
+					"int",
+					"ans",
+					"x",
+					"int",
+					"temp",
+					"int",
+					"x",
+					"rows",
+					"int",
+					"dfs",
+					"src",
+					"cur",
+					"src",
+					"ans3",
+					"visited",
+					"src",
+					"input1",
+					"a",
+					"input1",
+					"ei",
+					"si",
+					"ans",
+					"0LL",
+					"src",
+					"n + 1",
+					"no",
+					"a[i]",
+					"vi",
+					"int",
+					"No",
+					"Yes",
+					"cur",
+					"int",
+					"city",
+					"mp",
+					"distance1",
+					"x",
+					"a[i]",
+					"bool",
+					"cur",
+					"float",
+					"int",
+					"a",
+					"i",
+					"ei",
+					"li",
+					"arr",
+					"arr1",
+					"int",
+					"i",
+					"0",
+					"cnt"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 23.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.Terminus":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 2":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 3":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 4":
+			{
+				"height": 108.0
+			},
+			"output.astyle_error_message":
+			{
+				"height": 126.0
+			},
+			"output.exec":
+			{
+				"height": 196.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "Packages/User/C++ (without extra line).sublime-build",
+			"replace":
+			{
+				"height": 42.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"n",
+						"C:\\Users\\him97\\Desktop\\C++\\new.cpp"
+					],
+					[
+						"lo",
+						"C:\\Users\\him97\\Desktop\\C++\\gfg\\Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp"
+					],
+					[
+						"",
+						"C:\\Users\\him97\\Desktop\\C++\\gfg\\Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+				"max_columns": 2
+			}
+		},
+		"new_window_width": 761.333333333
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"in",
+						"insert"
+					],
+					[
+						"n",
+						"new\tnew"
+					],
+					[
+						"mod",
+						"modulusTree"
+					],
+					[
+						"upd",
+						"updateModulusTree"
+					],
+					[
+						"qu",
+						"query"
+					],
+					[
+						"build",
+						"buildModulusTree"
+					],
+					[
+						"up",
+						"updateTree"
+					],
+					[
+						"sumTr",
+						"sumTree"
+					],
+					[
+						"buil",
+						"buildSumTree"
+					],
+					[
+						"quick",
+						"quickSort_Helper"
+					],
+					[
+						"pi",
+						"pivot"
+					],
+					[
+						"qui",
+						"quickSort"
+					],
+					[
+						"mer",
+						"merge"
+					],
+					[
+						"m",
+						"m"
+					],
+					[
+						"re",
+						"requireUmbrellas"
+					],
+					[
+						"begi",
+						"beginend\t$1.begin(), $1.end()"
+					],
+					[
+						"io",
+						"iostream\tstandard header"
+					],
+					[
+						"s",
+						"s"
+					],
+					[
+						"sum",
+						"sumLeftSubtree"
+					],
+					[
+						"par",
+						"parR"
+					],
+					[
+						"pa",
+						"parL"
+					],
+					[
+						"fla",
+						"float"
+					],
+					[
+						"dst",
+						"dst_c"
+					],
+					[
+						"ds",
+						"dst_c"
+					],
+					[
+						"ne",
+						"next_c"
+					],
+					[
+						"fi",
+						"findMaxPath"
+					],
+					[
+						"sr",
+						"src_r"
+					],
+					[
+						"src",
+						"src_c"
+					],
+					[
+						"nex",
+						"next_r"
+					],
+					[
+						"e",
+						"endif"
+					],
+					[
+						"next",
+						"next_r"
+					],
+					[
+						"ma",
+						"marked"
+					],
+					[
+						"str",
+						"string"
+					],
+					[
+						"ti",
+						"tillNow"
+					],
+					[
+						"i",
+						"i"
+					],
+					[
+						"che",
+						"chessboard"
+					],
+					[
+						"query",
+						"queryLeft"
+					],
+					[
+						"se",
+						"segmenttree\tsegment tree snippet"
+					],
+					[
+						"que",
+						"queryRight"
+					],
+					[
+						"a",
+						"alpha"
+					],
+					[
+						"pri",
+						"printOrder"
+					],
+					[
+						"p",
+						"push"
+					],
+					[
+						"ans",
+						"ans3b"
+					],
+					[
+						"input",
+						"input3"
+					],
+					[
+						"inp",
+						"input1"
+					],
+					[
+						"max",
+						"maxDistance"
+					],
+					[
+						"long",
+						"longestPathBFS"
+					],
+					[
+						"st",
+						"students"
+					],
+					[
+						"visi",
+						"visited"
+					],
+					[
+						"end",
+						"endTime"
+					],
+					[
+						"be",
+						"beginend\t$1.begin(), $1.end()"
+					],
+					[
+						"pare",
+						"parent"
+					],
+					[
+						"pre",
+						"parentR"
+					],
+					[
+						"vi",
+						"visited"
+					],
+					[
+						"beg",
+						"begin"
+					],
+					[
+						"su",
+						"sub"
+					],
+					[
+						"cou",
+						"countSubsequences"
+					],
+					[
+						"__",
+						"____INCREASING___"
+					],
+					[
+						"fir",
+						"first_Part"
+					],
+					[
+						"bi",
+						"binarySearch"
+					],
+					[
+						"INT",
+						"INT_MAX"
+					],
+					[
+						"min",
+						"minSteps"
+					],
+					[
+						"cur",
+						"cur_Y"
+					],
+					[
+						"ste",
+						"steps-1"
+					],
+					[
+						"co",
+						"continue"
+					],
+					[
+						"inu",
+						"input2"
+					],
+					[
+						"inpu",
+						"input1"
+					],
+					[
+						"lo",
+						"longestPalindrome"
+					],
+					[
+						"de",
+						"dec"
+					],
+					[
+						"inc",
+						"increasing"
+					],
+					[
+						"int",
+						"INT_MIN"
+					],
+					[
+						"mi",
+						"minimums"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"contents": "class Solution\n{\npublic:\n    bool checkKthBitSet(int n, int k) {\n        int i = 1;\n        while (i < k) {\n            n >>= 1;\n            i++;\n        }\n\n        if (n & 1) {\n            return true;\n        }\n        return false;\n    }\n    vector<int> singleNumber(vector<int> a)\n    {\n        int n = a.size();\n        int x = 0;\n        for (int i = 0; i < n; i++) {\n            x ^= a[i];\n        }\n        vector<int>ans(2);\n\n        int rm = log2(x & (-x)) + 1;\n        int b = 0, c = 0;\n        for (int i = 0; i < n; i++) {\n            if (checkKthBitSet(a[i], rm)) {\n                b ^= a[i];\n            }\n            else {\n                c ^= a[i];\n            }\n        }\n\n        ans[0] = min(b, c);\n        ans[1] = max(b, c);\n        return ans;\n    }\n};",
+					"file": "/C/Users/him97/Desktop/C++/new.cpp",
+					"file_size": 817,
+					"file_write_time": 132591757505166744,
+					"settings":
+					{
+						"buffer_size": 776,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"contents": "4\nAABBAC\nCACA\nBBBBAC\nABCA\n",
+					"file": "/C/Users/him97/Desktop/C++/inputf.in",
+					"file_size": 22,
+					"file_write_time": 132591607075611651,
+					"settings":
+					{
+						"buffer_size": 26,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/C/Users/him97/Desktop/C++/outputf.in",
+					"settings":
+					{
+						"buffer_size": 5,
+						"line_ending": "Windows"
+					}
+				}
+			],
+			"build_system": "Packages/Default/Syntax Tests.sublime-build",
+			"build_system_choices":
+			[
+				[
+					[
+						[
+							"Packages/C++/C++ Single File.sublime-build",
+							""
+						],
+						[
+							"Packages/C++/C++ Single File.sublime-build",
+							"Run"
+						]
+					],
+					[
+						"Packages/C++/C++ Single File.sublime-build",
+						"Run"
+					]
+				],
+				[
+					[
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							""
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"All Syntaxes"
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"Performance"
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"Regex Compatibility"
+						]
+					],
+					[
+						"Packages/Default/Syntax Tests.sublime-build",
+						""
+					]
+				]
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"Snippet: ",
+						"Snippet: #include <…>"
+					],
+					[
+						"waka",
+						"WakaTime: Open Dashboard"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"ins",
+						"Package Control: Install Package"
+					],
+					[
+						"termin",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"inst",
+						"Package Control: Install Package"
+					],
+					[
+						"shell",
+						"Set Syntax: Bourne Again Shell (bash)"
+					]
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 288.0,
+				"history":
+				[
+					"git"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/C/Users/him97/Desktop/C++/out05.txt",
+				"/C/Users/him97/Desktop/C++/new3.cpp",
+				"/C/Users/him97/Desktop/C++/new2.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Non Repeating Numbers gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Incremental queries HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/snippets/segment tree snippet.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/segment tree.cpp",
+				"/C/Users/him97/Desktop/C++/gcd-recursive-modulus.cpp",
+				"/C/Users/him97/Desktop/C++/new5.cpp",
+				"/C/Users/him97/Desktop/C++/lcs longest common subsequence dp.cpp",
+				"/C/Users/him97/Desktop/C++/sorts/quick sort.cpp",
+				"/C/Users/him97/Desktop/C++/sorts/merge sort.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print all elements in sorted order from row and column wise sorted matrix gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new4.cpp",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/new.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/C++ (without extra line).sublime-build",
+				"/C/Users/him97/Desktop/C++/output.txt",
+				"/C/Users/him97/Desktop/C++/input.txt",
+				"/C/Users/him97/Desktop/C++/gfg/Create a matrix with alternating rectangles of O and X gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print Diagonally gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Change a Binary Tree so that every node stores sum of all nodes in left subtree including its own gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Construct Binary Tree from given Parent Array representation gfg.cpp",
+				"/C/Users/him97/Desktop/C++/preorder inorder postorder traversal.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Construct tree from ancestor matrix gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Vertical Traversal of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diagonal Traversal of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Number of SubTrees having given Sum  gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diameter of an N-ary tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diameter of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/dsu disjoint set union.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Boundary of a tree.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/7 Segment Display gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/reverse a linked list gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find k pairs with smallest sums in two arrays gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new5.exe",
+				"/C/Users/him97/Desktop/C++/gfg/Minimum cost for acquiring all coins with k extra coins allowed with every coin gfg.cpp",
+				"/C/Users/him97/Desktop/C++/prime-factorization-sieve.cpp",
+				"/C/Users/him97/Desktop/C++/out",
+				"/C/Users/him97/Desktop/C++/gfg/Rearrange characters gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Min sum formed by digits gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Cutting Rectangles gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find minimum time to finish all jobs with given constraints gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Max length chain gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Fractional Knapsack gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Common Subsequence gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Job Sequencing Problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/N meetings in one room gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Possible Route in a Matrix with Hurdles gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Combinational Sum gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/The Knight’s tour problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find shortest safe route in a path with landmines gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Word Break - Part 2 gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/word break problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Remove Invalid Parentheses gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Sudoku Backtracking gfg.cpp",
+				"/C/Users/him97/Desktop/C++/kmp pattern matching.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Implement two stacks in an array gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Jumping Numbers gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Alien Dictionary gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Snake and Ladder Problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Max Circular Subarray Sum gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Detect cycle in a directed graph gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Detect cycle in an undirected graph gfg.cpp",
+				"/C/Users/him97/Desktop/C++/kruskal mst simplified.cpp",
+				"/C/Users/him97/Desktop/C++/articulation point and bridge graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count all possible paths between two vertices gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Find a Mother Vertex in a Graph gfg.cpp",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/fenwick ( BIT ) tree snippet.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/graph weighted.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/graph.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/new.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/graph weighted.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/graph.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest path in a directed Acyclic graph (without edge weight) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Word Ladder LeetCode.cpp",
+				"/C/Users/him97/Desktop/C++/sssp bfs simple.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Strongly Connected Components (Kosaraju's Algo) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/perfect friends PepCoding.cpp",
+				"/C/Users/him97/Desktop/C++/kosaraju algo graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Friend Circles Problem iDeserve.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Oliver and the Game HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/dijkstra algo graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Minimizing Path Cost HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Chocolate Journey HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/dijkstra simplified.cpp",
+				"/C/Users/him97/Desktop/C++/kruskal mst simplified",
+				"/C/Users/him97/Desktop/C++/kruskal algo minimum spanning tree.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/We Are On Fire HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Connected Horses HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Monk and the Islands HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Dhoom 4 HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Cheapest Flights Within K Stops Leetcode.cpp",
+				"/C/Users/him97/Desktop/C++/Course Schedule II Leetcode.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Even Tree HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Journey to the Moon HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/new.exe",
+				"/C/Users/him97/Desktop/C++/gfg/Roads and Libraries HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find all the patterns of “1(0+)1” in a given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Given a string, find its first non-repeating character gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Distinct Subsequences gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find number of times a string occurs as a subsequence in given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Number of subsequences of the form a^i b^j c^k gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Search a Word in a 2D Grid of characters gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Given two strings, find if first string is a subsequence of second gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find largest word in dictionary by deleting some characters of given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Min flips of continuous characters to make all characters same in a string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/shortest common supersequence gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count binary strings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count of total anagram substrings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Queries on Strings gfg dp accepted.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Queries on Strings gfg TLE.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Distinct palindromic substrings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count of words whose i-th letter is either (i-1)-th, i-th, or (i+1)-th letter of given word gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find k’th character of decrypted string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/String Merging STRMRG codechef.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Non-palindromic substring gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Make largest palindrome by changing at most K-digits gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Longest Palindrome in a String gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Check if two strings are k-anagrams or not gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Occurences of Anagrams gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print Anagrams Together gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Consecutive 1's not allowed gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Probability of Knight gfg.cpp",
+				"/C/Users/him97/Desktop/C++/agressive cows spoj.cpp",
+				"/C/Users/him97/Desktop/C++/floyd warshall algo shortest distance.cpp",
+				"/C/Users/him97/Desktop/C++/lazy propagation in segment tree.cpp"
+			],
+			"find":
+			{
+				"height": 23.0
+			},
+			"find_in_files":
+			{
+				"height": 430.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"a",
+					"d",
+					"ll",
+					"int ",
+					"prime",
+					"nextPrime",
+					"isPrime",
+					"64",
+					"string",
+					"'",
+					"i",
+					"tree",
+					"INT_MIN",
+					"n",
+					"b",
+					"a1",
+					"sum",
+					"push_back",
+					"mpb",
+					",",
+					"sa",
+					"i",
+					"int",
+					"= 1000000",
+					"1000001",
+					"t",
+					"string",
+					"int",
+					"meeting_time",
+					"node",
+					"inorder",
+					"nod",
+					"y",
+					"       ",
+					"      ",
+					"int",
+					"       ",
+					"INT_MIN",
+					"x",
+					"temp ",
+					"d",
+					"init",
+					"arr",
+					"(float)",
+					",",
+					"n",
+					"a",
+					"int",
+					"ans",
+					"sieve",
+					"d1",
+					"d",
+					"ong long int",
+					"  ",
+					",",
+					"}",
+					"{",
+					" ",
+					"c",
+					"r",
+					"[",
+					"]",
+					"queue",
+					"stack",
+					",",
+					"a",
+					"100005",
+					"flag",
+					"int",
+					"8",
+					"5",
+					"8",
+					"5",
+					"8",
+					"i",
+					"n",
+					"int",
+					"ans",
+					"x",
+					"int",
+					"temp",
+					"int",
+					"x",
+					"rows",
+					"int",
+					"dfs",
+					"src",
+					"cur",
+					"src",
+					"ans3",
+					"visited",
+					"src",
+					"input1",
+					"a",
+					"input1",
+					"ei",
+					"si",
+					"ans",
+					"0LL",
+					"src",
+					"n + 1",
+					"no",
+					"a[i]",
+					"vi",
+					"int",
+					"No",
+					"Yes",
+					"cur",
+					"int",
+					"city",
+					"mp",
+					"distance1",
+					"x",
+					"a[i]",
+					"bool",
+					"cur",
+					"float",
+					"int",
+					"a",
+					"i",
+					"ei",
+					"li",
+					"arr",
+					"arr1",
+					"int",
+					"i",
+					"0",
+					"cnt"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/C/Users/him97/Desktop/C++/new.cpp",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 776,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										284,
+										284
+									]
+								],
+								"settings":
+								{
+									"bracket_highlighter.busy": false,
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+											"1":
+											[
+												283,
+												284
+											]
+										},
+										"icon":
+										{
+											"1":
+											[
+												"Packages/BracketHighlighter/icons/round_bracket.png",
+												"region.yellowish"
+											]
+										},
+										"open":
+										{
+											"1":
+											[
+												269,
+												270
+											]
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content"
+									],
+									"syntax": "Packages/C++/C++.sublime-syntax",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				},
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 1,
+							"file": "/C/Users/him97/Desktop/C++/inputf.in",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 26,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										26,
+										26
+									]
+								],
+								"settings":
+								{
+									"bracket_highlighter.busy": false,
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+										},
+										"icon":
+										{
+										},
+										"open":
+										{
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content",
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content"
+									],
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						}
+					]
+				},
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 2,
+							"file": "/C/Users/him97/Desktop/C++/outputf.in",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 5,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"bracket_highlighter.busy": false,
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+										},
+										"icon":
+										{
+										},
+										"open":
+										{
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content"
+									],
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 23.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						2
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					],
+					[
+						1,
+						1,
+						2,
+						2
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.685103391154,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					0.5,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.Terminus":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 2":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 3":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 4":
+			{
+				"height": 108.0
+			},
+			"output.astyle_error_message":
+			{
+				"height": 126.0
+			},
+			"output.exec":
+			{
+				"height": 196.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "Packages/User/C++ (without extra line).sublime-build",
+			"position": "0,2,3,-1,-1,-1,-1,841,494,367,1270",
+			"project": "",
+			"replace":
+			{
+				"height": 42.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"n",
+						"C:\\Users\\him97\\Desktop\\C++\\new.cpp"
+					],
+					[
+						"lo",
+						"C:\\Users\\him97\\Desktop\\C++\\gfg\\Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp"
+					],
+					[
+						"",
+						"C:\\Users\\him97\\Desktop\\C++\\gfg\\Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+				"last_automatic_layout":
+				[
+					[
+						0,
+						0,
+						1,
+						2
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					],
+					[
+						1,
+						1,
+						2,
+						2
+					]
+				]
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+				"max_columns": 2
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		},
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"in",
+						"insert"
+					],
+					[
+						"n",
+						"new\tnew"
+					],
+					[
+						"mod",
+						"modulusTree"
+					],
+					[
+						"upd",
+						"updateModulusTree"
+					],
+					[
+						"qu",
+						"query"
+					],
+					[
+						"build",
+						"buildModulusTree"
+					],
+					[
+						"up",
+						"updateTree"
+					],
+					[
+						"sumTr",
+						"sumTree"
+					],
+					[
+						"buil",
+						"buildSumTree"
+					],
+					[
+						"quick",
+						"quickSort_Helper"
+					],
+					[
+						"pi",
+						"pivot"
+					],
+					[
+						"qui",
+						"quickSort"
+					],
+					[
+						"mer",
+						"merge"
+					],
+					[
+						"m",
+						"m"
+					],
+					[
+						"re",
+						"requireUmbrellas"
+					],
+					[
+						"begi",
+						"beginend\t$1.begin(), $1.end()"
+					],
+					[
+						"io",
+						"iostream\tstandard header"
+					],
+					[
+						"s",
+						"s"
+					],
+					[
+						"sum",
+						"sumLeftSubtree"
+					],
+					[
+						"par",
+						"parR"
+					],
+					[
+						"pa",
+						"parL"
+					],
+					[
+						"fla",
+						"float"
+					],
+					[
+						"dst",
+						"dst_c"
+					],
+					[
+						"ds",
+						"dst_c"
+					],
+					[
+						"ne",
+						"next_c"
+					],
+					[
+						"fi",
+						"findMaxPath"
+					],
+					[
+						"sr",
+						"src_r"
+					],
+					[
+						"src",
+						"src_c"
+					],
+					[
+						"nex",
+						"next_r"
+					],
+					[
+						"e",
+						"endif"
+					],
+					[
+						"next",
+						"next_r"
+					],
+					[
+						"ma",
+						"marked"
+					],
+					[
+						"str",
+						"string"
+					],
+					[
+						"ti",
+						"tillNow"
+					],
+					[
+						"i",
+						"i"
+					],
+					[
+						"che",
+						"chessboard"
+					],
+					[
+						"query",
+						"queryLeft"
+					],
+					[
+						"se",
+						"segmenttree\tsegment tree snippet"
+					],
+					[
+						"que",
+						"queryRight"
+					],
+					[
+						"a",
+						"alpha"
+					],
+					[
+						"pri",
+						"printOrder"
+					],
+					[
+						"p",
+						"push"
+					],
+					[
+						"ans",
+						"ans3b"
+					],
+					[
+						"input",
+						"input3"
+					],
+					[
+						"inp",
+						"input1"
+					],
+					[
+						"max",
+						"maxDistance"
+					],
+					[
+						"long",
+						"longestPathBFS"
+					],
+					[
+						"st",
+						"students"
+					],
+					[
+						"visi",
+						"visited"
+					],
+					[
+						"end",
+						"endTime"
+					],
+					[
+						"be",
+						"beginend\t$1.begin(), $1.end()"
+					],
+					[
+						"pare",
+						"parent"
+					],
+					[
+						"pre",
+						"parentR"
+					],
+					[
+						"vi",
+						"visited"
+					],
+					[
+						"beg",
+						"begin"
+					],
+					[
+						"su",
+						"sub"
+					],
+					[
+						"cou",
+						"countSubsequences"
+					],
+					[
+						"__",
+						"____INCREASING___"
+					],
+					[
+						"fir",
+						"first_Part"
+					],
+					[
+						"bi",
+						"binarySearch"
+					],
+					[
+						"INT",
+						"INT_MAX"
+					],
+					[
+						"min",
+						"minSteps"
+					],
+					[
+						"cur",
+						"cur_Y"
+					],
+					[
+						"ste",
+						"steps-1"
+					],
+					[
+						"co",
+						"continue"
+					],
+					[
+						"inu",
+						"input2"
+					],
+					[
+						"inpu",
+						"input1"
+					],
+					[
+						"lo",
+						"longestPalindrome"
+					],
+					[
+						"de",
+						"dec"
+					],
+					[
+						"inc",
+						"increasing"
+					],
+					[
+						"int",
+						"INT_MIN"
+					],
+					[
+						"mi",
+						"minimums"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"contents": "{\n    // Debug logging\n    \"debug_enable\": false,\n\n    // When only either the left or right bracket can be found\n    // this defines if the unmatched bracket should be shown.\n    \"show_unmatched\": true,\n\n    // Do the opposite of `show_unmatched` for the languages listed below\n    \"show_unmatched_exceptions\": [],\n\n    // Enable high visibility by default when sublime starts up\n    // If sublime is already running and this gets changed,\n    // you will not see any changes (restart required to see change)\n    \"high_visibility_enabled_by_default\": false,\n\n    // Experimental: Creates a visible bar at the beginning of all lines between\n    // multiline bracket spans.\n    \"content_highlight_bar\": false,\n\n    // Show hover popup\n    // This will show a hover popup when mousing over\n    // the visible bracket if the other\n    // highlighted matching bracket is off screen.\n    // It will show line text of the off screen bracket -/+ 128 chars\n    // from the bracket start and end points.\n    // A link will be available allowing the user to click and jump to\n    // the other bracket.\n    \"show_offscreen_bracket_popup\": true,\n\n    // If enabled with `show_offscreen_bracket_popup`,the popup will be shown\n    // even if brackets are onscreen.\n    \"show_bracket_popup_always\": false,\n\n    // Adjust char per line context of bracket popup.\n    \"popup_char_context\": 120,\n\n    // Adjust number of lines of additional context\n    // that are shown when brackets are vertically off screen.\n    // Specified line count is split to context before and after the target line.\n    // So a value of 4 would give you two lines of context before and two lines after.\n    \"popup_line_context\": 2,\n\n    // Experimental: Use `popup_bracket_emphasis` to customize the popup's bracket emphasis color\n    \"use_custom_popup_bracket_emphasis\": false,\n\n    // Experimental: Specify the scope (to get color) to emphasize the off screen bracket\n    // in popups.  Alternatively you can use a hex value in the form `#rgb` or `#rrggbb`.\n    \"popup_bracket_emphasis\": \"keyword\",\n\n    // Experimental: Align the content highlight bar at the bracket indent level\n    \"align_content_highlight_bar\": false,\n\n    // Experimental: Allow bracket highlighter to search in widgets.\n    // Most widgets use Plain Text which BH should ignore,\n    // But regex find views views are usually regular expression\n    // Which should be the only views to trigger BH.\n    \"search_in_widgets\": false,\n\n    // Show brackets in the minimap.\n    // Depending on your highlight style, regions may not be visible in minimap.\n    // \"underline\" won't show up due to it being a style consisting of\n    // multiple zero width selections to create a fat underline.\n    // But the following styles should show up fine as they are normal regions styles:\n    //     - thin_underline\n    //     - solid\n    //     - outline\n    //     - squiggly\n    //     - stippled\n    \"show_in_minimap\": false,\n\n    // High visibility style and color for high visibility mode\n    // (`solid`|`outline`|`underline`)\n    // ST3 has additional options of (`thin_underline`|`squiggly`|`stippled`)\n    \"high_visibility_style\": \"outline\",\n\n    // (scope|__default__|__bracket__)\n    \"high_visibility_color\": \"__bracket__\",\n\n    // Match brackets only when the cursor is touching the inside of the bracket\n    \"match_only_adjacent\": false,\n\n    // Outside adjacent bracket matching\n    \"bracket_outside_adjacent\": true,\n\n    // Experimental: Special matching mode for block cursor.\n    // Essentially, this provides a matching mode that makes a little more\n    // sense to some in regards to the visual representation of block cursors.\n    // This will ignore `bracket_outside_adjacent`.\n    \"block_cursor_mode\": false,\n\n    // When `bracket_outside_adjacent` is set, and a plugin command explicitly sets\n    // `no_outside_adj` to `None` instead of `true` or the default `false`,\n    // this value will be used.\n    \"ignore_outside_adjacent_in_plugin\": true,\n\n    // When `block_cursor_mode` is set, and a plugin command explicitly sets\n    // \"no_block_mode\" to `None` instead of `true` or the default `false`,\n    // this value will be used.\n    \"ignore_block_mode_in_plugin\": true,\n\n    // Character threshold to search\n    \"search_threshold\": 5000,\n\n    // Ignore threshold\n    \"ignore_threshold\": false,\n\n    // Set mode for string escapes to ignore (`regex`|`string`)\n    \"bracket_string_escape_mode\": \"string\",\n\n    // Set max number of multi-select brackets that will be searched automatically\n    \"auto_selection_threshold\" : 10,\n\n    // Enable this to completely kill highlighting if \"auto_selection_threshold\"\n    // is exceeded.  Default is to highlight up to the \"auto_selection_threshold\".\n    \"kill_highlight_on_threshold\": true,\n\n    // Disable gutter icons when doing multi-select\n    \"no_multi_select_icons\": false,\n\n    // Global control of gutter icons.\n    \"gutter_icons\": true,\n\n    // Rules that define the finding and matching of brackets\n    // that are contained in a common scope.\n    // Useful for bracket pairs that are the same but\n    // share a common scope.  Brackets are found by\n    // Finding the extent of the scope and using regex\n    // to look at the beginning and end to identify bracket.\n    // Use only if they cannot be targeted with traditional bracket\n    // rules.\n    \"scope_brackets\": [\n        // Quotes\n        {\n            \"name\": \"py_single_quote\",\n            \"open\": \"(?:u|b|f)?r?((?:'')?')\",\n            \"close\": \"((?:'')?')\",\n            \"style\": \"single_quote\",\n            \"scopes\": [\"string\", \"meta.string\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\n                \"Python\",\n                \"PythonImproved\",\n                \"MagicPython\"\n            ],\n            \"sub_bracket_search\": \"true\",\n            \"plugin_library\": \"bh_modules.pyquotes\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"py_double_quote\",\n            \"open\": \"(?:u|b|f)?r?((?:\\\"\\\")?\\\")\",\n            \"close\": \"((?:\\\"\\\")?\\\")\",\n            \"style\": \"double_quote\",\n            \"scopes\": [\"string\", \"meta.string\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\n                \"Python\",\n                \"PythonImproved\",\n                \"MagicPython\"\n            ],\n            \"sub_bracket_search\": \"true\",\n            \"plugin_library\": \"bh_modules.pyquotes\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"csharp_double_quote\",\n            \"open\": \"\\\\$?@?(\\\")\",\n            \"close\": \"(\\\")\",\n            \"style\": \"double_quote\",\n            \"scopes\": [\"string.quoted.double\", \"meta.string.interpolated\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"C#\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"single_quote\",\n            \"open\": \"(')\",\n            \"close\": \"(')\",\n            \"style\": \"single_quote\",\n            \"scopes\": [\n                \"meta.attribute-with-value.style.html -entity.other.attribute-name.style.html -punctuation.separator.key-value.html\",\n                \"source.ruby string.quoted, source.ruby meta.interpolation\",\n                \"string\",\n                \"string.quoted\"\n            ],\n            \"language_filter\": \"blocklist\",\n            \"language_list\": [\"Plain text\", \"Hex\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"double_quote\",\n            \"open\": \"(\\\")\",\n            \"close\": \"(\\\")\",\n            \"style\": \"double_quote\",\n            \"scopes\": [\n                \"meta.attribute-with-value.style.html -entity.other.attribute-name.style.html -punctuation.separator.key-value.html\",\n                \"source.ruby string.quoted, source.ruby meta.interpolation\",\n                \"string\",\n                \"string.quoted\"\n            ],\n            \"language_filter\": \"blocklist\",\n            \"language_list\": [\"Plain text\", \"Hex\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"backtick_quote\",\n            \"open\": \"(`)\",\n            \"close\": \"(`)\",\n            \"style\": \"single_quote\",\n            \"scopes\": [\n                \"string.interpolated.ruby\",\n                \"string.interpolated.backtick.shell\",\n                \"string.template-string.js\",\n                \"string.template.js, meta.template.expression.js\"\n            ],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Ruby\", \"Shell-Unix-Generic\", \"Bash\", \"JavaScript\", \"JavaScriptNext\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        // Regex for different Languages\n        {\n            \"name\": \"jsregex\",\n            \"open\": \" *(/)\",\n            \"close\": \"(/)[igm]*\",\n            \"style\": \"regex\",\n            \"scopes\": [\"string\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"JavaScript\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"perlregex\",\n            \"open\": \"(?:m|s|tr)(.|\\n)\",\n            \"close\": \"(.|\\n)(?:[igmos]*)\",\n            \"style\": \"regex\",\n            \"scopes\": [\"string.regexp\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Perl\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"rubyregex\",\n            \"open\": \" *(/)\",\n            \"close\": \"(/)[imxo]*\",\n            \"style\": \"regex\",\n            \"scopes\": [\"string\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Ruby\", \"RSpec\", \"Better RSpec\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        // Markdown\n        {\n            \"name\": \"mditalic\",\n            \"open\": \"(\\\\*|_)\",\n            \"close\": \"(\\\\*|_)\",\n            \"style\": \"default\",\n            \"scopes\": [\"markup.italic\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Markdown\", \"Multimarkdown\", \"GithubFlavoredMarkdown\", \"Markdown Extended\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"mdbold\",\n            \"open\": \"(\\\\*\\\\*|__)\",\n            \"close\": \"(\\\\*\\\\*|__)\",\n            \"style\": \"default\",\n            \"scopes\": [\"markup.bold\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Markdown\", \"Multimarkdown\", \"GithubFlavoredMarkdown\", \"Markdown Extended\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"mdcodeinline\",\n            \"open\": \"(`+)\",\n            \"close\": \"(`+)\",\n            \"style\": \"default\",\n            \"scopes\": [\"markup.raw.inline.markdown\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Markdown\", \"Multimarkdown\", \"GithubFlavoredMarkdown\", \"Markdown Extended\"],\n            \"sub_bracket_search\": \"true\",\n            \"plugin_library\": \"bh_modules.mdcode\",\n            \"enabled\": true\n        },\n        {\n            \"name\": \"mdcodeblock\",\n            \"open\": \"\\\\s*(`{3,}|~{3,})\",\n            \"close\": \"(`{3,}|~{3,})\\\\n?\",\n            \"style\": \"default\",\n            \"scopes\": [\"markup.raw.block.fenced.markdown, markup.raw.block.markdown.fenced\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Markdown\", \"Multimarkdown\", \"GithubFlavoredMarkdown\", \"Markdown Extended\"],\n            \"plugin_library\": \"bh_modules.mdcode\",\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        // LaTeX\n        {\n            \"name\": \"latexmath_inline\",\n            \"open\": \"(\\\\$)\",\n            \"close\": \"(\\\\$)\",\n            \"style\": \"default\",\n            \"scopes\": [\"string.other.math.tex\", \"meta.environment.math.inline.dollar.latex\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"LaTeX\", \"LaTeX (TikZ)\", \"knitr (Rnw)\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        }\n    ],\n\n    // Rule definitions for finding and matching brackets.\n    // Brackets are found by using regex and can use scope\n    // qualifiers exclude certain matches.\n    // Once all matches are found, the closest pair surrounding\n    // the cursor are selected.\n    \"brackets\": [\n        // OCaml\n        {\n            \"name\": \"ocaml_comment\",\n            \"open\": \"(\\\\(\\\\*)\",\n            \"close\": \"(\\\\*\\\\))\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"-comment\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"OCaml\"],\n            \"sub_bracket_search\": \"false\",\n            \"enabled\": true\n        },\n        // Basic brackets\n        {\n            \"name\": \"curly\",\n            \"open\": \"(\\\\{)\",\n            \"close\": \"(\\\\})\",\n            \"style\": \"curly\",\n            \"scope_exclude\": [\n                \"string\",\n                \"comment\",\n                \"source.regexp constant.character.escape\",\n                \"source.yaml-tmlanguage constant.character.escape\"\n            ],\n            \"scope_exclude_exceptions\": [\"text.tex string.other.math\"],\n            \"language_filter\": \"blocklist\",\n            \"language_list\": [\"Plain text\", \"Hex\"],\n            \"find_in_sub_search\": \"true\",\n            \"ignore_string_escape\": true,\n            \"enabled\": true\n        },\n        {\n            \"name\": \"round\",\n            \"open\": \"(\\\\()\",\n            \"close\": \"(\\\\))\",\n            \"style\": \"round\",\n            \"scope_exclude_exceptions\": [\n                \"text.tex string.other.math\",\n                \"punctuation.definition.string.begin.shell\",\n                \"punctuation.definition.string.end.shell\"\n            ],\n            \"scope_exclude\": [\n                \"string\",\n                \"comment\",\n                \"source.regexp constant.character.escape\",\n                \"keyword.control.conditional.patterns.end.shell\",\n                \"keyword.control.case.item\",\n                \"source.yaml-tmlanguage constant.character.escape\"\n            ],\n            \"language_filter\": \"blocklist\",\n            \"language_list\": [\"Plain text\", \"Hex\", \"RTF\"],\n            \"find_in_sub_search\": \"true\",\n            \"ignore_string_escape\": true,\n            \"enabled\": true\n        },\n        //XML\n        {\n            \"name\":\"xml_cdata\",\n            \"open\":\"(<!\\\\[CDATA\\\\[)\",\n            \"close\":\"(\\\\]\\\\]>)\",\n            \"style\":\"default\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"XML\"],\n            \"scope_exclude\": [\n                \"comment\"\n            ],\n            \"enabled\":true\n        },\n        {\n            \"name\": \"square\",\n            \"open\": \"(\\\\[)\",\n            \"close\": \"(\\\\])\",\n            \"style\": \"square\",\n            \"scope_exclude\": [\n                \"string\",\n                \"source.regexp constant.character.escape\",\n                \"comment\"\n            ],\n            \"scope_exclude_exceptions\": [\"text.tex string.other.math\", \"source.yaml-tmlanguage meta.value -constant.character.escape\"],\n            \"language_filter\": \"blocklist\",\n            \"language_list\": [\"Plain text\", \"Hex\", \"RTF\"],\n            \"find_in_sub_search\": \"true\",\n            \"ignore_string_escape\": true,\n            \"enabled\": true\n        },\n        // PHP Angle\n        {\n            \"name\": \"php_angle\",\n            \"open\": \"(<\\\\?)(?:php)?\",\n            \"close\": \"(\\\\?>)\",\n            \"style\": \"angle\",\n            \"scope_exclude\": [\"string\", \"comment\", \"keyword.operator\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"HTML\", \"HTML 5\"],\n            \"enabled\": true\n        },\n        // Angle\n        {\n            \"name\": \"angle\",\n            \"open\": \"(<)(?=[^?%]|$)\",\n            \"close\": \"(?:(?<=[^?%])|(?<=^))(>)\",\n            \"style\": \"angle\",\n            \"scope_exclude\": [\n                \"string\",\n                \"comment\",\n                \"keyword.operator\",\n                \"source.ruby.rails.embedded.html\",\n                \"source.ruby.embedded.html\",\n                \"storage.type.function.arrow.js\",\n                \"punctuation.accessor.php\",\n                \"punctuation.accessor.arrow.php\",\n                \"source.php meta.embedded.html punctuation.section.embedded.begin.php\",\n                \"source.php meta.embedded.js punctuation.section.embedded.begin.php\",\n                \"source.php meta.embedded.css punctuation.section.embedded.begin.php\"\n            ],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\n                \"HTML\",\n                \"HTML 5\",\n                \"XML\",\n                \"PHP\",\n                \"HTML (Rails)\",\n                \"HTML (Jinja Templates)\",\n                \"HTML (Jinja2)\",\n                \"HTML (Twig)\",\n                \"HTML (Django)\",\n                \"CFML\",\n                \"HTML+CFML\",\n                \"ColdFusion\",\n                \"ColdFusionCFC\",\n                \"laravel-blade\",\n                \"blade\",\n                \"Handlebars\",\n                \"AngularJS\",\n                \"Java Server Pages (JSP)\"\n            ],\n            \"plugin_library\": \"bh_modules.tags\",\n            \"enabled\": true\n        },\n        // CSSedit groups\n        {\n            \"name\": \"cssedit_groups\",\n            \"open\": \"(/\\\\* *@group .*\\\\*/)\",\n            \"close\": \"(/\\\\* *@end *\\\\*/)\",\n            \"style\": \"default\",\n            \"scope_exclude\": [],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"CSS\"],\n            \"enabled\": true\n        },\n        // Ruby embedded HTML\n        // !!! May conflict with `php_keywords` if enabled in same file !!!\n        {\n            \"name\": \"ruby_embedded_html\",\n            \"open\": \"((?:(?<=<%)|(?<=^)|(?<==)|(?<=<<))\\\\s*\\\\b(?:if|begin|case)\\\\b(?!:)|(?:(?<=<%)|(?<=^))\\\\s*(?:(?:private|public|protected)\\\\s*)?def\\\\b[\\\\p{Ll}\\\\p{Lu}]*\\\\b(?!:)|(?:(?<=<%)|(?<=^))\\\\s*\\\\b(?:for|until|unless|while|class|module)\\\\b(?!:)|(?<!:)\\\\bdo\\\\b(?!:)|(?<=return)\\\\s*\\\\b(?:begin|case|for|until|while|class|module)\\\\b(?!:))\",\n            \"close\": \"(?<=[\\\\s;])(end)\\\\b(?!:)\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"text.html\", \"source\", \"comment\", \"string\"],\n            \"scope_exclude_exceptions\": [\n                \"source.ruby.rails.embedded.html -comment -string\",\n                \"source.ruby.embedded.html -comment -string\"\n            ],\n            \"plugin_library\": \"bh_modules.rubykeywords\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"HTML\", \"HTML 5\", \"HTML (Rails)\"],\n            \"enabled\": true\n        },\n        // Ruby conditional statements\n        {\n            \"name\": \"ruby\",\n            \"open\": \"((?:(?<=^)|(?<==)|(?<=<<))\\\\s*\\\\b(?:if|begin|case)\\\\b(?!:)|^\\\\s*(?:(?:private|public|protected)\\\\s*)?def\\\\b[\\\\p{Ll}\\\\p{Lu}]*\\\\b(?!:)|^\\\\s*\\\\b(?:for|until|unless|while|class|module)\\\\b(?!:)|(?<!:)\\\\bdo\\\\b(?!:)|(?<=return)\\\\s*\\\\b(?:begin|case|for|until|while|class|module)\\\\b(?!:))\",\n            \"close\": \"(?<=[\\\\s;])(end)\\\\b(?!:)\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"plugin_library\": \"bh_modules.rubykeywords\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Ruby\", \"RSpec\", \"Better RSpec\", \"Ruby on Rails\"],\n            \"enabled\": true\n        },\n        // C/C++ compile switches\n        {\n            \"name\": \"c_compile_switch\",\n            \"open\": \"\\\\#[ \\\\t]*(if|ifdef|ifndef)\\\\b\",\n            \"close\": \"\\\\#[ \\\\t]*(endif)\\\\b\",\n            \"style\": \"c_define\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"C++\", \"C\", \"Objective-C++\", \"Objective-C\", \"CCpp\", \"C Improved\"],\n            \"enabled\": true\n        },\n        // PHP conditional keywords\n        // !!! May conflict with `ruby_embedded_html` if enabled in same file !!!\n        {\n            \"name\": \"php_keywords\",\n            \"open\": \"(?:(?<=^)|(?<=<\\\\?php)|(?<=<\\\\?))\\\\s*(if|foreach|for|while|switch)\\\\b(?=.*?\\\\)\\\\s*:\\\\s*(?://.*?|/\\\\*.*?\\\\*/\\\\s*?)?(?:\\\\?>|$))\",\n            \"close\": \"(?:(?<=^)|(?<=<\\\\?php)|(?<=<\\\\?))\\\\s*(endif|endfor|endforeach|endwhile|endswitch)\\\\b(?=\\\\s*(?:;|;?\\\\?>))\",\n            \"style\": \"default\",\n            \"language_filter\": \"allowlist\",\n            \"scope_exclude\": [\"string\", \"comment\", \"text.html\"],\n            \"scope_exclude_exceptions\": [\n                \"source.php -comment -string\"\n            ],\n            \"plugin_library\": \"bh_modules.phpkeywords\",\n            \"language_list\": [\n                \"HTML\",\n                \"HTML 5\",\n                \"PHP\",\n                \"CFML\",\n                \"HTML+CFML\",\n                \"ColdFusion\",\n                \"ColdFusionCFC\"\n            ],\n            \"enabled\": true\n        },\n        // Erlang conditional statements\n        {\n            \"name\": \"erlang\",\n            \"open\": \"\\\\s*(\\\\b(?:if|case|begin|try|fun(?=\\\\s*\\\\()|receive)\\\\b)\",\n            \"close\": \"\\\\b(end)\\\\b\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"language_filter\": \"allowlist\",\n            \"plugin_library\": \"bh_modules.lowercase\",\n            \"language_list\": [\"Erlang\", \"HTML (Erlang)\"],\n            \"enabled\": true\n        },\n        //Bash\n        {\n            \"name\": \"bash\",\n            \"open\": \"(?:(?<!\\\\\\\\\\\\n)(?:;|^|&|\\\\|)\\\\s*)\\\\b(if|case|while|select|until|for)\\\\s\",\n            \"close\": \"(?:(?<!\\\\\\\\\\\\n)(?:;|^)\\\\s*)\\\\b(fi|esac|done)(?=;|\\\\s|$)\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"plugin_library\": \"bh_modules.bashsupport\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Shell-Unix-Generic\", \"Bash\"],\n            \"enabled\": true\n        },\n        //Fish shell\n        {\n            \"name\": \"fish\",\n            \"open\": \"(?:(?<!\\\\\\\\\\\\n)(?:;|^|&|\\\\||and|or|not)\\\\s*)\\\\b(begin|if|while|for|switch|function)(?:;|\\\\s)\",\n            \"close\": \"(?:(?<!\\\\\\\\\\\\n)(?:;|^)\\\\s*)\\\\b(end)(?=;|\\\\s|$)\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"fish\"],\n            \"enabled\": true\n        },\n        // Lua\n        {\n            \"name\": \"lua\",\n            \"open\": \"(?:(?<=[\\\\s;])|(?<=^))(if|function|do|repeat)\\\\b\",\n            \"close\": \"(?:(?<=[\\\\s;])|(?<=^))(end|until)\\\\b\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"plugin_library\": \"bh_modules.luakeywords\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Lua\"],\n            \"enabled\": true\n        },\n        // LaTeX\n        {\n            \"name\": \"latexenv\",\n            \"open\": \"(\\\\\\\\begin{[^}]*})\",\n            \"close\": \"(\\\\\\\\end{[^}]*})\",\n            \"style\": \"tag\",\n            \"scope_exclude\": [\"comment\"],\n            \"plugin_library\": \"bh_modules.latexenvironments\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"LaTeX\", \"LaTeX (TikZ)\", \"knitr (Rnw)\"],\n            \"sub_bracket_search\": \"true\",\n            \"enabled\": true\n        },\n        // Pascal\n        {\n            \"name\": \"pascal\",\n            \"open\": \"(?:(?<=^)|(?<=[\\\\s;]))(try|(?<=\\\\=\\\\s)(?:class|record|interface)|begin|repeat)\\\\b\",\n            \"close\": \"(?<=[\\\\s;])(end(?=[;\\\\s])|until(?=\\\\s))\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"plugin_library\": \"bh_modules.pascalkeywords\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Pascal\"],\n            \"enabled\": true\n        },\n        // Elixir\n        {\n            \"name\": \"elixir\",\n            \"open\": \"\\\\b(do$|fn)\\\\b\",\n            \"close\": \"\\\\b(end)\\\\b\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"Elixir\"],\n            \"enabled\": true\n        },\n        // CMake\n        {\n            \"name\": \"cmake\",\n            \"open\": \"\\\\b(foreach|function|if|macro|while)\\\\b\",\n            \"close\": \"\\\\b(end(?:foreach|function|if|macro|while))\\\\b\",\n            \"style\": \"default\",\n            \"scope_exclude\": [\"-keyword.cmake\"],\n            \"plugin_library\": \"bh_modules.cmakekeywords\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"CMake\"],\n            \"enabled\": true\n        },\n        // `SINUMERIK 840D SL G-Code`\n        {\n            \"name\": \"s840d_gcode\",\n            \"open\": \"\\\\b(IF(?!.*GOTO)|FOR|WHILE|REPEAT(?!.*GOTO))\\\\b\",\n            \"close\": \"\\\\b(END(?:IF|FOR|WHILE)|UNTIL)\\\\b\",\n            \"style\": \"tag\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"plugin_library\": \"bh_modules.s840d_gcode\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"s840d_gcode\"],\n            \"enabled\": true\n        },\n        // `SINUMERIK 840D SL RunMyHmi`\n        {\n            \"name\": \"s840d_hmi\",\n            \"open\": \"^\\\\s*(//[ABGMS]|ACTIVATE|CHANGE|FOCUS|IF|LOAD|UNLOAD|OUTPUT|PRESS|SUB)\\\\b\",\n            \"close\": \"^\\\\s*(//END|END_(?:ACTIVATE|CHANGE|FOCUS|IF|LOAD|UNLOAD|OUTPUT|PRESS|SUB))\\\\b\",\n            \"style\": \"tag\",\n            \"scope_exclude\": [\"string\", \"comment\"],\n            \"plugin_library\": \"bh_modules.s840d_hmi\",\n            \"language_filter\": \"allowlist\",\n            \"language_list\": [\"s840d_hmi\"],\n            \"enabled\": true\n        }\n    ],\n\n    // `user_scope_brackets` and `user_brackets` will be appended\n    // to the tail of scope_brackets and brackets respectively\n    // If you have custom rules that you don't want to commit to\n    // the official list, and do not need to be inserted before\n    // one of the official definitions, this is a good place to\n    // put yours rules and keep in sync with the defaults.\n    // If you want to disable all gutter icons, please set icon\n    // to none for all region with user_bracket_styles\n    \"user_scope_brackets\": [],\n    \"user_brackets\": [],\n    \"user_bracket_styles\": {},\n\n    // Define region highlight styles\n    \"bracket_styles\": {\n        // `default` and `unmatched` styles are special\n        // styles. If they are not defined here,\n        // they will be generated internally with\n        // internal defaults.\n\n        // `default` style defines attributes that\n        // will be used for any style that does not\n        // explicitly define that attribute.  So if\n        // a style does not define a color, it will\n        // use the color from the \"default\" style.\n        \"default\": {\n            \"icon\": \"dot\",\n            // Support the old convention of `brackethighlighter.default`\n            // for themes that already provide something.\n            // As this has always been the only one we've provided\n            // by default, all the others will use region-ish colors.\n            \"color\": \"region.yellowish brackethighlighter.default\",\n            \"style\": \"underline\"\n        },\n\n        // This particular style is used to highlight\n        // unmatched bracket pairs.  It is a special\n        // style.\n        \"unmatched\": {\n            \"icon\": \"question\",\n            \"color\": \"region.redish\",\n            \"style\": \"outline\"\n        },\n        // User defined region styles\n        \"curly\": {\n            \"icon\": \"curly_bracket\",\n            \"color\": \"region.purplish\"\n            // \"style\": \"underline\"\n        },\n        \"round\": {\n            \"icon\": \"round_bracket\",\n            \"color\": \"region.yellowish\"\n            // \"style\": \"underline\"\n        },\n        \"square\": {\n            \"icon\": \"square_bracket\",\n            \"color\": \"region.bluish\"\n            // \"style\": \"underline\"\n        },\n        \"angle\": {\n            \"icon\": \"angle_bracket\",\n            \"color\": \"region.orangish\"\n            // \"style\": \"underline\"\n        },\n        \"tag\": {\n            \"icon\": \"tag\",\n            \"color\": \"region.orangish\"\n            // \"style\": \"underline\"\n        },\n        \"c_define\": {\n            \"icon\": \"hash\",\n            \"color\": \"region.yellowish\"\n            // \"style\": \"underline\"\n        },\n        \"single_quote\": {\n            \"icon\": \"single_quote\",\n            \"color\": \"region.greenish\"\n            // \"style\": \"underline\"\n        },\n        \"double_quote\": {\n            \"icon\": \"double_quote\",\n            \"color\": \"region.greenish\"\n            // \"style\": \"underline\"\n        },\n        \"regex\": {\n            \"icon\": \"star\",\n            \"color\": \"region.greenish\"\n            // \"style\": \"underline\"\n        }\n    }\n}\n",
+					"file": "/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
+					"file_size": -1,
+					"file_write_time": -1,
+					"settings":
+					{
+						"buffer_size": 28590,
+						"line_ending": "Windows",
+						"read_only": true,
+						"scratch": true
+					}
+				},
+				{
+					"contents": "{\n\n}\n",
+					"file": "/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/bh_core.sublime-settings",
+					"file_size": -1,
+					"file_write_time": -1,
+					"settings":
+					{
+						"buffer_size": 5,
+						"line_ending": "Windows",
+						"scratch": true
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+				[
+					[
+						[
+							"Packages/C++/C++ Single File.sublime-build",
+							""
+						],
+						[
+							"Packages/C++/C++ Single File.sublime-build",
+							"Run"
+						]
+					],
+					[
+						"Packages/C++/C++ Single File.sublime-build",
+						"Run"
+					]
+				],
+				[
+					[
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							""
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"All Syntaxes"
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"Performance"
+						],
+						[
+							"Packages/Default/Syntax Tests.sublime-build",
+							"Regex Compatibility"
+						]
+					],
+					[
+						"Packages/Default/Syntax Tests.sublime-build",
+						""
+					]
+				]
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"Snippet: ",
+						"Snippet: #include <…>"
+					],
+					[
+						"waka",
+						"WakaTime: Open Dashboard"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"ins",
+						"Package Control: Install Package"
+					],
+					[
+						"termin",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"inst",
+						"Package Control: Install Package"
+					],
+					[
+						"shell",
+						"Set Syntax: Bourne Again Shell (bash)"
+					]
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 288.0,
+				"history":
+				[
+					"git"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/C/Users/him97/Desktop/C++/out05.txt",
+				"/C/Users/him97/Desktop/C++/new3.cpp",
+				"/C/Users/him97/Desktop/C++/new2.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Non Repeating Numbers gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Incremental queries HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/snippets/segment tree snippet.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/segment tree.cpp",
+				"/C/Users/him97/Desktop/C++/gcd-recursive-modulus.cpp",
+				"/C/Users/him97/Desktop/C++/new5.cpp",
+				"/C/Users/him97/Desktop/C++/lcs longest common subsequence dp.cpp",
+				"/C/Users/him97/Desktop/C++/sorts/quick sort.cpp",
+				"/C/Users/him97/Desktop/C++/sorts/merge sort.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print all elements in sorted order from row and column wise sorted matrix gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new4.cpp",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/new.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/C++ (without extra line).sublime-build",
+				"/C/Users/him97/Desktop/C++/output.txt",
+				"/C/Users/him97/Desktop/C++/input.txt",
+				"/C/Users/him97/Desktop/C++/gfg/Create a matrix with alternating rectangles of O and X gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print Diagonally gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Change a Binary Tree so that every node stores sum of all nodes in left subtree including its own gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Construct Binary Tree from given Parent Array representation gfg.cpp",
+				"/C/Users/him97/Desktop/C++/preorder inorder postorder traversal.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Construct tree from ancestor matrix gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Vertical Traversal of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diagonal Traversal of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Number of SubTrees having given Sum  gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diameter of an N-ary tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Diameter of Binary Tree gfg.cpp",
+				"/C/Users/him97/Desktop/C++/dsu disjoint set union.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Boundary of a tree.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/7 Segment Display gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/reverse a linked list gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find k pairs with smallest sums in two arrays gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new5.exe",
+				"/C/Users/him97/Desktop/C++/gfg/Minimum cost for acquiring all coins with k extra coins allowed with every coin gfg.cpp",
+				"/C/Users/him97/Desktop/C++/prime-factorization-sieve.cpp",
+				"/C/Users/him97/Desktop/C++/out",
+				"/C/Users/him97/Desktop/C++/gfg/Rearrange characters gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Min sum formed by digits gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Cutting Rectangles gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find minimum time to finish all jobs with given constraints gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Max length chain gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Fractional Knapsack gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Common Subsequence gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Job Sequencing Problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/N meetings in one room gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Possible Route in a Matrix with Hurdles gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Combinational Sum gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/The Knight’s tour problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find shortest safe route in a path with landmines gfg.cpp",
+				"/C/Users/him97/Desktop/C++/new.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Word Break - Part 2 gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/word break problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Remove Invalid Parentheses gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Sudoku Backtracking gfg.cpp",
+				"/C/Users/him97/Desktop/C++/kmp pattern matching.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Implement two stacks in an array gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Jumping Numbers gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Alien Dictionary gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Snake and Ladder Problem gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Max Circular Subarray Sum gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Detect cycle in a directed graph gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Detect cycle in an undirected graph gfg.cpp",
+				"/C/Users/him97/Desktop/C++/kruskal mst simplified.cpp",
+				"/C/Users/him97/Desktop/C++/articulation point and bridge graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count all possible paths between two vertices gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Find a Mother Vertex in a Graph gfg.cpp",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/fenwick ( BIT ) tree snippet.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/graph weighted.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/graph.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/snippets/new.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/graph weighted.sublime-snippet",
+				"/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/graph.sublime-snippet",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest path in a directed Acyclic graph (without edge weight) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Word Ladder LeetCode.cpp",
+				"/C/Users/him97/Desktop/C++/sssp bfs simple.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Strongly Connected Components (Kosaraju's Algo) gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/perfect friends PepCoding.cpp",
+				"/C/Users/him97/Desktop/C++/kosaraju algo graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Friend Circles Problem iDeserve.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Oliver and the Game HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/dijkstra algo graph.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Minimizing Path Cost HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Chocolate Journey HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/dijkstra simplified.cpp",
+				"/C/Users/him97/Desktop/C++/kruskal mst simplified",
+				"/C/Users/him97/Desktop/C++/kruskal algo minimum spanning tree.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/We Are On Fire HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Connected Horses HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Monk and the Islands HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/Dhoom 4 HackerEarth.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Cheapest Flights Within K Stops Leetcode.cpp",
+				"/C/Users/him97/Desktop/C++/Course Schedule II Leetcode.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Even Tree HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Journey to the Moon HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/new.exe",
+				"/C/Users/him97/Desktop/C++/gfg/Roads and Libraries HackerRank.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find all the patterns of “1(0+)1” in a given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Given a string, find its first non-repeating character gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Distinct Subsequences gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find number of times a string occurs as a subsequence in given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Number of subsequences of the form a^i b^j c^k gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Search a Word in a 2D Grid of characters gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Given two strings, find if first string is a subsequence of second gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find largest word in dictionary by deleting some characters of given string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Min flips of continuous characters to make all characters same in a string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/shortest common supersequence gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count binary strings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count of total anagram substrings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Queries on Strings gfg dp accepted.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Queries on Strings gfg TLE.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Distinct palindromic substrings gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count of words whose i-th letter is either (i-1)-th, i-th, or (i+1)-th letter of given word gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Find k’th character of decrypted string gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/String Merging STRMRG codechef.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Longest Non-palindromic substring gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Make largest palindrome by changing at most K-digits gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Longest Palindrome in a String gfg.cpp",
+				"/C/Users/him97/Desktop/C++/Check if two strings are k-anagrams or not gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Count Occurences of Anagrams gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Print Anagrams Together gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Consecutive 1's not allowed gfg.cpp",
+				"/C/Users/him97/Desktop/C++/gfg/Probability of Knight gfg.cpp",
+				"/C/Users/him97/Desktop/C++/agressive cows spoj.cpp",
+				"/C/Users/him97/Desktop/C++/floyd warshall algo shortest distance.cpp",
+				"/C/Users/him97/Desktop/C++/lazy propagation in segment tree.cpp"
+			],
+			"find":
+			{
+				"height": 23.0
+			},
+			"find_in_files":
+			{
+				"height": 430.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 28590,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										28590,
+										28590
+									]
+								],
+								"settings":
+								{
+									"bracket_highlighter.busy": false,
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+										},
+										"icon":
+										{
+										},
+										"open":
+										{
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content"
+									],
+									"edit_settings_other_view_id": 66,
+									"edit_settings_view": "base",
+									"mini_diff": false,
+									"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						}
+					]
+				},
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 1,
+							"file": "/C/Users/him97/AppData/Roaming/Sublime Text 3/Packages/User/bh_core.sublime-settings",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 5,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										2,
+										2
+									]
+								],
+								"settings":
+								{
+									"bracket_highlighter.busy": false,
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+											"1":
+											[
+												3,
+												4
+											]
+										},
+										"icon":
+										{
+											"1":
+											[
+												"Packages/BracketHighlighter/icons/curly_bracket.png",
+												"region.purplish"
+											]
+										},
+										"open":
+										{
+											"1":
+											[
+												0,
+												1
+											]
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content"
+									],
+									"edit_settings_default": "{\n\n}\n",
+									"edit_settings_other_view_id": 65,
+									"edit_settings_view": "user",
+									"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 23.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.5,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.Terminus":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 2":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 3":
+			{
+				"height": 108.0
+			},
+			"output.Terminus 4":
+			{
+				"height": 108.0
+			},
+			"output.astyle_error_message":
+			{
+				"height": 126.0
+			},
+			"output.exec":
+			{
+				"height": 196.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "Packages/User/C++ (without extra line).sublime-build",
+			"position": "0,0,1,-1,-1,-1,-1,547,207,74,983",
+			"project": "",
+			"replace":
+			{
+				"height": 42.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"n",
+						"C:\\Users\\him97\\Desktop\\C++\\new.cpp"
+					],
+					[
+						"lo",
+						"C:\\Users\\him97\\Desktop\\C++\\gfg\\Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp"
+					],
+					[
+						"",
+						"C:\\Users\\him97\\Desktop\\C++\\gfg\\Longest Path in a Directed Acyclic Graph (weighted) gfg.cpp"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 1,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+				"max_columns": 2
+			},
+			"window_id": 11,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}
