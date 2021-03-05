@@ -1,41 +1,41 @@
-class Solution
+/*
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|     ( website: himanshu010.github.io/Portfolio_website )  |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+*/
+#include<bits/stdc++.h>
+#define moduli 998244353
+#define int long long int
+#define ld long double
+#define F first
+#define S second
+#define P pair<int,int>
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define PQ priority_queue
+using namespace std;
+
+void solve(int tc) {
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+
+}
+int32_t main()
 {
-public:
-
-    bool checkKthBitSet(int n, int k) {
-        int i = 1;
-        while (i < k) {
-            n >>= 1;
-            i++;
-        }
-
-        if (n & 1) {
-            return true;
-        }
-        return false;
-    }
-    vector<int> singleNumber(vector<int> a)
+    ios_base:: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int tc = 1;
+    // int t;cin>>t;while(t--)
     {
-        int n = a.size();
-        int x = 0;
-        for (int i = 0; i < n; i++) {
-            x ^= a[i];
-        }
-        vector<int>ans(2);
-
-        int rm = log2(x & (-x)) + 1;
-        int b = 0, c = 0;
-        for (int i = 0; i < n; i++) {
-            if (checkKthBitSet(a[i], rm)) {
-                b ^= a[i];
-            }
-            else {
-                c ^= a[i];
-            }
-        }
-
-        ans[0] = min(b, c);
-        ans[1] = max(b, c);
-        return ans;
+        solve(tc);
+        tc++;
     }
-};
+}
