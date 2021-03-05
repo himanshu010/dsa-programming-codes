@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -27,8 +27,10 @@ vector<int> tree(5000009);
 vector<int> sumTree(5000009);
 vector<int> modulusTree(5000009);
 
-void buildTree(vector<int> &a, int s, int e, int index) {
-    if (s == e) {
+void buildTree(vector<int> &a, int s, int e, int index)
+{
+    if (s == e)
+    {
         tree[index] = a[s];
         return;
     }
@@ -40,8 +42,10 @@ void buildTree(vector<int> &a, int s, int e, int index) {
     tree[index] = max(tree[2 * index + 1], tree[2 * index + 2]);
 }
 
-void buildSumTree(vector<int> &a, int s, int e, int index) {
-    if (s == e) {
+void buildSumTree(vector<int> &a, int s, int e, int index)
+{
+    if (s == e)
+    {
         sumTree[index] = a[s];
         return;
     }
@@ -51,14 +55,17 @@ void buildSumTree(vector<int> &a, int s, int e, int index) {
     sumTree[index] = sumTree[2 * index + 1] + sumTree[2 * index + 2];
 }
 
+void buildModulusTree(vector<int> &a, int s, int e, int index)
+{
 
-void buildModulusTree(vector<int>&a, int s, int e, int index) {
-
-    if (s == e) {
-        if (a[s] % 2 == 0) {
+    if (s == e)
+    {
+        if (a[s] % 2 == 0)
+        {
             modulusTree[index] = 1;
         }
-        else {
+        else
+        {
             modulusTree[index] = 0;
         }
         return;
@@ -69,18 +76,21 @@ void buildModulusTree(vector<int>&a, int s, int e, int index) {
     buildModulusTree(a, mid + 1, e, 2 * index + 2);
 
     modulusTree[index] = modulusTree[2 * index + 1] + modulusTree[2 * index + 2];
-
 }
-int query(int s, int e, int l, int r, int index) {
+int query(int s, int e, int l, int r, int index)
+{
 
-    if (l > e) {
+    if (l > e)
+    {
         return INT_MIN;
     }
-    if (r < s) {
+    if (r < s)
+    {
         return INT_MIN;
     }
 
-    if (l <= s and r >= e) {
+    if (l <= s and r >= e)
+    {
         return tree[index];
     }
     int mid = (s + e) / 2;
@@ -89,16 +99,20 @@ int query(int s, int e, int l, int r, int index) {
 
     return max(left, right);
 }
-int querySum(int s, int e, int l, int r, int index) {
+int querySum(int s, int e, int l, int r, int index)
+{
 
-    if (l > e) {
+    if (l > e)
+    {
         return 0;
     }
-    if (r < s) {
+    if (r < s)
+    {
         return 0;
     }
 
-    if (l <= s and r >= e) {
+    if (l <= s and r >= e)
+    {
         return sumTree[index];
     }
     int mid = (s + e) / 2;
@@ -108,17 +122,20 @@ int querySum(int s, int e, int l, int r, int index) {
     return left + right;
 }
 
-int queryModulus(int s, int e, int l, int r, int index) {
+int queryModulus(int s, int e, int l, int r, int index)
+{
 
-    if (l > e) {
+    if (l > e)
+    {
         return 0;
     }
-    if (r < s) {
+    if (r < s)
+    {
         return 0;
     }
 
-
-    if (l <= s and r >= e) {
+    if (l <= s and r >= e)
+    {
         return modulusTree[index];
     }
 
@@ -129,14 +146,17 @@ int queryModulus(int s, int e, int l, int r, int index) {
     return left + right;
 }
 
-
-void updateTree(int i, int s, int e, int index, int upd) {
-    if (i<s or i> e) {
+void updateTree(int i, int s, int e, int index, int upd)
+{
+    if (i < s or i > e)
+    {
         return;
     }
 
-    if (s == e) {
-        if (s == i) {
+    if (s == e)
+    {
+        if (s == i)
+        {
             tree[index] = upd;
         }
         return;
@@ -148,12 +168,16 @@ void updateTree(int i, int s, int e, int index, int upd) {
     tree[index] = max(tree[2 * index + 1], tree[2 * index + 2]);
 }
 
-void updateSumTree(int i, int s, int e, int index, int upd) {
-    if (i<s or i> e) {
+void updateSumTree(int i, int s, int e, int index, int upd)
+{
+    if (i < s or i > e)
+    {
         return;
     }
-    if (s == e) {
-        if (s == i) {
+    if (s == e)
+    {
+        if (s == i)
+        {
             sumTree[index] = upd;
         }
         return;
@@ -164,17 +188,22 @@ void updateSumTree(int i, int s, int e, int index, int upd) {
     sumTree[index] = sumTree[2 * index + 1] + sumTree[2 * index + 2];
 }
 
-
-void updateModulusTree(int i, int s, int e, int index, int upd) {
-    if (i<s or i> e) {
+void updateModulusTree(int i, int s, int e, int index, int upd)
+{
+    if (i < s or i > e)
+    {
         return;
     }
-    if (s == e) {
-        if (s == i) {
-            if (upd % 2 == 0) {
+    if (s == e)
+    {
+        if (s == i)
+        {
+            if (upd % 2 == 0)
+            {
                 modulusTree[index] = 1;
             }
-            else {
+            else
+            {
                 modulusTree[index] = 0;
             }
         }
@@ -186,9 +215,8 @@ void updateModulusTree(int i, int s, int e, int index, int upd) {
     modulusTree[index] = modulusTree[2 * index + 1] + modulusTree[2 * index + 2];
 }
 
-
-
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> k;
     vector<int> a(n);
@@ -205,7 +233,8 @@ void solve(int tc) {
         int q, l, r;
         cin >> q >> l >> r;
         l--;
-        if (q == 2) {
+        if (q == 2)
+        {
             r--;
             int mx = query(0, n - 1, l, r, 0);
             sum = querySum(0, n - 1, l, r, 0);
@@ -213,17 +242,20 @@ void solve(int tc) {
             int total = r - l + 1;
             int odd = total - even;
             ans = 0;
-            if (mx & 1) {
+            if (mx & 1)
+            {
                 sum = sum - even;
                 ans = ((mx * total) - sum) / 2;
             }
-            else {
+            else
+            {
                 sum = sum - odd;
                 ans = ((mx * total) - sum) / 2;
             }
             cout << ans << endl;
         }
-        else {
+        else
+        {
             updateTree(l, 0, n - 1, 0, r);
             updateSumTree(l, 0, n - 1, 0, r);
             updateModulusTree(l, 0, n - 1, 0, r);
@@ -232,7 +264,7 @@ void solve(int tc) {
 }
 int32_t main()
 {
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

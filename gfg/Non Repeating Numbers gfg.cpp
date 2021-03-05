@@ -1,15 +1,17 @@
 class Solution
 {
-public:
-
-    bool checkKthBitSet(int n, int k) {
+  public:
+    bool checkKthBitSet(int n, int k)
+    {
         int i = 1;
-        while (i < k) {
+        while (i < k)
+        {
             n >>= 1;
             i++;
         }
 
-        if (n & 1) {
+        if (n & 1)
+        {
             return true;
         }
         return false;
@@ -18,18 +20,22 @@ public:
     {
         int n = a.size();
         int x = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             x ^= a[i];
         }
-        vector<int>ans(2);
+        vector<int> ans(2);
 
         int rm = log2(x & (-x)) + 1;
         int b = 0, c = 0;
-        for (int i = 0; i < n; i++) {
-            if (checkKthBitSet(a[i], rm)) {
+        for (int i = 0; i < n; i++)
+        {
+            if (checkKthBitSet(a[i], rm))
+            {
                 b ^= a[i];
             }
-            else {
+            else
+            {
                 c ^= a[i];
             }
         }
