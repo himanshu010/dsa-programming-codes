@@ -1,48 +1,68 @@
+/*
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|     ( website: himanshu010.github.io/Portfolio_website )  |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+*/
+#include<bits/stdc++.h>
+#define moduli 998244353
+#define int long long int
+#define ld long double
+#define F first
+#define S second
+#define P pair<int,int>
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define PQ priority_queue
+using namespace std;
 
-void solve(int tc)
-{
-
-    int n, k;
-    cin >> n >> k;
-    if (k < n)
+void solve(int tc) {
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i)
     {
-
-        int o = n / k;
-        if (n % k != 0)
-            k = (o + 1) * k;
-        else
-            k = n;
+        cin >> a[i];
     }
 
-    int x = k / n;
-    if (k % n != 0)
-        x++;
+    sort(a.begin(), a.end());
 
-    cout << x << endl;
-    R;
+    int x = a[n - 1];
+    int y = a[0];
+    int mx = INT_MIN, mx1 = INT_MIN;
+    for (int i = n - 2; i >= 0; --i)
+    {
+        mx = max(x * a[i] + x - a[i], mx);
+    }
+    // cout << mx << endl;
+
+    for (int i = 1; i < n; ++i)
+    {
+        mx1 = max(y * a[i] + y - a[i], mx1);
+    }
+
+    cout << max(mx, mx1) << endl;
+
+
+
+
 }
-
 int32_t main()
 {
-
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(false);
+    ios_base:: sync_with_stdio(false);
     cin.tie(NULL);
-
-    int t = 1;
-
-    cin >> t;
+    cout.tie(NULL);
     int tc = 1;
-
-    while (t--)
+    int t; cin >> t; while (t--)
     {
-
         solve(tc);
-
         tc++;
     }
-    return 0;
 }
