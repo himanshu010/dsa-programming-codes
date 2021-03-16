@@ -1,91 +1,91 @@
+/*
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|            ( website: himanshuaswal.codes )               |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+*/
 #include <bits/stdc++.h>
+#define moduli 998244353
+#define int long long int
+#define ld long double
+#define F first
+#define S second
+#define P pair<int, int>
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define PQ priority_queue
+
 using namespace std;
 
-bool checkPalindrome(string s)
+class Node
 {
-    int n = s.size();
-    int i = 0, j = n - 1;
-
-    while (i < j)
+  public:
+    int data;
+    Node *left, *right;
+    Node(int d)
     {
-        if (s[i] != s[j])
-        {
-            return false;
-        }
-        i++;
-        j--;
+        this->data = d;
+        left = NULL;
+        right = NULL;
     }
+};
 
-    return true;
+map<int, vector<int>> mp;
+void diagonalSum(Node *temp, int i)
+{
+    mp[i].push_back(temp->data);
+    if (temp->left)
+    {
+        diagonalSum(temp->left, i - 1);
+    }
+    if (temp->right)
+    {
+        diagonalSum(temp->right, i);
+    }
 }
 
-int main()
+void solve(int tc)
 {
-    int n, m;
-    cin >> n;
-    unordered_map<string, int> reversedStrings;
-    vector<string> a(n);
-    string s;
-    for (int i = 0; i < n; ++i)
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    Node *root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(9);
+    root->left->right = new Node(6);
+    root->right->left = new Node(4);
+    root->right->right = new Node(5);
+    root->right->left->right = new Node(7);
+    root->right->left->left = new Node(12);
+    root->left->right->left = new Node(11);
+    root->left->left->right = new Node(10);
+
+    diagonalSum(root, 0);
+    for (auto x : mp)
     {
-        cin >> s;
-        a[i] = s;
-        reverse(s.begin(), s.end());
-        reversedStrings[s]++;
+        sum = 0;
+        for (auto y : x.second)
+        {
+            sum += y;
+        }
+        cout << sum << endl;
     }
-
-    // In this loop, we are checking that:-
-    // 1. If string itself is a Palindrome
-    // 2. If reverse of the whole string is present is the array
-    for (int i = 0; i < n; ++i)
+}
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int tc = 1;
+    // int t;cin>>t;while(t--)
     {
-        if (checkPalindrome(a[i]))
-        {
-            cout << "true" << endl;
-            return 0;
-        }
-        if (reversedStrings.find(a[i]) != reversedStrings.end())
-        {
-            cout << "true" << endl;
-            return 0;
-        }
+        solve(tc);
+        tc++;
     }
-
-    // In this for loop we are checking that can a string be divided in a pair of string
-    // such that one part of the string is itself a palindrome and the reverse of other part is
-    // present in the array
-    for (int i = 0; i < n; ++i)
-    {
-        s = a[i];
-        m = s.size();
-
-        // Here we are dividing the array from the front
-        // s.substr(0,j) denotes the front part on which we are checking that is a palindrome
-        // or not and if it is, then we are checking the the reverse of the rear part(s.substr(j)) is present or not
-        for (int j = 1; j < m; ++j)
-        {
-            if (checkPalindrome(s.substr(0, j)))
-            {
-                if (reversedStrings.find(s.substr(j)) != reversedStrings.end())
-                {
-                    cout << "true" << endl;
-                    return 0;
-                }
-            }
-        }
-
-        // Here we are dividing the array from the back and are checking using the same procedure as above.
-        for (int j = 1; j < m; ++j)
-        {
-            if (checkPalindrome(s.substr(m - j)))
-            {
-                if (reversedStrings.find(s.substr(0, m - j)) != reversedStrings.end())
-                {
-                    cout << "true" << endl;
-                    return 0;
-                }
-            }
-        }
-    }
-    cout << "false" << endl;
 }
