@@ -1,67 +1,117 @@
-/*
-*-----------------------------------------------------------*
-|                                                           |
-|                                                           |
-|               AUTHOR: Himanshu Aswal                      |
-|     ( website: himanshu010.github.io/Portfolio_website )  |
-|                                                           |
-|                                                           |
-*-----------------------------------------------------------*
-*/
-#include <bits/stdc++.h>
-#define moduli 998244353
-#define int long long int
-#define ld long double
-#define F first
-#define S second
-#define P pair<int, int>
-#define pb push_back
-#define vi vector<int>
-#define vvi vector<vector<int>>
-#define vb vector<bool>
-#define um unordered_map
-#define PQ priority_queue
+#include<bits/stdc++.h>
+
 using namespace std;
 
-void solve(int tc)
+#define ll long long
+
+vector<int>arr[1000];
+
+
+
+void dfs(int u, vector<ll>&disc, vector<ll>&low, vector<ll>&parent, vector<bool>&arti)
+
 {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; ++i)
+
+    static ll time = 0;
+
+    disc[u] = low[u] = time;
+
+    time++;
+
+    int children = 0;
+
+    for ( int i = 0 ; i < arr[u].size(); i++)
+
     {
-        cin >> a[i];
+
+        ll v = arr[u][i];
+
+        if (disc[v] == -1)
+
+        {
+
+            children++;
+
+            parent[v] = u;
+
+            dfs(v, disc, low, parent, arti);
+
+
+
+            low[u] = min(low[u], low[v]);
+
+            if (parent[u] == -1 && children > 1)
+
+                arti[u] = true;
+
+            if (parent[u] != -1 && low[v] >= disc[u])
+
+                arti[u] = true;
+
+        }
+
+        else if ( v != parent[u])
+
+            low[u] = min(low[u], disc[v]);
+
     }
 
-    sort(a.begin(), a.end());
-
-    int x = a[n - 1];
-    int y = a[0];
-    int mx = INT_MIN, mx1 = INT_MIN;
-    for (int i = n - 2; i >= 0; --i)
-    {
-        mx = max(x * a[i] + x - a[i], mx);
-    }
-    // cout << mx << endl;
-
-    for (int i = 1; i < n; ++i)
-    {
-        mx1 = max(y * a[i] + y - a[i], mx1);
-    }
-
-    cout << max(mx, mx1) << endl;
 }
-int32_t main()
+
+int main()
+
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int tc = 1;
-    int t;
-    cin >> t;
-    while (t--)
+
+    ll n, m, q; cin >> n >> m;
+
+    while (m--)
+
     {
-        solve(tc);
-        tc++;
+
+        ll a, b; cin >> a >> b;
+
+        arr[a].push_back(b);
+
+        arr[b].push_back(a);
+
     }
+
+    vector<ll>disc(n + 1, -1);
+
+    vector<ll>low(n + 1, -1);
+
+    vector<ll>parent(n + 1, -1);
+
+    vector<bool>arti(n + 1, false);
+
+    for ( int i = 1; i <= n; i++)
+
+    {
+
+        if (disc[i] == -1)
+
+        {
+
+            dfs(i, disc, low, parent, arti);
+
+        }
+
+    }
+    cin >> q;
+    while (q--)
+
+    {
+
+        ll ans; cin >> ans;
+
+        if (arti[ans])
+
+            cout << "Satisfied" << " " << arr[ans].size() << endl;
+
+        else
+
+            cout << "Not Satisfied" << endl;
+
+    }
+
 }
