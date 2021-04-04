@@ -1,109 +1,90 @@
+/*
+*-----------------------------------------------------------*
+|                                                           |
+|                                                           |
+|               AUTHOR: Himanshu Aswal                      |
+|            ( website: himanshuaswal.codes )               |
+|                                                           |
+|                                                           |
+*-----------------------------------------------------------*
+*/
 #include <bits/stdc++.h>
-
+#define moduli 998244353
+#define int long long int
+#define ld long double
+#define F first
+#define S second
+#define P pair<int, int>
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define PQ priority_queue
 using namespace std;
 
-#define ll long long
-
-vector<int> arr[1000];
-
-void dfs(int u, vector<ll> &disc, vector<ll> &low, vector<ll> &parent, vector<bool> &arti)
-
+int binary_search(vector<int> a, int s, int e, int k)
 {
-
-    static ll time = 0;
-
-    disc[u] = low[u] = time;
-
-    time++;
-
-    int children = 0;
-
-    for (int i = 0; i < arr[u].size(); i++)
-
+    if (s >= e)
     {
-
-        ll v = arr[u][i];
-
-        if (disc[v] == -1)
-
+        if (k = a[s])
         {
-
-            children++;
-
-            parent[v] = u;
-
-            dfs(v, disc, low, parent, arti);
-
-            low[u] = min(low[u], low[v]);
-
-            if (parent[u] == -1 && children > 1)
-
-                arti[u] = true;
-
-            if (parent[u] != -1 && low[v] >= disc[u])
-
-                arti[u] = true;
+            return s;
         }
+        return -1;
+    }
 
-        else if (v != parent[u])
+    int mid = s + ((e - s) / 2);
+    if (a[mid] == k)
+    {
+        return mid;
+    }
 
-            low[u] = min(low[u], disc[v]);
+    if (a[s] <= a[mid])
+    {
+        if (k < a[mid] and k >= a[s])
+        {
+            return binary_search(a, s, mid - 1, k);
+        }
+        return binary_search(a, mid + 1, e, k);
+    }
+    else
+    {
+        if (k <= a[e] and k > a[mid])
+        {
+            return binary_search(a, mid + 1, e, k);
+        }
+        return binary_search(a, s, mid - 1, k);
     }
 }
 
-int main()
-
+void solve(int tc)
 {
-
-    ll n, m, q;
-    cin >> n >> m;
-
-    while (m--)
-
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i)
     {
-
-        ll a, b;
-        cin >> a >> b;
-
-        arr[a].push_back(b);
-
-        arr[b].push_back(a);
+        cin >> a[i];
     }
 
-    vector<ll> disc(n + 1, -1);
-
-    vector<ll> low(n + 1, -1);
-
-    vector<ll> parent(n + 1, -1);
-
-    vector<bool> arti(n + 1, false);
-
-    for (int i = 1; i <= n; i++)
-
+    cin >> k;
+    for (int i = 0; i < k; ++i)
     {
-
-        if (disc[i] == -1)
-
-        {
-
-            dfs(i, disc, low, parent, arti);
-        }
+        cin >> j;
+        cout << binary_search(a, 0, n - 1, j) << endl;
+        ;
     }
-    cin >> q;
-    while (q--)
-
+}
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int tc = 1;
+    // int t;cin>>t;while(t--)
     {
-
-        ll ans;
-        cin >> ans;
-
-        if (arti[ans])
-
-            cout << "Satisfied"
-                 << " " << arr[ans].size() << endl;
-
-        else
-
-            cout << "Not Satisfied" << endl;
+        solve(tc);
+        tc++;
     }
 }

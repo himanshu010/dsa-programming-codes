@@ -65,6 +65,7 @@ void updateNode(int *tree, int ss, int se, int i, int update, int index)
     int mid = (ss + se) / 2;
     updateNode(tree, ss, mid, i, update, 2 * index);
     updateNode(tree, mid + 1, se, i, update, 2 * index + 1);
+    tree[index] = min(tree[2 * index], tree[2 * index + 1]);
 }
 
 void updateRange(int *tree, int ss, int se, int l, int r, int update, int index)

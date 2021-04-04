@@ -44,11 +44,6 @@ vector<int> factors(vector<int> primes, int m)
 
 int32_t main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
@@ -70,7 +65,7 @@ int32_t main()
 
             for (int i = 2; i * i <= b; ++i)
             {
-                for (int j = 2 * i; j <= b; j += i)
+                for (int j = i * i; j <= b; j += i)
                 {
                     A[j] = 1;
                 }

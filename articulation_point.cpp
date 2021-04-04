@@ -23,55 +23,6 @@
 #define PQ priority_queue
 using namespace std;
 
-//---------------------------------------------------debugging-------------------------------------------------------------}
-                                                                                                      \
-    }
-void print(int a)
-{
-    cout << a << endl;
-}
-void print(int a, int b)
-{
-    cout << a << " " << b << endl;
-}
-void print(int a, int b, int c)
-{
-    cout << a << " " << b << " " << c << endl;
-}
-void print(int a, int b, int c, int d)
-{
-    cout << a << " " << b << " " << c << " " << d << endl;
-}
-void print(int a, int b, int c, int d, int e)
-{
-    cout << a << " " << b << " " << c << " " << d << " " << e << endl;
-}
-void print(vector<int> a)
-{
-    for (auto i : a)
-        cout << i << " ";
-    cout << endl;
-}
-void print(string s)
-{
-    cout << s << endl;
-}
-void print(string s, int a)
-{
-    cout << s << " " << a;
-    cout << endl;
-}
-void print(string s1, int a, string s2, int b)
-{
-    cout << s1 << " " << a << " " << s2 << " " << b;
-    cout << endl;
-}
-void printline(int a)
-{
-    cout << "line " << a << endl;
-}
-//_________________________________________________________________________________________________________________________}
-
 vvi graph;
 vi visited_time, low_time, parent;
 vb articulation;
