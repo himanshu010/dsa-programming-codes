@@ -28,9 +28,9 @@ int findAllWays(int n, int m)
 int main()
 {
     int n, m;
-    cin >> n >> m;
+    cin >> n;
     // if (n > m) {
     //     swap(n, m);
     // }
-    cout << findAllWays(n, m) << endl;
+    cout << n << endl;
 }
