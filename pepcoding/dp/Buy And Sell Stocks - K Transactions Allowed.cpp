@@ -3,7 +3,7 @@
 |                                                           |
 |                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|     ( website: himanshu010.github.io/Portfolio_website )  |
+|            ( website: himanshuaswal.codes )               |
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*
@@ -23,60 +23,34 @@
 #define PQ priority_queue
 using namespace std;
 
-
-void merge(int *a, int n, int s, int mid, int e) {
-    int temp[e - s + 1];
-    int i = s, j = mid + 1, k = 0;
-    while (i <= mid and j <= e) {
-        if (a[i] <= a[j]) {
-            temp[k] = a[i];
-            i++;
-        }
-        else {
-            temp[k] = a[j];
-            j++;
-        }
-        k++;
-    }
-
-    while (i <= mid) {
-        temp[k++] = a[i++];
-    }
-    while (j <= e) {
-        temp[k++] = a[j++];
-    }
-
-    for (int i = s; i <= e; ++i)
-    {
-        a[i] = temp[i - s];
-    }
-}
-
-void mergeSort(int *a, int n, int s, int e) {
-    if (s >= e) {
-        return;
-    }
-    int mid = s + (e - s) / 2;
-    mergeSort(a, n, s, mid);
-    mergeSort(a, n, mid + 1, e);
-    merge(a, n, s, mid, e);
-}
-
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
-    int a[n];
+    vi a(n);
     for (int i = 0; i < n; ++i)
     {
         cin >> a[i];
     }
-
-    mergeSort(a, n, 0, n - 1);
-    for (int i = 0; i < n; ++i)
+    cin >> m;
+    vvi dp(m + 1, vi(n + 1));
+    for (int i = 0; i <= m; ++i)
     {
-        cout << a[i] << ' ';
+        int mx = INT_MIN;
+        for (int j = 0; j < n; ++j)
+        {
+            if (i == 0 or j == 0) {
+                dp[i][j] = 0;
+                continue;
+            }
+            mx = max(mx, dp[i - 1][j - 1] - a[j - 1]);
+
+            dp[i][j] = max(dp[i][j - 1], a[j] + mx);
+        }
     }
-    cout << endl;
+
+    cout << dp[m][n - 1] << endl;
+
+
 
 }
 int32_t main()
