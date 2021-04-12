@@ -3,7 +3,7 @@
 |                                                           |
 |                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|     ( website: himanshu010.github.io/Portfolio_website )  |
+|            ( website: himanshuaswal.codes )               |
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*
@@ -23,60 +23,37 @@
 #define PQ priority_queue
 using namespace std;
 
-
-void merge(int *a, int n, int s, int mid, int e) {
-    int temp[e - s + 1];
-    int i = s, j = mid + 1, k = 0;
-    while (i <= mid and j <= e) {
-        if (a[i] <= a[j]) {
-            temp[k] = a[i];
-            i++;
-        }
-        else {
-            temp[k] = a[j];
-            j++;
-        }
-        k++;
-    }
-
-    while (i <= mid) {
-        temp[k++] = a[i++];
-    }
-    while (j <= e) {
-        temp[k++] = a[j++];
-    }
-
-    for (int i = s; i <= e; ++i)
-    {
-        a[i] = temp[i - s];
-    }
-}
-
-void mergeSort(int *a, int n, int s, int e) {
-    if (s >= e) {
-        return;
-    }
-    int mid = s + (e - s) / 2;
-    mergeSort(a, n, s, mid);
-    mergeSort(a, n, mid + 1, e);
-    merge(a, n, s, mid, e);
-}
-
 void solve(int tc) {
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
-    int a[n];
+    vector<int> a(n);
     for (int i = 0; i < n; ++i)
     {
         cin >> a[i];
     }
 
-    mergeSort(a, n, 0, n - 1);
+    vi pre(n, 0);
+    int mn = a[0];
+    for (int i = 1; i < n; ++i)
+    {
+        mn = min(a[i], mn);
+        pre[i] = max(pre[i - 1], a[i] - mn);
+    }
+
+    vi suff(n, 0);
+    int mx = a[n - 1];
+    for (int i = n - 2; i >= 0; --i)
+    {
+        mx = max(mx, a[i]);
+        suff[i] = max(suff[i + 1], mx - a[i]);
+    }
+
+    ans = INT_MIN;
     for (int i = 0; i < n; ++i)
     {
-        cout << a[i] << ' ';
+        ans = max(ans, pre[i] + suff[i]);
     }
-    cout << endl;
+    cout << ans << endl;
 
 }
 int32_t main()
