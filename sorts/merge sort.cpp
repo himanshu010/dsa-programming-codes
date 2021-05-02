@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -23,26 +23,31 @@
 #define PQ priority_queue
 using namespace std;
 
-
-void merge(int *a, int n, int s, int mid, int e) {
+void merge(int *a, int n, int s, int mid, int e)
+{
     int temp[e - s + 1];
     int i = s, j = mid + 1, k = 0;
-    while (i <= mid and j <= e) {
-        if (a[i] <= a[j]) {
+    while (i <= mid and j <= e)
+    {
+        if (a[i] <= a[j])
+        {
             temp[k] = a[i];
             i++;
         }
-        else {
+        else
+        {
             temp[k] = a[j];
             j++;
         }
         k++;
     }
 
-    while (i <= mid) {
+    while (i <= mid)
+    {
         temp[k++] = a[i++];
     }
-    while (j <= e) {
+    while (j <= e)
+    {
         temp[k++] = a[j++];
     }
 
@@ -52,8 +57,10 @@ void merge(int *a, int n, int s, int mid, int e) {
     }
 }
 
-void mergeSort(int *a, int n, int s, int e) {
-    if (s >= e) {
+void mergeSort(int *a, int n, int s, int e)
+{
+    if (s >= e)
+    {
         return;
     }
     int mid = s + (e - s) / 2;
@@ -62,7 +69,8 @@ void mergeSort(int *a, int n, int s, int e) {
     merge(a, n, s, mid, e);
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
     int a[n];
@@ -77,11 +85,10 @@ void solve(int tc) {
         cout << a[i] << ' ';
     }
     cout << endl;
-
 }
 int32_t main()
 {
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;

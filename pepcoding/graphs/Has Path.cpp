@@ -8,13 +8,13 @@
 |                                                           |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -23,19 +23,24 @@
 #define PQ priority_queue
 using namespace std;
 
-bool bfs(int src, int dest, vvi &graph, int n) {
+bool bfs(int src, int dest, vvi &graph, int n)
+{
     queue<int> qu;
     qu.push(src);
     vb visited(n, 0);
-    while (!qu.empty()) {
+    while (!qu.empty())
+    {
         int cur = qu.front();
-        if (cur == dest) {
+        if (cur == dest)
+        {
             return true;
         }
         visited[cur] = 1;
         qu.pop();
-        for (auto x : graph[cur]) {
-            if (!visited[x]) {
+        for (auto x : graph[cur])
+        {
+            if (!visited[x])
+            {
                 qu.push(x);
             }
         }
@@ -43,10 +48,11 @@ bool bfs(int src, int dest, vvi &graph, int n) {
     return false;
 }
 
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> m;
-    vector<vector<int>>graph(n);
+    vector<vector<int>> graph(n);
     for (int i = 0; i < m; ++i)
     {
         int l, r, w;
@@ -56,17 +62,17 @@ void solve(int tc) {
     }
 
     cin >> k >> j;
-    if (bfs(k, j, graph, n)) {
+    if (bfs(k, j, graph, n))
+    {
         cout << "true" << endl;
         return;
     }
     cout << "false" << endl;
 }
 
-
 int32_t main()
 {
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int tc = 1;
