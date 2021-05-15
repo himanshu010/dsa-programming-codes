@@ -3,11 +3,12 @@
 |                                                           |
 |                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|            ( website: himanshuaswal.codes )               |
+|     ( website: himanshu010.github.io/Portfolio_website )  |
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*
 */
+
 #include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
@@ -20,60 +21,76 @@
 #define vvi vector<vector<int>>
 #define vb vector<bool>
 #define um unordered_map
-#define PQ priority_queue
+
 using namespace std;
+
+bool CanPlaceAtThisGap(int *a, int gap, int cows, int a_size)
+{
+	int last_pos = a[0];
+	int cnt = 1;
+	for (int i = 0; i < a_size; ++i)
+	{
+		if ((a[i] - last_pos) >= gap)
+		{
+			last_pos = a[i];
+			cnt++;
+			if (cnt == cows)
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+{
+	int ans;
+	while (s <= e)
+	{
+		int mid = (s + e) / 2;
+
+		if (CanPlaceAtThisGap(a, mid, cows, a_size))
+		{
+			s = mid + 1;
+			ans = mid;
+		}
+		else
+		{
+			e = mid - 1;
+		}
+	}
+
+	return ans;
+}
 
 void solve(int tc)
 {
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; ++i)
-    {
-        cin >> a[i];
-    }
+	int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+	cin >> n >> m;
+	int a[n];
 
-    vector<unordered_map<int, int>> dp(n);
-    for (int i = 1; i < n; ++i)
-    {
-        for (int j = 0; j < i; ++j)
-        {
-            int dif = a[i] - a[j];
-            if (dif <= INT_MIN or dif >= INT_MAX)
-            {
-                continue;
-            }
-            a
+	for (int i = 0; i < n; ++i)
+	{
+		cin >> a[i];
+	}
 
-                if (dp[j].count(dif))
-            {
-                ans += dp[j][dif];
-                dp[i][dif] += dp[j][dif] + 1;
-            }
-            else
-            {
-                dp[i][dif] = 1;
-            }
-        }
-    }
-    // for (auto x : dp) {
-    //     for (auto y : x) {
-    //         cout << y.F << ' ' << y.S << endl;
-    //     }
-    //     cout << endl;
-    // }
+	sort(a, a + n);
 
-    cout << ans << endl;
+	cout << searching_max_gap(a, 0, a[n - 1], m, n) << endl;
 }
+
 int32_t main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int tc = 1;
-    // int t;cin>>t;while(t--)
-    {
-        solve(tc);
-        tc++;
-    }
+
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int tc = 1;
+		solve(tc);
+		tc++;
+	}
 }

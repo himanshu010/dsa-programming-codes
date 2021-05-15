@@ -1,20 +1,37 @@
+#include<bits/stdc++.h>
 class Solution
 {
-  public:
-    long long arrangeTiles(int N)
+public:
+    int maxAmt(int n , int hi[] , int li[])
     {
-        vector<long long int> dp(N + 1);
-        dp[0] = 1;
-        dp[1] = 1;
-        for (int i = 2; i <= N; i++)
-        {
-            dp[i] = dp[i - 1];
-            if (i - 4 >= 0)
-            {
-                dp[i] += dp[i - 4];
+        vector<vector<int>>dp(n, vector<int> (3));
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == 0) {
+                    dp[i][0] = hi[0];
+                    dp[i][1] = li[0];
+                    dp[i][2] = 0;
+                    continue;
+                }
+
+                if (j == 0) {
+                    dp[i][j] = dp[i - 1][2] + hi[i];
+                    continue;
+                }
+                if (j == 1) {
+                    dp[i][j] = max({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]}) + li[i];
+                    continue;
+                }
+                if (j == 2) {
+                    dp[i][j] = max({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]});
+                    continue;
+                }
             }
         }
-
-        return dp[N];
+        int ans = INT_MIN;
+        for (auto x : dp[n - 1]) {
+            ans = max(ans, x);
+        }
+        return ans;
     }
 };
