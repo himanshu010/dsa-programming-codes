@@ -1,37 +1,63 @@
-#include<bits/stdc++.h>
-class Solution
-{
-public:
-    int maxAmt(int n , int hi[] , int li[])
-    {
-        vector<vector<int>>dp(n, vector<int> (3));
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (i == 0) {
-                    dp[i][0] = hi[0];
-                    dp[i][1] = li[0];
-                    dp[i][2] = 0;
-                    continue;
-                }
+/*
+*-----------------------------------------------------------*
+|               AUTHOR: Himanshu Aswal                      |
+|            ( website: himanshuaswal.com )                 |
+*-----------------------------------------------------------*
+*/
+#include <bits/stdc++.h>
+#define moduli 998244353
+#define int long long int
+#define ld long double
+#define F first
+#define S second
+#define P pair<int, int>
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define PQ priority_queue
+using namespace std;
 
-                if (j == 0) {
-                    dp[i][j] = dp[i - 1][2] + hi[i];
-                    continue;
-                }
-                if (j == 1) {
-                    dp[i][j] = max({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]}) + li[i];
-                    continue;
-                }
-                if (j == 2) {
-                    dp[i][j] = max({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]});
-                    continue;
-                }
-            }
-        }
-        int ans = INT_MIN;
-        for (auto x : dp[n - 1]) {
-            ans = max(ans, x);
-        }
-        return ans;
+void preCompute()
+{
+}
+
+int calculateDepth(string s, int n, int &i)
+{
+    if (s[i] == 'l' or i >= n)
+    {
+        return 0;
     }
-};
+    i++;
+    int left = calculateDepth(s, n, i);
+    i++;
+    int right = calculateDepth(s, n, i);
+
+    return max(left, right) + 1;
+}
+
+void solve(int tc)
+{
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    string s;
+    cin >> s;
+    n = s.size();
+    i = 0;
+    cout << calculateDepth(s, n, i) << endl;
+}
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    preCompute();
+    int tc = 1;
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve(tc);
+        tc++;
+    }
+}

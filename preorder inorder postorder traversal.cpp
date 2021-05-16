@@ -4,7 +4,7 @@
 |                                                           |
 |                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|               ( himanshuaswal.codes )                     |
+|                ( himanshuaswal.com )                      |
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*

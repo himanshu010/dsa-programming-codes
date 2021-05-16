@@ -1,14 +1,8 @@
 /*
-
 *-----------------------------------------------------------*
-|                                                           |
-|                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|               ( himanshuaswal.codes )                     |
-|                                                           |
-|                                                           |
+|            ( website: himanshuaswal.com )                 |
 *-----------------------------------------------------------*
-
 */
 
 #include <bits/stdc++.h>

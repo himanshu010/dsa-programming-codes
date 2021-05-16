@@ -243,7 +243,7 @@ def get_time_today(args, use_ntlm_proxy=False):
     code = response.status_code if response is not None else None
     content = response.text if response is not None else None
 
-    if code == requests.codes.ok:
+    if code == requests.com.ok:
         try:
             summary = response.json()['data'][0]
             if len(summary['categories']) > 1:
@@ -349,4 +349,4 @@ def _get_results(response):
 
 
 def _success(code):
-    return code == requests.codes.created or code == requests.codes.accepted
+    return code == requests.com.created or code == requests.com.accepted

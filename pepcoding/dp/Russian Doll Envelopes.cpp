@@ -1,11 +1,7 @@
 /*
 *-----------------------------------------------------------*
-|                                                           |
-|                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|            ( website: himanshuaswal.codes )               |
-|                                                           |
-|                                                           |
+|            ( website: himanshuaswal.com )                 |
 *-----------------------------------------------------------*
 */
 #include <bits/stdc++.h>

@@ -4,7 +4,7 @@
 |                                                           |
 |                                                           |
 |               AUTHOR: Himanshu Aswal                      |
-|         (himanshu010.github.io/Portfolio_website)         |
+|         (himanshuaswal.com)         |
 |                                                           |
 |                                                           |
 *-----------------------------------------------------------*

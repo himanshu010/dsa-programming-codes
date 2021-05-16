@@ -169,7 +169,7 @@ MODULES = {'basic': ('_G',
  'utf8': ('utf8.char',
           'utf8.charpattern',
           'utf8.codepoint',
-          'utf8.codes',
+          'utf8.com',
           'utf8.len',
           'utf8.offset')}
 
