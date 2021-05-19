@@ -39,6 +39,8 @@ bool CanPlaceAtThisGap(int *a, int gap, int cows, int a_size)
 
     return false;
 }
+
+int ma
 {
     int ans;
     while (s <= e)

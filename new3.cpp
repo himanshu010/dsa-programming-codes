@@ -1,69 +1,26 @@
-class Solution
-{
-  public:
-    vector<vector<int>> win_cond = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6},
-                                    {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
-
-    bool win(vector<char> board, char c)
-    {
-        int cnt = 0;
-        for (auto x : win_cond)
-        {
-            cnt = 0;
-            for (auto y : x)
-            {
-                if (board[y] == c)
-                {
-                    cnt += 1;
-                }
+class Solution {
+public:
+    int minSwap(vector<int>& nums1, vector<int>& nums2) {
+        int n = nums1.size();
+        vector<pair<int, int>>dp(n, {INT_MAX, INT_MAX});
+        dp[0] = {0, 1};
+        for (int i = 1; i < n; i++) {
+            if (nums1[i] > nums1[i - 1] and nums2[i] > nums2[i - 1]) {
+                dp[i].first = min(dp[i - 1].first, dp[i].first);
             }
-            if (cnt == 3)
-            {
-                return 1;
+            if (nums1[i] > nums2[i - 1] and nums2[i] > nums1[i - 1]) {
+                dp[i].first = min(dp[i].first, dp[i - 1].second);
             }
-        }
 
-        return 0;
-    }
 
-    bool isValid(char b[9])
-    {
-        vector<char> board;
-        for (int i = 0; i < 9; i++)
-        {
-            board.push_back(b[i]);
-        }
-        bool o_win = win(board, 'O');
-        bool x_win = win(board, 'X');
-        int x_cnt = 0, o_cnt = 0;
-        for (auto x : board)
-        {
-            if (x == 'X')
-            {
-                x_cnt += 1;
+            if (nums2[i] > nums1[i - 1] and nums1[i] > nums2[i - 1]) {
+                dp[i].second = min(dp[i - 1].first + 1, dp[i].second);
             }
-            else
-            {
-                o_cnt += 1;
+            if (nums2[i] > nums2[i - 1] and nums1[i] > nums1[i - 1]) {
+                dp[i].second = min(dp[i - 1].second + 1, dp[i].second);
             }
-        }
 
-        if (x_win and x_cnt != o_cnt + 1)
-        {
-            return 0;
         }
-        if (o_win and x_cnt != o_cnt)
-        {
-            return 0;
-        }
-        if (o_win and x_win)
-        {
-            return 0;
-        }
-        if (o_cnt >= x_cnt)
-        {
-            return 0;
-        }
-        return 1;
+        return min(dp[n - 1].first, dp[n - 1].second);
     }
 };

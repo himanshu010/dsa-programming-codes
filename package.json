@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "clang-format -i *.cpp ./gfg/*.cpp ./pepcoding/dp/*.cpp ./pepcoding/graphs/*.cpp"
+    "format": "clang-format -i *.cpp ./gfg/*.cpp ./pepcoding/dp/*.cpp ./pepcoding/graphs/*.cpp ./leetcode/*.cpp"
   },
   "repository": {
     "type": "git",
