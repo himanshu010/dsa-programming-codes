@@ -4,13 +4,13 @@
 |             ( website: himanshuaswal.com )                |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -19,15 +19,19 @@
 #define PQ priority_queue
 using namespace std;
 
-int findWays(int n, int k, vvi &dp) {
-    if (dp[n][k] != -1) {
+int findWays(int n, int k, vvi &dp)
+{
+    if (dp[n][k] != -1)
+    {
         return dp[n][k];
     }
-    if (k == 1) {
+    if (k == 1)
+    {
         return 1;
     }
 
-    if (n == k) {
+    if (n == k)
+    {
         return 1;
     }
 
@@ -38,19 +42,19 @@ int findWays(int n, int k, vvi &dp) {
     return dp[n][k] = sum;
 }
 
-
-void preCompute() {
-
+void preCompute()
+{
 }
-void solve(int tc) {
+void solve(int tc)
+{
     int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n >> k;
-    vector<vector<int>>dp(n + 1, vector<int>(k + 1, -1));
+    vector<vector<int>> dp(n + 1, vector<int>(k + 1, -1));
     cout << findWays(n, k, dp);
 }
 int32_t main()
 {
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     preCompute();

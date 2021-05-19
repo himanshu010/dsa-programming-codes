@@ -1,6 +1,8 @@
-class Solution {
-public:
-    int numJewelsInStones(string jewels, string stones) {
+class Solution
+{
+  public:
+    int numJewelsInStones(string jewels, string stones)
+    {
         sort(jewels.begin(), jewels.end());
         sort(stones.begin(), stones.end());
 
@@ -8,18 +10,21 @@ public:
         int sum = 0;
         int n = jewels.size();
         int m = stones.size();
-        while (i < n and j < m) {
-            if (jewels[i] == stones[j]) {
+        while (i < n and j < m)
+        {
+            if (jewels[i] == stones[j])
+            {
                 sum += 1;
                 j += 1;
             }
-            else if (jewels[i] < stones[j]) {
+            else if (jewels[i] < stones[j])
+            {
                 i++;
             }
-            else {
+            else
+            {
                 j++;
             }
-
         }
 
         return sum;

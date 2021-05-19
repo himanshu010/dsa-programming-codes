@@ -9,28 +9,35 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
-public:
+class Solution
+{
+  public:
     bool ans = 1;
-    int check(TreeNode* cur) {
+    int check(TreeNode *cur)
+    {
         int l = 0, r = 0;
 
-        if (cur->left) {
+        if (cur->left)
+        {
             l = check(cur->left);
         }
-        if (cur->right) {
+        if (cur->right)
+        {
             r = check(cur->right);
         }
 
-        if (abs(l - r) > 1) {
+        if (abs(l - r) > 1)
+        {
             ans = false;
             return 0;
         }
         return max(l, r) + 1;
     }
 
-    bool isBalanced(TreeNode* root) {
-        if (!root) {
+    bool isBalanced(TreeNode *root)
+    {
+        if (!root)
+        {
             return 1;
         }
         check(root);

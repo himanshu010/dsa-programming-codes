@@ -20,19 +20,24 @@ public:
 
 vector<int> ans;
 
-void preOrder(Node* cur) {
+void preOrder(Node *cur)
+{
     ans.push_back(cur->val);
 
-    for (auto x : cur->children) {
+    for (auto x : cur->children)
+    {
         preOrder(x);
     }
 }
 
-class Solution {
-public:
-    vector<int> preorder(Node* root) {
+class Solution
+{
+  public:
+    vector<int> preorder(Node *root)
+    {
         ans.clear();
-        if (root == NULL) {
+        if (root == NULL)
+        {
             return ans;
         }
         preOrder(root);

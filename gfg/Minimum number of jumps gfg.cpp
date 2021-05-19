@@ -1,20 +1,27 @@
-class Solution {
-public:
-    int minJumps(int arr[], int n) {
-        if (n == 1) {
+class Solution
+{
+  public:
+    int minJumps(int arr[], int n)
+    {
+        if (n == 1)
+        {
             return 0;
         }
         int cur = arr[0];
         int jump = 1;
         int start = 1;
 
-        while (cur < n) {
-            if (start > cur) {
+        while (cur < n)
+        {
+            if (start > cur)
+            {
                 return -1;
             }
             int mx = INT_MIN;
-            for (int i = start; i <= cur; i++) {
-                if (i >= n - 1) {
+            for (int i = start; i <= cur; i++)
+            {
+                if (i >= n - 1)
+                {
                     return jump;
                 }
 

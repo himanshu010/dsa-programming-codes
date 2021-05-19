@@ -1,7 +1,9 @@
-class Solution {
-public:
-    string sortSentence(string s) {
-        vector <string> words;
+class Solution
+{
+  public:
+    string sortSentence(string s)
+    {
+        vector<string> words;
 
         stringstream check1(s);
 
@@ -12,14 +14,16 @@ public:
             words.push_back(im);
         }
 
-        map<int, string>mp;
-        for (auto x : words) {
+        map<int, string> mp;
+        for (auto x : words)
+        {
             int m = x.size();
             int t = x[m - 1] - '0';
             mp[t] = x.substr(0, m - 1);
         }
         string ans;
-        for (auto x : mp) {
+        for (auto x : mp)
+        {
             ans += x.second + " ";
         }
 
