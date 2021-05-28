@@ -1,64 +1,25 @@
-/*
-*-----------------------------------------------------------*
-|               AUTHOR: Himanshu Aswal                      |
-|             ( website: himanshuaswal.com )                |
-*-----------------------------------------------------------*
-*/
-#include <bits/stdc++.h>
-#define moduli 998244353
-#define int long long int
-#define ld long double
-#define F first
-#define S second
-#define P pair<int, int>
-#define pb push_back
-#define vi vector<int>
-#define vvi vector<vector<int>>
-#define vb vector<bool>
-#define um unordered_map
-#define PQ priority_queue
-using namespace std;
-
-void preCompute()
-{
-}
-void solve(int tc)
-{
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> k;
-    vvi dp(n + 1, vi(k + 1));
-    for (int i = 0; i <= n; ++i)
-    {
-        for (int j = 0; j <= k; ++j)
-        {
-            if (i == 0 or j == 0)
-            {
-                dp[i][j] = 0;
-                continue;
+class Solution {
+public:
+    int wiggleMaxLength(vector<int>& nums) {
+        int n = nums.size();
+        vector<pair<int, int>> dp(n);
+        dp[0] = {1, 1};
+        int ans = 1;
+        for (int i = 1; i < n; i++) {
+            int mx1 = 0, mx2 = 0;
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {
+                    mx1 = max(mx1, dp[j].second);
+                }
+                if (nums[j] > nums[i]) {
+                    mx2 = max(mx2, dp[j].first);
+                }
             }
 
-            if (i == j)
-            {
-                dp[i][j] = 1;
-                continue;
-            }
+            dp[i] = {mx1 + 1, mx2 + 1};
 
-            dp[i][j] = (dp[i - 1][j] * j) + dp[i - 1][j - 1];
+            ans = max({ans, mx1 + 1, mx2 + 1});
         }
+        return ans;
     }
-
-    cout << dp[n][k] << endl;
-}
-int32_t main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    preCompute();
-    int tc = 1;
-    // int t;cin>>t;while(t--)
-    {
-        solve(tc);
-        tc++;
-    }
-}
+};

@@ -1,94 +1,37 @@
-/*
-*-----------------------------------------------------------*
-|               AUTHOR: Himanshu Aswal                      |
-|            ( website: himanshuaswal.com )                 |
-*-----------------------------------------------------------*
-*/
-
-#include <bits/stdc++.h>
-#define moduli 998244353
-#define int long long int
-#define ld long double
-#define F first
-#define S second
-#define P pair<int, int>
-#define pb push_back
-#define vi vector<int>
-#define vvi vector<vector<int>>
-#define vb vector<bool>
-#define um unordered_map
-
-using namespace std;
-
-bool CanPlaceAtThisGap(int *a, int gap, int cows, int a_size)
-{
-    int last_pos = a[0];
-    int cnt = 1;
-    for (int i = 0; i < a_size; ++i)
-    {
-        if ((a[i] - last_pos) >= gap)
-        {
-            last_pos = a[i];
-            cnt++;
-            if (cnt == cows)
-            {
-                return true;
+class Solution {
+public:
+    int findNumberOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        vector<pair<int, int>>dp(n, {1, 0});
+        dp[0] = {1, 1};
+        for (int i = 1; i < n; i++) {
+            int mx = 0;
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    if (mx == dp[j].first) {
+                        dp[i].second += dp[j].second;
+                    }
+                    else if (mx < dp[j].first) {
+                        mx = dp[j].first;
+                        dp[i].second = dp[j].second;
+                    }
+                }
+            }
+            dp[i].first = mx + 1;
+            dp[i].second = max(dp[i].second, 1);
+        }
+        int ans = 0;
+        int mx = 0;
+        for (auto x : dp) {
+            if (mx == x.first) {
+                ans += x.second;
+            }
+            else if (mx < x.first) {
+                mx = x.first;
+                ans = x.second;
             }
         }
+
+        return ans;
     }
-
-    return false;
-}
-
-int ma
-{
-    int ans;
-    while (s <= e)
-    {
-        int mid = (s + e) / 2;
-
-        if (CanPlaceAtThisGap(a, mid, cows, a_size))
-        {
-            s = mid + 1;
-            ans = mid;
-        }
-        else
-        {
-            e = mid - 1;
-        }
-    }
-
-    return ans;
-}
-
-void solve(int tc)
-{
-    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
-    cin >> n >> m;
-    int a[n];
-
-    for (int i = 0; i < n; ++i)
-    {
-        cin >> a[i];
-    }
-
-    sort(a, a + n);
-
-    cout << searching_max_gap(a, 0, a[n - 1], m, n) << endl;
-}
-
-int32_t main()
-{
-
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int tc = 1;
-        solve(tc);
-        tc++;
-    }
-}
+};
