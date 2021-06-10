@@ -1,31 +1,75 @@
 class Solution
 {
-  public:
-    int minSwap(vector<int> &nums1, vector<int> &nums2)
+  private:
+    vector<int> tree = vector<int>(400005);
+    static bool compare(vector<int> &a, vector<int> &b)
     {
-        int n = nums1.size();
-        vector<pair<int, int>> dp(n, {INT_MAX, INT_MAX});
-        dp[0] = {0, 1};
-        for (int i = 1; i < n; i++)
+        return a[1] == b[1] ? a[0] < b[0] : a[1] < b[1];
+    }
+    void buildTree(int s, int e, int index)
+    {
+        if (s == e)
         {
-            if (nums1[i] > nums1[i - 1] and nums2[i] > nums2[i - 1])
-            {
-                dp[i].first = min(dp[i - 1].first, dp[i].first);
-            }
-            if (nums1[i] > nums2[i - 1] and nums2[i] > nums1[i - 1])
-            {
-                dp[i].first = min(dp[i].first, dp[i - 1].second);
-            }
+            tree[index] = s;
+            return;
+        }
 
-            if (nums2[i] > nums1[i - 1] and nums1[i] > nums2[i - 1])
+        int mid = s + (e - s) / 2;
+        buildTree(s, mid, 2 * index + 1);
+        buildTree(mid + 1, e, 2 * index + 2);
+
+        tree[index] = min(tree[2 * index + 1], tree[2 * index + 2]);
+    }
+
+    int queryDay(int s, int e, int l, int r, int index)
+    {
+        if (l > e or r < s)
+        {
+            return INT_MAX;
+        }
+
+        if (l <= s and r >= e)
+        {
+            return tree[index];
+        }
+
+        int mid = s + (e - s) / 2;
+        return min(queryDay(s, mid, l, r, 2 * index + 1), queryDay(mid + 1, e, l, r, 2 * index + 2));
+    }
+
+    void updateTree(int s, int e, int d, int index)
+    {
+        if (d < s or d > e)
+        {
+            return;
+        }
+        if (s == e)
+        {
+            tree[index] = INT_MAX;
+            return;
+        }
+        int mid = s + (e - s) / 2;
+
+        updateTree(s, mid, d, 2 * index + 1);
+        updateTree(mid + 1, e, d, 2 * index + 2);
+        tree[index] = min(tree[2 * index + 1], tree[2 * index + 2]);
+    }
+
+  public:
+    int maxEvents(vector<vector<int>> &events)
+    {
+        buildTree(1, 100000, 1);
+        int ans = 0;
+        sort(events.begin(), events.end(), compare);
+        for (auto x : events)
+        {
+            int day = queryDay(1, 100000, x[0], x[1], 1);
+            if (day != INT_MAX)
             {
-                dp[i].second = min(dp[i - 1].first + 1, dp[i].second);
-            }
-            if (nums2[i] > nums2[i - 1] and nums1[i] > nums1[i - 1])
-            {
-                dp[i].second = min(dp[i - 1].second + 1, dp[i].second);
+                ans += 1;
+                updateTree(1, 100000, day, 1);
             }
         }
-        return min(dp[n - 1].first, dp[n - 1].second);
+        return ans;
     }
 };

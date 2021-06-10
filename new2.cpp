@@ -1,37 +1,38 @@
-class Solution {
-public:
-    int findNumberOfLIS(vector<int>& nums) {
-        int n = nums.size();
-        vector<pair<int, int>>dp(n, {1, 0});
-        dp[0] = {1, 1};
-        for (int i = 1; i < n; i++) {
-            int mx = 0;
-            for (int j = 0; j < i; j++) {
-                if (nums[i] > nums[j]) {
-                    if (mx == dp[j].first) {
-                        dp[i].second += dp[j].second;
+class Solution
+{
+  public:
+    int countWays(string a, string b)
+    {
+        int n = a.size(), m = b.size();
+        vector<vector<int>> dp(n + 1, vector<int>(m));
+
+        for (int i = 0; i < m; i++)
+        {
+            dp[0][i] = 0;
+        }
+
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                if (a[i - 1] == b[j])
+                {
+                    if (j == 0)
+                    {
+                        dp[i][j] = dp[i - 1][j] + 1;
                     }
-                    else if (mx < dp[j].first) {
-                        mx = dp[j].first;
-                        dp[i].second = dp[j].second;
+                    else
+                    {
+                        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
                     }
                 }
-            }
-            dp[i].first = mx + 1;
-            dp[i].second = max(dp[i].second, 1);
-        }
-        int ans = 0;
-        int mx = 0;
-        for (auto x : dp) {
-            if (mx == x.first) {
-                ans += x.second;
-            }
-            else if (mx < x.first) {
-                mx = x.first;
-                ans = x.second;
+                else
+                {
+                    dp[i][j] = dp[i - 1][j];
+                }
             }
         }
 
-        return ans;
+        return dp[n][m - 1];
     }
 };

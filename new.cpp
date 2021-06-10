@@ -1,25 +1,32 @@
-class Solution {
-public:
-    int wiggleMaxLength(vector<int>& nums) {
+class Solution
+{
+  public:
+    int jump(vector<int> &nums)
+    {
         int n = nums.size();
-        vector<pair<int, int>> dp(n);
-        dp[0] = {1, 1};
-        int ans = 1;
-        for (int i = 1; i < n; i++) {
-            int mx1 = 0, mx2 = 0;
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
-                    mx1 = max(mx1, dp[j].second);
-                }
-                if (nums[j] > nums[i]) {
-                    mx2 = max(mx2, dp[j].first);
-                }
+        if (n == 1)
+        {
+            return 0;
+        }
+        int maxReach = nums[0];
+        int sLeft = maxReach;
+        int jump = 1;
+        for (int i = 1; i < n; i++)
+        {
+            if (i == n - 1)
+            {
+                return jump;
             }
 
-            dp[i] = {mx1 + 1, mx2 + 1};
+            maxReach = max(maxReach, i + nums[i]);
 
-            ans = max({ans, mx1 + 1, mx2 + 1});
+            sLeft--;
+            if (sLeft == 0)
+            {
+                jump += 1;
+                sLeft = maxReach - i;
+            }
         }
-        return ans;
+        return jump;
     }
 };
