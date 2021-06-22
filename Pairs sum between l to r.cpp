@@ -4,13 +4,13 @@
 |             ( website: himanshuaswal.com )                |
 *-----------------------------------------------------------*
 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define moduli 998244353
 #define int long long int
 #define ld long double
 #define F first
 #define S second
-#define P pair<int,int>
+#define P pair<int, int>
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
@@ -19,11 +19,11 @@
 #define PQ priority_queue
 using namespace std;
 
-
-void preCompute() {
-
+void preCompute()
+{
 }
-void solve(int tc) {
+void solve(int tc)
+{
     int j, k, n, m, ans = 0, cnt = 0, sum = 0;
     cin >> n;
     vi a(n);
@@ -34,14 +34,16 @@ void solve(int tc) {
 
     sort(a.begin(), a.end());
 
-
     int i = 0, low = n - 1, high = n - 1;
-    while (i < high) {
+    while (i < high)
+    {
         low = max(i, low);
-        while (low > i and a[i] + a[low] >= l) {
+        while (low > i and a[i] + a[low] >= l)
+        {
             low--;
         }
-        while (high > low and a[i] + a[high] > r) {
+        while (high > low and a[i] + a[high] > r)
+        {
             high--;
         }
         sum += (high - low);
@@ -51,7 +53,7 @@ void solve(int tc) {
 }
 int32_t main()
 {
-    ios_base:: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     preCompute();
