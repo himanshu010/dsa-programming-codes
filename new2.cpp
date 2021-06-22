@@ -1,38 +1,30 @@
-class Solution
-{
-  public:
-    int countWays(string a, string b)
-    {
-        int n = a.size(), m = b.size();
-        vector<vector<int>> dp(n + 1, vector<int>(m));
-
-        for (int i = 0; i < m; i++)
-        {
-            dp[0][i] = 0;
-        }
-
-        for (int i = 1; i <= n; i++)
-        {
-            for (int j = 0; j < m; j++)
-            {
-                if (a[i - 1] == b[j])
-                {
-                    if (j == 0)
-                    {
-                        dp[i][j] = dp[i - 1][j] + 1;
-                    }
-                    else
-                    {
-                        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
-                    }
+class Solution {
+public:
+    bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
+        int n = word1.size();
+        int m = word2.size();
+        int i = 0, j = 0;
+        int k = 0, l = 0;
+        while (i < n and j < m) {
+            while (k < word1[i].size() and l < word2[j].size()) {
+                if (word1[i][k] != word2[j][l]) {
+                    return 0;
                 }
-                else
-                {
-                    dp[i][j] = dp[i - 1][j];
-                }
+                k++;
+                l++;
+            }
+            if (k == word1[i].size()) {
+                i++;
+                k = 0;
+            }
+            if (l == word2[j].size()) {
+                j++;
+                l = 0;
             }
         }
-
-        return dp[n][m - 1];
+        if (k != 0 or l != 0 or i < n or j < m) {
+            return 0;
+        }
+        return 1;
     }
 };

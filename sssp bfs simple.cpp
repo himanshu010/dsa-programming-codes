@@ -34,6 +34,7 @@ void addEdge(int l, int r)
 void sssp(int src)
 {
     dist[src] = 0;
+    visited[src] = 1;
     queue<int> qu;
     qu.push(src);
 
