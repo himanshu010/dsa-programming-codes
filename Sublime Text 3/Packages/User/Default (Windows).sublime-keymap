@@ -1,7 +1,0 @@
-[
-	{ 
-        "keys": ["ctrl+`"], "command": "terminus_open", "args": {
-            "cwd": "${file_path:${folder}}"
-        }
-    }
-]
