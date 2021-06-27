@@ -1,39 +1,42 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
-class Solution
-{
-  public:
-    pair<TreeNode *, int> build(int s, int e, int i, vector<int> &inorder, vector<int> &postorder)
-    {
-        if (s > e)
-        {
-            return {NULL, i + 1};
-        }
-        if (s == e)
-        {
-            TreeNode *c = new TreeNode(inorder[s]);
-            return {c, i};
-        }
-        TreeNode *root = new TreeNode(postorder[i]);
-        int cur = find(inorder.begin(), inorder.end(), postorder[i]) - inorder.begin();
+/*
+*-----------------------------------------------------------*
+|               AUTHOR: Himanshu Aswal                      |
+|             ( website: himanshuaswal.com )                |
+*-----------------------------------------------------------*
+*/
+#include<bits/stdc++.h>
+#define moduli 998244353
+#define ll long long int
+#define ld long double
+#define F first
+#define S second
+#define P pair<int,int>
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vb vector<bool>
+#define um unordered_map
+#define PQ priority_queue
+#define endl "\n"
+using namespace std;
+void preCompute() {
 
-        pair<TreeNode *, int> r = build(cur + 1, e, i - 1, inorder, postorder);
-        pair<TreeNode *, int> l = build(s, cur - 1, r.second - 1, inorder, postorder);
-        root->left = l.first;
-        root->right = r.first;
-        return {root, min({i, r.second, l.second})};
-    }
-    TreeNode *buildTree(vector<int> &inorder, vector<int> &postorder)
+}
+
+void solve(int tc) {
+    int i, j, k, n, m, ans = 0, cnt = 0, sum = 0;
+    cout << 5 << endl << 4 << endl;
+}
+int main()
+{
+    ios_base:: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    preCompute();
+    int tc = 1;
+    // int t;cin>>t;while(t--)
     {
-        return build(0, inorder.size() - 1, inorder.size() - 1, inorder, postorder).first;
+        solve(tc);
+        tc++;
     }
-};
+}
