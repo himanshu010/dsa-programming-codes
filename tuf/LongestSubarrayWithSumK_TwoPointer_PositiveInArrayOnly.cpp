@@ -25,27 +25,20 @@ void preCompute() {
 
 }
 
-int subarraySum(vector<int> &nums, int k) {
-    unordered_map<int, int> mp;
-    int sum = 0, n = nums.size(), cnt = 0;
-    for (int i = 0; i < n; ++i)
-    {
-        sum += nums[i];
+int longestSubarray(vector<int> &nums, int k) {
+    ll left = 0, right = 0, sum = nums[0], n = nums.size(), ans = 0;
+    while (right < n) {
+        while (left <= right && sum > k) {
+            sum -= nums[left++];
+        }
         if (sum == k) {
-            cnt += 1;
+            ans = max(ans, right - left + 1);
         }
-        if (mp.find(sum - k) != mp.end()) {
-            cnt += mp[sum - k];
-        }
-        if (mp.find(sum) == mp.end()) {
-            mp[sum] = 1;
-        }
-        else {
-            mp[sum]++;
-        }
-    }
+        right++;
+        if (right < n) sum += nums[right];
 
-    return cnt;
+    }
+    return ans;
 }
 
 void solve(int tc) {
@@ -57,7 +50,7 @@ void solve(int tc) {
         cin >> a[i];
     }
     int b; cin >> b;
-    cout << subarraySum(a, b) << endl;
+    cout << longestSubarray(a, b) << endl;
 
 }
 int main()
